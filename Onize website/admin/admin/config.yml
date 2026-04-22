@@ -1,0 +1,69 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: images/uploads
+
+collections:
+  - name: blog
+    label: Blog Posts
+    folder: _posts
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Featured Image, name: image, widget: image, required: false }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: homepage
+    label: Homepage
+    files:
+      - label: Hero Section
+        name: hero
+        file: _data/hero.json
+        fields:
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subtext, name: subtext, widget: text }
+          - { label: CTA Button Text, name: cta, widget: string }
+      - label: Stats
+        name: stats
+        file: _data/stats.json
+        fields:
+          - { label: Stat 1 Number, name: stat1_number, widget: string }
+          - { label: Stat 1 Label, name: stat1_label, widget: string }
+          - { label: Stat 2 Number, name: stat2_number, widget: string }
+          - { label: Stat 2 Label, name: stat2_label, widget: string }
+          - { label: Stat 3 Number, name: stat3_number, widget: string }
+          - { label: Stat 3 Label, name: stat3_label, widget: string }
+
+  - name: testimonials
+    label: Testimonials
+    folder: _testimonials
+    create: true
+    fields:
+      - { label: Client Name, name: name, widget: string }
+      - { label: Title & Company, name: title, widget: string }
+      - { label: Quote, name: quote, widget: text }
+      - { label: Photo, name: photo, widget: image, required: false }
+
+  - name: services
+    label: Services
+    folder: _services
+    create: true
+    fields:
+      - { label: Service Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: CTA Text, name: cta, widget: string }
+
+  - name: portfolio
+    label: Portfolio & Work
+    folder: _portfolio
+    create: true
+    fields:
+      - { label: Client Name, name: client, widget: string }
+      - { label: Project Type, name: type, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Results, name: results, widget: text }
+      - { label: Featured Image, name: image, widget: image, required: false }
