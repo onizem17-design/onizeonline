@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Onize Muhammed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --olive:      #3B4A2F;
+      --olive-dark: #2A3320;
+      --olive-mid:  #4E6038;
+      --nude:       #EFE3CA;
+      --nude-light: #F7F0E3;
+      --brown:      #8B6347;
+      --brown-light:#C4956A;
+      --white:      #FFFFFF;
+      --text-dark:  #1E2318;
+      --text-mid:   #4A4A3A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--nude-light); color: var(--text-dark); }
+    h1,h2,h3 { font-family: 'DM Serif Display', serif; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(42,51,32,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(239,227,202,0.08);
+      padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--nude-light); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: rgba(239,227,202,0.65); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--nude-light); }
+    .toggle-btn {
+      background: none; border: 1.5px solid rgba(239,227,202,0.35); border-radius: 50px;
+      padding: 5px 14px; cursor: pointer; font-size: 0.8rem; font-weight: 500;
+      color: rgba(239,227,202,0.75); transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+    }
+    .toggle-btn:hover { background: var(--brown); color: white; border-color: transparent; }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--olive-dark);
+      padding: 140px 24px 80px;
+      text-align: center;
+    }
+    .page-hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--nude-light); margin-bottom: 12px; }
+    .page-hero p { font-size: 1rem; color: rgba(239,227,202,0.55); }
+
+    /* PLACEHOLDER BODY */
+    .placeholder-body {
+      max-width: 680px; margin: 80px auto; padding: 0 24px;
+      text-align: center;
+    }
+    .coming-badge {
+      display: inline-block;
+      background: var(--nude);
+      color: var(--brown);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 50px; margin-bottom: 28px;
+    }
+    .placeholder-body h2 { font-size: 2rem; color: var(--text-dark); margin-bottom: 16px; }
+    .placeholder-body p { font-size: 1rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 36px; }
+    .btn-back {
+      display: inline-block;
+      background: var(--olive);
+      color: var(--nude-light);
+      padding: 12px 28px; border-radius: 50px;
+      font-size: 0.88rem; font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-back:hover { background: var(--brown); }
+
+    /* FOOTER */
+    footer {
+      background: var(--nude);
+      border-top: 1px solid rgba(59,74,47,0.1);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.82rem; color: var(--text-mid);
+    }
+    footer a { color: var(--brown); }
+
+    @media(max-width:700px) { .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="onizeonline.html" class="nav-logo">Onize.</a>
+    <div class="nav-links">
+      <a href="about.html" class="active">About</a>
+      <a href="portfolio.html" >Portfolio</a>
+      <a href="blog.html" >Blog</a>
+      <a href="pricing.html" >Pricing</a>
+      <a href="project.html" >Project</a>
+      <a href="contact.html" >Contact</a>
+    </div>
+    <button class="toggle-btn">🌙 Dark</button>
+  </nav>
+
+  <div class="page-hero">
+    <h1>About</h1>
+    <p>Onize Muhammed · SaaS Content &amp; AI Visibility</p>
+  </div>
+
+  <div class="placeholder-body">
+    <span class="coming-badge">Coming Soon</span>
+    <h2>This page is being built</h2>
+    <p>Great things are in the works. Check back soon or head back to the homepage.</p>
+    <a href="onizeonline.html" class="btn-back">← Back to Home</a>
+  </div>
+
+  <footer>
+    © 2026 Onize Muhammed · <a href="onizeonline.html">OnizeOnline.com</a>
+  </footer>
+
+</body>
+</html>
