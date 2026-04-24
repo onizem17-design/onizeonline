@@ -1,4 +1,4 @@
- backend:
+backend:
   name: github
   repo: onizem17-design/onizeonline
   branch: main
@@ -11,39 +11,75 @@ collections:
     folder: _posts
     create: true
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Date, name: date, widget: datetime }
-      - { label: Featured Image, name: image, widget: image, required: false }
-      - { label: Excerpt, name: excerpt, widget: text }
-      - { label: Body, name: body, widget: markdown }
-
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: Featured Image
+        name: image
+        widget: image
+        required: false
+      - label: Excerpt
+        name: excerpt
+        widget: text
+      - label: Body
+        name: body
+        widget: markdown
   - name: testimonials
     label: Testimonials
     folder: _testimonials
     create: true
     fields:
-      - { label: Client Name, name: name, widget: string }
-      - { label: Title & Company, name: title, widget: string }
-      - { label: Quote, name: quote, widget: text }
-      - { label: Photo, name: photo, widget: image, required: false }
-
+      - label: Client Name
+        name: name
+        widget: string
+      - label: Title and Company
+        name: title
+        widget: string
+      - label: Quote
+        name: quote
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+        required: false
   - name: services
     label: Services
     folder: _services
     create: true
     fields:
-      - { label: Service Title, name: title, widget: string }
-      - { label: Subtitle, name: subtitle, widget: string }
-      - { label: Description, name: description, widget: text }
-      - { label: CTA Text, name: cta, widget: string }
-
+      - label: Service Title
+        name: title
+        widget: string
+      - label: Subtitle
+        name: subtitle
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+      - label: CTA Text
+        name: cta
+        widget: string
   - name: portfolio
-    label: Portfolio & Work
+    label: Portfolio and Work
     folder: _portfolio
     create: true
     fields:
-      - { label: Client Name, name: client, widget: string }
-      - { label: Project Type, name: type, widget: string }
-      - { label: Description, name: description, widget: text }
-      - { label: Results, name: results, widget: text }
-      - { label: Featured Image, name: image, widget: image, required: false }
+      - label: Client Name
+        name: client
+        widget: string
+      - label: Project Type
+        name: type
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+      - label: Results
+        name: results
+        widget: text
+      - label: Featured Image
+        name: image
+        widget: image
+        required: false
