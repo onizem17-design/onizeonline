@@ -1,5 +1,6 @@
-backend:
-  name: git-gateway
+ backend:
+  name: github
+  repo: onizem17-design/onizeonline
   branch: main
 
 media_folder: images/uploads
@@ -15,27 +16,6 @@ collections:
       - { label: Featured Image, name: image, widget: image, required: false }
       - { label: Excerpt, name: excerpt, widget: text }
       - { label: Body, name: body, widget: markdown }
-
-  - name: homepage
-    label: Homepage
-    files:
-      - label: Hero Section
-        name: hero
-        file: _data/hero.json
-        fields:
-          - { label: Headline, name: headline, widget: string }
-          - { label: Subtext, name: subtext, widget: text }
-          - { label: CTA Button Text, name: cta, widget: string }
-      - label: Stats
-        name: stats
-        file: _data/stats.json
-        fields:
-          - { label: Stat 1 Number, name: stat1_number, widget: string }
-          - { label: Stat 1 Label, name: stat1_label, widget: string }
-          - { label: Stat 2 Number, name: stat2_number, widget: string }
-          - { label: Stat 2 Label, name: stat2_label, widget: string }
-          - { label: Stat 3 Number, name: stat3_number, widget: string }
-          - { label: Stat 3 Label, name: stat3_label, widget: string }
 
   - name: testimonials
     label: Testimonials
