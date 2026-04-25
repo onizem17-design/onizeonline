@@ -2,9 +2,7 @@ backend:
   name: github
   repo: onizem17-design/onizeonline
   branch: main
-  auth_type: pkce
-  app_id: Ov23liQq4lYzveC60paf
-
+  base_url: https://cms-auth.onizem17.workers.dev
 media_folder: images/uploads
 
 collections:
