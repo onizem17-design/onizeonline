@@ -40,6 +40,101 @@ collections:
       - label: Body
         name: body
         widget: markdown
+  - name: pages
+    label: Pages
+    files:
+      - name: homepage
+        label: Homepage
+        file: content/_index.md
+        fields:
+          - label: Hero Eyebrow Text
+            name: hero_eyebrow
+            widget: string
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+          - label: Hero Button Text
+            name: hero_cta
+            widget: string
+          - label: Value Section Heading
+            name: value_heading
+            widget: string
+          - label: Value Section Intro
+            name: value_intro
+            widget: text
+          - label: Value Bullet Points
+            name: value_bullets
+            widget: list
+            hint: "Each item is one bullet point"
+          - label: Value Section Button Text
+            name: value_cta
+            widget: string
+          - label: Client Brands
+            name: brands
+            widget: list
+            hint: "Brand names shown in the social proof bar"
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - label: Number (e.g. 150%)
+                name: number
+                widget: string
+                required: false
+              - label: Use Badge Instead of Number
+                name: badge
+                widget: boolean
+                default: false
+                required: false
+              - label: Badge Text
+                name: badge_text
+                widget: string
+                required: false
+              - label: Description
+                name: description
+                widget: string
+          - label: AI Section Heading
+            name: ai_heading
+            widget: string
+          - label: AI Section Bullet Points
+            name: ai_bullets
+            widget: list
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+              - label: Quote
+                name: quote
+                widget: text
+              - label: Client Name
+                name: name
+                widget: string
+              - label: Role & Company
+                name: role
+                widget: string
+              - label: Initial (single letter avatar)
+                name: initial
+                widget: string
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - label: Icon (emoji)
+                name: icon
+                widget: string
+              - label: Service Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+              - label: Bullet Points
+                name: bullets
+                widget: list
+              - label: Button Text
+                name: cta
+                widget: string
+
   - name: testimonials
     label: Testimonials
     folder: _testimonials

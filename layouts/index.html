@@ -163,9 +163,9 @@
         </div>
       </div>
       <div class="hero-card">
-        <span class="hero-eyebrow">SaaS Content · AEO · AI Visibility</span>
-        <h1>SaaS content that's <span>visible</span> across Google and AI platforms — and wins signups</h1>
-        <a href="#contact" class="btn-primary">SAY LESS. I'M IN.</a>
+        <span class="hero-eyebrow">{{ .Params.hero_eyebrow }}</span>
+        <h1>{{ .Params.hero_headline }}</h1>
+        <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
       </div>
     </div>
   </section>
@@ -174,16 +174,14 @@
   <section class="value-section" id="about">
     <div class="value-inner container">
       <div class="reveal">
-        <h2>Scaled content doesn't have to be <em>garbage</em></h2>
-        <p>AI Content shouldn't be a trade off between quality and quantity, but that's if you bring in an expert eyes that can:</p>
+        <h2>{{ .Params.value_heading }}</h2>
+        <p>{{ .Params.value_intro }}</p>
         <ul class="value-list">
-          <li>Build you a strategy based on real customer pain point (no compromise!)</li>
-          <li>Build content workflows based on years of pruned and reliable process</li>
-          <li>Take AI outputs from good enough to gems that position your brand as a trusted and valuable resource</li>
+          {{ range .Params.value_bullets }}<li>{{ . }}</li>{{ end }}
         </ul>
         <p style="font-weight:500; color:var(--text);">And that's me.</p>
         <br/>
-        <a href="#contact" class="btn-primary">Say no more. Let's talk →</a>
+        <a href="#contact" class="btn-primary">{{ .Params.value_cta }}</a>
       </div>
       <div class="value-img-wrap reveal">
         <div class="value-img-placeholder">[ Insert your workspace / brand photo here ]</div>
@@ -196,16 +194,19 @@
     <div class="proof-bar-inner">
       <p class="proof-label reveal">I've helped these brands</p>
       <div class="brand-logos reveal">
-        <span class="brand-logo">Tripledart</span>
-        <span class="brand-logo">Docupilot</span>
-        <span class="brand-logo">SaleDuo</span>
-        <span class="brand-logo">MobileText Alert</span>
+        {{ range .Params.brands }}<span class="brand-logo">{{ . }}</span>{{ end }}
       </div>
       <div class="stats-grid">
-        <div class="stat-item reveal"><div class="stat-num">xxx<span>%</span></div><div class="stat-desc">Traffic</div></div>
-        <div class="stat-item reveal"><div class="stat-num">xxx</div><div class="stat-desc">User signup</div></div>
-        <div class="stat-item reveal"><div class="stat-badge">Cited in AI</div><div class="stat-desc">Mentioned and cited in Google AI overview, Google AI mode, ChatGPT, Claude, Perplexity</div></div>
-        <div class="stat-item reveal"><div class="stat-num">1</div><div class="stat-desc">Average revision round per article</div></div>
+        {{ range .Params.stats }}
+        <div class="stat-item reveal">
+          {{ if .badge }}
+            <div class="stat-badge">{{ .badge_text }}</div>
+          {{ else }}
+            <div class="stat-num">{{ .number }}</div>
+          {{ end }}
+          <div class="stat-desc">{{ .description }}</div>
+        </div>
+        {{ end }}
       </div>
     </div>
   </section>
@@ -217,11 +218,9 @@
         <div class="value-img-placeholder">[ Insert your image here ]</div>
       </div>
       <div class="reveal">
-        <h2>Search Visibility has gone beyond Google, your brand strategy has to align. I can help you:</h2>
+        <h2>{{ .Params.ai_heading }}</h2>
         <ul class="value-list" style="margin-top: 24px;">
-          <li>Map a content strategy around prompts your target audience are searching on AI platforms like ChatGPT, Claude, Perplexity and Google AI mode</li>
-          <li>Audit your website to find AI visibility gaps</li>
-          <li>Optimize your existing article to show up on AI platforms</li>
+          {{ range .Params.ai_bullets }}<li>{{ . }}</li>{{ end }}
         </ul>
       </div>
     </div>
@@ -235,18 +234,18 @@
         <a href="#" class="see-all">See all testimonials →</a>
       </div>
       <div class="testi-grid">
+        {{ range .Params.testimonials }}
         <div class="testi-card reveal">
-          <p class="testi-text">"Onize deeply understands the product, user journeys, and how content can actually drive adoption and conversions. <strong>Her top-performing posts led to more traffic and demo requests for us.</strong>"</p>
-          <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Client Name</div><div class="testi-role">Head of Content · Brand Name</div></div></div>
+          <p class="testi-text">"{{ .quote }}"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">{{ .initial }}</div>
+            <div>
+              <div class="testi-name">{{ .name }}</div>
+              <div class="testi-role">{{ .role }}</div>
+            </div>
+          </div>
         </div>
-        <div class="testi-card reveal">
-          <p class="testi-text">"I'm particularly impressed by the ability to follow briefs to a T, yet <strong>adapt and reorganize information on the fly</strong> based on what she knows about our ICP. Never more than one round of feedback."</p>
-          <div class="testi-author"><div class="testi-avatar">N</div><div><div class="testi-name">Client Name</div><div class="testi-role">Head of Marketing · Brand Name</div></div></div>
-        </div>
-        <div class="testi-card reveal">
-          <p class="testi-text">"Always on time, super dependable, and consistently went above and beyond. <strong>She took feedback really fast and always came back stronger</strong> — the kind of person who makes your work easier."</p>
-          <div class="testi-author"><div class="testi-avatar">L</div><div><div class="testi-name">Client Name</div><div class="testi-role">Head of Content · Brand Name</div></div></div>
-        </div>
+        {{ end }}
       </div>
     </div>
   </section>
@@ -256,39 +255,17 @@
     <div class="services-inner container">
       <div class="services-header reveal"><h2>Hire me for<em>…</em></h2></div>
       <div class="services-grid">
+        {{ range .Params.services }}
         <div class="service-card reveal">
-          <div class="service-icon">✍️</div>
-          <h3>SaaS Content Writing</h3>
-          <p class="service-sub">Content That Converts</p>
+          <div class="service-icon">{{ .icon }}</div>
+          <h3>{{ .title }}</h3>
+          <p class="service-sub">{{ .subtitle }}</p>
           <ul class="service-list">
-            <li>Write content from scratch that ranks and resonates</li>
-            <li>Humanize and optimize AI-generated content</li>
-            <li>Refresh and update old content for new traffic</li>
+            {{ range .bullets }}<li>{{ . }}</li>{{ end }}
           </ul>
-          <a href="#contact" class="btn-outline">Hire a Content Writer</a>
+          <a href="#contact" class="btn-outline">{{ .cta }}</a>
         </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🔭</div>
-          <h3>Search Visibility Strategy</h3>
-          <p class="service-sub">SEO + AEO</p>
-          <ul class="service-list">
-            <li>Generate content ideas based on customer pain points</li>
-            <li>Define your brand positioning and job-to-be-done</li>
-            <li>Find AI search visibility gaps across platforms</li>
-          </ul>
-          <a href="#contact" class="btn-outline">Hire a Search Strategist</a>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">⚙️</div>
-          <h3>Content Workflows</h3>
-          <p class="service-sub">Automation & Systems</p>
-          <ul class="service-list">
-            <li>Identify content bottlenecks and manual processes</li>
-            <li>Replace them with vibe-coded tools & agentic workflows</li>
-            <li>Integrate MCPs to supercharge your content ops</li>
-          </ul>
-          <a href="#contact" class="btn-outline">Hire a Content Engineer</a>
-        </div>
+        {{ end }}
       </div>
       <div class="see-pricing reveal"><a href="/pricing/">→ See full pricing</a></div>
     </div>
