@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> 
 
   <style>
     /* ─── CSS Variables ─── */
@@ -92,6 +91,12 @@
       color: rgba(239,227,202,0.75); transition: all 0.2s; display: flex; align-items: center; gap: 6px;
     }
     .toggle-btn:hover { background: var(--brown); color: white; border-color: transparent; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--nude-light); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu { display: none; position: fixed; top: 57px; left: 0; right: 0; z-index: 99; background: rgba(42,51,32,0.98); backdrop-filter: blur(12px); flex-direction: column; padding: 16px 24px 24px; gap: 4px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1rem; font-weight: 500; color: rgba(239,227,202,0.75); padding: 10px 0; border-bottom: 1px solid rgba(239,227,202,0.08); }
+    .mobile-menu a:hover { color: var(--nude-light); }
 
 
     /* ─── HERO ─── */
@@ -460,6 +465,7 @@
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
     }
     @media(max-width: 480px) {
       .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -485,8 +491,18 @@
       <button class="toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
         <span id="theme-icon">🌙</span> <span id="theme-label">Dark</span>
       </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="project.html">Project</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
 
   <!-- ═══ HERO ═══ -->
@@ -771,6 +787,11 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
 
     // Nav shadow on scroll
     window.addEventListener('scroll', () => {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About — Onize Muhammed</title>
+  <title>Contact — Onize Muhammed</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -45,16 +45,9 @@
       color: rgba(239,227,202,0.75); transition: all 0.2s; display: flex; align-items: center; gap: 6px;
     }
     .toggle-btn:hover { background: var(--brown); color: white; border-color: transparent; }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer;
-      background: none; border: none; padding: 4px;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--nude-light); border-radius: 2px; transition: all 0.3s; }
-    .mobile-menu {
-      display: none; position: fixed; top: 57px; left: 0; right: 0; z-index: 99;
-      background: rgba(42,51,32,0.98); backdrop-filter: blur(12px);
-      flex-direction: column; padding: 16px 24px 24px; gap: 4px;
-    }
+    .mobile-menu { display: none; position: fixed; top: 57px; left: 0; right: 0; z-index: 99; background: rgba(42,51,32,0.98); backdrop-filter: blur(12px); flex-direction: column; padding: 16px 24px 24px; gap: 4px; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: 1rem; font-weight: 500; color: rgba(239,227,202,0.75); padding: 10px 0; border-bottom: 1px solid rgba(239,227,202,0.08); }
     .mobile-menu a:hover, .mobile-menu a.active { color: var(--nude-light); }
@@ -110,32 +103,29 @@
   <nav>
     <a href="index.html" class="nav-logo">Onize.</a>
     <div class="nav-links">
-      <a href="about.html" class="active">About</a>
+      <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="blog.html">Blog</a>
       <a href="pricing.html">Pricing</a>
       <a href="project.html">Project</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
       <button class="toggle-btn" id="themeToggle">🌙 Dark</button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
   <div class="mobile-menu" id="mobileMenu">
-    <a href="about.html" class="active">About</a>
+    <a href="about.html">About</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="blog.html">Blog</a>
     <a href="pricing.html">Pricing</a>
     <a href="project.html">Project</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
   </div>
 
   <div class="page-hero">
-    <h1>About</h1>
+    <h1>Contact</h1>
     <p>Onize Muhammed · SaaS Content &amp; AI Visibility</p>
   </div>
 
@@ -151,20 +141,10 @@
   </footer>
 
   <script>
-    const html = document.documentElement;
-    const toggleBtn = document.getElementById('themeToggle');
-    const saved = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', saved);
-    toggleBtn.textContent = saved === 'dark' ? '☀️ Light' : '🌙 Dark';
-    toggleBtn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      toggleBtn.textContent = next === 'dark' ? '☀️ Light' : '🌙 Dark';
-    });
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    });
+    const html=document.documentElement,tb=document.getElementById('themeToggle'),s=localStorage.getItem('theme')||'light';
+    html.setAttribute('data-theme',s);tb.textContent=s==='dark'?'☀️ Light':'🌙 Dark';
+    tb.addEventListener('click',()=>{const n=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('theme',n);tb.textContent=n==='dark'?'☀️ Light':'🌙 Dark';});
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
   </script>
 </body>
 </html>
