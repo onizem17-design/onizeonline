@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: onizem17-design/onizeonline
+  branch: main
+  base_url: https://cms-auth.onizem17.workers.dev
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: blog
+    label: Blog Posts
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: Description
+        name: description
+        widget: text
+        hint: "Used as meta description and excerpt on blog listing page"
+      - label: Featured Image
+        name: image
+        widget: image
+        required: false
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+      - label: Body
+        name: body
+        widget: markdown
+  - name: testimonials
+    label: Testimonials
+    folder: _testimonials
+    create: true
+    fields:
+      - label: Client Name
+        name: name
+        widget: string
+      - label: Title and Company
+        name: title
+        widget: string
+      - label: Quote
+        name: quote
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+        required: false

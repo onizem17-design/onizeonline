@@ -1,0 +1,31 @@
+baseURL = "https://onizeonline.pages.dev/"
+languageCode = "en-us"
+title = "Onize Muhammed – SaaS Content & AI Visibility Strategist"
+
+[permalinks]
+  blog = "/blog/:slug/"
+
+[params]
+  description = "SaaS content that's visible across Google and AI platforms — and wins signups."
+  author = "Onize Muhammed"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[minify]
+  minifyOutput = true
+  [minify.tdewolff.html]
+    keepWhitespace = false
+  [minify.tdewolff.css]
+    precision = 0
+  [minify.tdewolff.js]
+    precision = 0

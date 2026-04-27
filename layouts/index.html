@@ -1,0 +1,315 @@
+{{ define "styles" }}
+<style>
+  /* ─── HERO ─── */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; padding: 80px 0 0; background: var(--nude-light);
+  }
+  [data-theme="dark"] .hero { background: var(--olive-dark); }
+  .hero-stage {
+    position: relative; z-index: 2;
+    display: flex; align-items: flex-end; justify-content: center;
+    max-width: 1000px; width: 100%; padding: 120px 40px 0;
+  }
+  .hero-photo-col { position: relative; flex-shrink: 0; z-index: 2; margin-right: -48px; }
+  .hero-photo-wrap {
+    width: 290px; height: 480px; overflow: hidden;
+    border-radius: 4px 4px 0 0; box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    background: var(--nude);
+  }
+  .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .hero-photo-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #d4c8ae 0%, var(--brown-light) 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.85); font-size: 0.82rem; font-weight: 500; gap: 10px;
+    text-align: center; padding: 20px;
+  }
+  .speech-bubble {
+    position: absolute; top: 52px; left: -168px;
+    background: var(--olive-dark); color: var(--nude-light);
+    padding: 11px 16px; border-radius: 14px 14px 4px 14px;
+    font-size: 0.8rem; font-weight: 500; line-height: 1.4; width: 155px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    animation: float 3s ease-in-out infinite; z-index: 5;
+  }
+  .speech-bubble::after {
+    content: ''; position: absolute; top: 14px; right: -10px;
+    border-width: 8px 0 8px 10px; border-style: solid;
+    border-color: transparent transparent transparent var(--olive-dark);
+  }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  [data-theme="dark"] .speech-bubble { background: var(--brown); }
+  [data-theme="dark"] .speech-bubble::after { border-color: transparent transparent transparent var(--brown); }
+  .hero-card {
+    background: var(--white); padding: 56px 52px 56px 72px;
+    border-radius: 2px 2px 0 0; box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+    max-width: 460px; flex-shrink: 0; z-index: 3; align-self: flex-end;
+  }
+  [data-theme="dark"] .hero-card { background: var(--olive-dark); }
+  .hero-eyebrow {
+    display: inline-block; background: var(--nude); color: var(--brown);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 50px; margin-bottom: 20px;
+  }
+  [data-theme="dark"] .hero-eyebrow { background: var(--olive-mid); color: var(--nude-light); }
+  .hero-card h1 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    color: var(--olive-dark); line-height: 1.15; margin-bottom: 32px;
+  }
+  [data-theme="dark"] .hero-card h1 { color: var(--nude-light); }
+  .hero-card h1 span { color: var(--brown); font-style: italic; }
+
+  /* ─── SOCIAL PROOF ─── */
+  .proof-bar { background: var(--olive-dark); padding: 48px 24px; }
+  .proof-bar-inner { max-width: 1140px; margin: 0 auto; }
+  .proof-label { text-align: center; font-size: 0.72rem; letter-spacing: 2.5px; font-weight: 600; text-transform: uppercase; color: rgba(239,227,202,0.5); margin-bottom: 28px; }
+  .brand-logos { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px 32px; margin-bottom: 48px; }
+  .brand-logo { font-family: 'DM Serif Display', serif; font-size: 1rem; color: rgba(239,227,202,0.7); padding: 6px 16px; border: 1px solid rgba(239,227,202,0.15); border-radius: 50px; transition: all 0.2s; }
+  .brand-logo:hover { color: var(--nude-light); border-color: rgba(239,227,202,0.4); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; border-top: 1px solid rgba(239,227,202,0.1); padding-top: 40px; }
+  .stat-item { text-align: center; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--nude-light); line-height: 1; }
+  .stat-num span { color: var(--brown-light); }
+  .stat-desc { font-size: 0.8rem; color: rgba(239,227,202,0.55); margin-top: 6px; line-height: 1.4; }
+  .stat-badge { display: inline-block; background: var(--brown); color: white; font-size: 0.65rem; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; margin-bottom: 6px; }
+
+  /* ─── VALUE ─── */
+  .value-section { padding: 100px 24px; background: var(--bg); }
+  .value-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .section-tag { font-size: 0.72rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; color: var(--brown); margin-bottom: 16px; }
+  .value-inner h2 { font-size: clamp(2rem, 3vw, 2.8rem); color: var(--text); margin-bottom: 20px; }
+  .value-inner h2 em { font-style: italic; color: var(--brown); }
+  .value-inner p { color: var(--text-sub); line-height: 1.8; font-size: 1rem; margin-bottom: 24px; }
+  .value-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+  .value-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: var(--text-sub); line-height: 1.5; }
+  .value-list li::before { content: '→'; color: var(--brown); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .value-img-wrap { border-radius: 24px; overflow: hidden; background: var(--nude); min-height: 380px; display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 48px rgba(59,74,47,0.1); }
+  [data-theme="dark"] .value-img-wrap { background: var(--olive-mid); }
+  .value-img-placeholder { font-size: 0.85rem; color: var(--text-light); text-align: center; padding: 40px; }
+
+  /* ─── AI SECTION ─── */
+  .ai-section { background: var(--bg-alt); padding: 100px 24px; }
+  [data-theme="dark"] .ai-section { background: var(--olive); }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials { background: var(--olive-dark); padding: 100px 24px; }
+  .testimonials-inner { max-width: 1140px; margin: 0 auto; }
+  .testimonials-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+  .testimonials-header h2 { font-size: 2rem; color: var(--nude-light); }
+  .see-all { font-size: 0.85rem; color: var(--brown-light); font-weight: 500; display: flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+  .see-all:hover { gap: 10px; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .testi-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(239,227,202,0.1); border-radius: 20px; padding: 28px; transition: border-color 0.2s; }
+  .testi-card:hover { border-color: rgba(196,149,106,0.4); }
+  .testi-text { font-size: 0.92rem; color: rgba(239,227,202,0.8); line-height: 1.7; margin-bottom: 24px; }
+  .testi-text strong { color: var(--nude-light); }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--olive-mid); overflow: hidden; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--nude-light); }
+  .testi-name { font-size: 0.88rem; font-weight: 600; color: var(--nude-light); }
+  .testi-role { font-size: 0.78rem; color: rgba(239,227,202,0.45); }
+
+  /* ─── SERVICES ─── */
+  .services { background: var(--bg); padding: 100px 24px; }
+  .services-inner { max-width: 1140px; margin: 0 auto; }
+  .services-header { text-align: center; margin-bottom: 60px; }
+  .services-header h2 { font-size: clamp(1.9rem,3vw,2.8rem); }
+  .services-header h2 em { color: var(--brown); font-style: italic; }
+  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .service-card { background: var(--card-bg); border: 1px solid rgba(59,74,47,0.08); border-radius: 24px; padding: 36px 28px; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(59,74,47,0.1); }
+  .service-icon { font-size: 2rem; margin-bottom: 20px; }
+  .service-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
+  .service-sub { font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; color: var(--brown); margin-bottom: 16px; }
+  .service-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.7; flex: 1; margin-bottom: 28px; }
+  .service-list { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 8px; }
+  .service-list li { font-size: 0.85rem; color: var(--text-sub); display: flex; align-items: flex-start; gap: 8px; }
+  .service-list li::before { content: '·'; color: var(--brown); font-size: 1.2rem; line-height: 1.2; }
+  .see-pricing { text-align: center; margin-top: 48px; }
+  .see-pricing a { font-size: 0.9rem; color: var(--brown); font-weight: 500; border-bottom: 1px solid currentColor; padding-bottom: 2px; transition: color 0.2s; }
+  .see-pricing a:hover { color: var(--olive); }
+
+  /* Responsive */
+  @media(max-width: 900px) {
+    .hero-stage { flex-direction: column; align-items: center; padding: 100px 20px 0; }
+    .hero-photo-col { margin-right: 0; margin-bottom: -20px; z-index: 3; }
+    .hero-photo-wrap { width: 220px; height: 300px; border-radius: 4px; }
+    .speech-bubble { left: -10px; top: -60px; width: 140px; font-size: 0.75rem; }
+    .speech-bubble::after { display: none; }
+    .hero-card { padding: 36px 28px; text-align: center; border-radius: 8px 8px 0 0; width: 100%; max-width: 100%; }
+    .value-inner { grid-template-columns: 1fr; }
+    .testi-grid, .services-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2,1fr); }
+    .testimonials-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-stage reveal">
+      <div class="hero-photo-col">
+        <div class="speech-bubble">Hi, I'm Onize, your content partner ✨</div>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-placeholder">
+            <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="22" r="14" fill="white" fill-opacity="0.45"/>
+              <ellipse cx="32" cy="52" rx="22" ry="12" fill="white" fill-opacity="0.3"/>
+            </svg>
+            <span>Your photo here</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="hero-eyebrow">SaaS Content · AEO · AI Visibility</span>
+        <h1>SaaS content that's <span>visible</span> across Google and AI platforms — and wins signups</h1>
+        <a href="#contact" class="btn-primary">SAY LESS. I'M IN.</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROP -->
+  <section class="value-section" id="about">
+    <div class="value-inner container">
+      <div class="reveal">
+        <h2>Scaled content doesn't have to be <em>garbage</em></h2>
+        <p>AI Content shouldn't be a trade off between quality and quantity, but that's if you bring in an expert eyes that can:</p>
+        <ul class="value-list">
+          <li>Build you a strategy based on real customer pain point (no compromise!)</li>
+          <li>Build content workflows based on years of pruned and reliable process</li>
+          <li>Take AI outputs from good enough to gems that position your brand as a trusted and valuable resource</li>
+        </ul>
+        <p style="font-weight:500; color:var(--text);">And that's me.</p>
+        <br/>
+        <a href="#contact" class="btn-primary">Say no more. Let's talk →</a>
+      </div>
+      <div class="value-img-wrap reveal">
+        <div class="value-img-placeholder">[ Insert your workspace / brand photo here ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof-bar">
+    <div class="proof-bar-inner">
+      <p class="proof-label reveal">I've helped these brands</p>
+      <div class="brand-logos reveal">
+        <span class="brand-logo">Tripledart</span>
+        <span class="brand-logo">Docupilot</span>
+        <span class="brand-logo">SaleDuo</span>
+        <span class="brand-logo">MobileText Alert</span>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item reveal"><div class="stat-num">xxx<span>%</span></div><div class="stat-desc">Traffic</div></div>
+        <div class="stat-item reveal"><div class="stat-num">xxx</div><div class="stat-desc">User signup</div></div>
+        <div class="stat-item reveal"><div class="stat-badge">Cited in AI</div><div class="stat-desc">Mentioned and cited in Google AI overview, Google AI mode, ChatGPT, Claude, Perplexity</div></div>
+        <div class="stat-item reveal"><div class="stat-num">1</div><div class="stat-desc">Average revision round per article</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI VISIBILITY -->
+  <section class="ai-section">
+    <div class="value-inner container">
+      <div class="value-img-wrap reveal">
+        <div class="value-img-placeholder">[ Insert your image here ]</div>
+      </div>
+      <div class="reveal">
+        <h2>Search Visibility has gone beyond Google, your brand strategy has to align. I can help you:</h2>
+        <ul class="value-list" style="margin-top: 24px;">
+          <li>Map a content strategy around prompts your target audience are searching on AI platforms like ChatGPT, Claude, Perplexity and Google AI mode</li>
+          <li>Audit your website to find AI visibility gaps</li>
+          <li>Optimize your existing article to show up on AI platforms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="work">
+    <div class="testimonials-inner container">
+      <div class="testimonials-header reveal">
+        <h2>What clients say</h2>
+        <a href="#" class="see-all">See all testimonials →</a>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <p class="testi-text">"Onize deeply understands the product, user journeys, and how content can actually drive adoption and conversions. <strong>Her top-performing posts led to more traffic and demo requests for us.</strong>"</p>
+          <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Client Name</div><div class="testi-role">Head of Content · Brand Name</div></div></div>
+        </div>
+        <div class="testi-card reveal">
+          <p class="testi-text">"I'm particularly impressed by the ability to follow briefs to a T, yet <strong>adapt and reorganize information on the fly</strong> based on what she knows about our ICP. Never more than one round of feedback."</p>
+          <div class="testi-author"><div class="testi-avatar">N</div><div><div class="testi-name">Client Name</div><div class="testi-role">Head of Marketing · Brand Name</div></div></div>
+        </div>
+        <div class="testi-card reveal">
+          <p class="testi-text">"Always on time, super dependable, and consistently went above and beyond. <strong>She took feedback really fast and always came back stronger</strong> — the kind of person who makes your work easier."</p>
+          <div class="testi-author"><div class="testi-avatar">L</div><div><div class="testi-name">Client Name</div><div class="testi-role">Head of Content · Brand Name</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-inner container">
+      <div class="services-header reveal"><h2>Hire me for<em>…</em></h2></div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">✍️</div>
+          <h3>SaaS Content Writing</h3>
+          <p class="service-sub">Content That Converts</p>
+          <ul class="service-list">
+            <li>Write content from scratch that ranks and resonates</li>
+            <li>Humanize and optimize AI-generated content</li>
+            <li>Refresh and update old content for new traffic</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Hire a Content Writer</a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🔭</div>
+          <h3>Search Visibility Strategy</h3>
+          <p class="service-sub">SEO + AEO</p>
+          <ul class="service-list">
+            <li>Generate content ideas based on customer pain points</li>
+            <li>Define your brand positioning and job-to-be-done</li>
+            <li>Find AI search visibility gaps across platforms</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Hire a Search Strategist</a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">⚙️</div>
+          <h3>Content Workflows</h3>
+          <p class="service-sub">Automation & Systems</p>
+          <ul class="service-list">
+            <li>Identify content bottlenecks and manual processes</li>
+            <li>Replace them with vibe-coded tools & agentic workflows</li>
+            <li>Integrate MCPs to supercharge your content ops</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Hire a Content Engineer</a>
+        </div>
+      </div>
+      <div class="see-pricing reveal"><a href="/pricing/">→ See full pricing</a></div>
+    </div>
+  </section>
+{{ end }}
+
+{{ define "footer" }}
+  <footer id="contact">
+    <div class="footer-inner container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Onize.</h3>
+          <p>SaaS content that's visible across Google and AI platforms — and wins signups.</p>
+          <br/>
+          <a href="mailto:onizem17@gmail.com" style="color:var(--brown); font-size:0.88rem;">onizem17@gmail.com</a>
+        </div>
+        <div class="footer-col"><h4>Menu</h4><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Pages</h4><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/project/">Project</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">LinkedIn</a></li><li><a href="#">Twitter / X</a></li><li><a href="#">Newsletter</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Onize Muhammed. All rights reserved.</span><span>OnizeOnline.com</span></div>
+    </div>
+  </footer>
+{{ end }}

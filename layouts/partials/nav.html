@@ -1,0 +1,26 @@
+<nav>
+  <a href="/" class="nav-logo">Onize.</a>
+  <div class="nav-links">
+    <a href="/about/" {{ if eq .RelPermalink "/about/" }}class="active"{{ end }}>About</a>
+    <a href="/portfolio/" {{ if eq .RelPermalink "/portfolio/" }}class="active"{{ end }}>Portfolio</a>
+    <a href="/blog/" {{ if hasPrefix .RelPermalink "/blog" }}class="active"{{ end }}>Blog</a>
+    <a href="/pricing/" {{ if eq .RelPermalink "/pricing/" }}class="active"{{ end }}>Pricing</a>
+    <a href="/project/" {{ if eq .RelPermalink "/project/" }}class="active"{{ end }}>Project</a>
+    <a href="/contact/" {{ if eq .RelPermalink "/contact/" }}class="active"{{ end }}>Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="toggle-btn" id="themeToggle">🌙 Dark</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/about/" {{ if eq .RelPermalink "/about/" }}class="active"{{ end }}>About</a>
+  <a href="/portfolio/" {{ if eq .RelPermalink "/portfolio/" }}class="active"{{ end }}>Portfolio</a>
+  <a href="/blog/" {{ if hasPrefix .RelPermalink "/blog" }}class="active"{{ end }}>Blog</a>
+  <a href="/pricing/" {{ if eq .RelPermalink "/pricing/" }}class="active"{{ end }}>Pricing</a>
+  <a href="/project/" {{ if eq .RelPermalink "/project/" }}class="active"{{ end }}>Project</a>
+  <a href="/contact/" {{ if eq .RelPermalink "/contact/" }}class="active"{{ end }}>Contact</a>
+</div>
