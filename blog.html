@@ -7,26 +7,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
   <style>
     :root {
-      --olive:      #3B4A2F;
-      --olive-dark: #2A3320;
-      --olive-mid:  #4E6038;
-      --nude:       #EFE3CA;
-      --nude-light: #F7F0E3;
-      --brown:      #8B6347;
-      --brown-light:#C4956A;
-      --white:      #FFFFFF;
-      --text-dark:  #1E2318;
-      --text-mid:   #4A4A3A;
+      --olive:       #3B4A2F;
+      --olive-dark:  #2A3320;
+      --olive-mid:   #4E6038;
+      --nude:        #EFE3CA;
+      --nude-light:  #F7F0E3;
+      --brown:       #8B6347;
+      --brown-light: #C4956A;
+      --white:       #FFFFFF;
+      --text-dark:   #1E2318;
+      --text-mid:    #4A4A3A;
+      --bg:          var(--nude-light);
+      --card-bg:     var(--white);
+      --card-border: rgba(59,74,47,0.10);
+    }
+    [data-theme="dark"] {
+      --bg:        #1A2012;
+      --card-bg:   #232E18;
+      --card-border: rgba(239,227,202,0.08);
+      --text-dark: #EFE3CA;
+      --text-mid:  #B5A98A;
+      --nude-light:#EFE3CA;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--nude-light); color: var(--text-dark); }
-    h1,h2,h3 { font-family: 'DM Serif Display', serif; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-dark); transition: background 0.3s, color 0.3s; }
+    h1,h2,h3,h4 { font-family: 'DM Serif Display', serif; }
     a { text-decoration: none; color: inherit; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(42,51,32,0.96);
@@ -46,7 +58,22 @@
     }
     .toggle-btn:hover { background: var(--brown); color: white; border-color: transparent; }
 
-    /* PAGE HERO */
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--nude-light); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu {
+      display: none; position: fixed; top: 57px; left: 0; right: 0; z-index: 99;
+      background: rgba(42,51,32,0.98); backdrop-filter: blur(12px);
+      flex-direction: column; padding: 16px 24px 24px; gap: 16px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1rem; font-weight: 500; color: rgba(239,227,202,0.75); padding: 8px 0; border-bottom: 1px solid rgba(239,227,202,0.08); }
+    .mobile-menu a:hover, .mobile-menu a.active { color: var(--nude-light); }
+
+    /* ── PAGE HERO ── */
     .page-hero {
       background: var(--olive-dark);
       padding: 140px 24px 80px;
@@ -55,31 +82,112 @@
     .page-hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--nude-light); margin-bottom: 12px; }
     .page-hero p { font-size: 1rem; color: rgba(239,227,202,0.55); }
 
-    /* PLACEHOLDER BODY */
-    .placeholder-body {
-      max-width: 680px; margin: 80px auto; padding: 0 24px;
-      text-align: center;
+    /* ── BLOG GRID ── */
+    .blog-section {
+      max-width: 1100px; margin: 0 auto; padding: 72px 24px 100px;
     }
-    .coming-badge {
-      display: inline-block;
-      background: var(--nude);
-      color: var(--brown);
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-      padding: 6px 16px; border-radius: 50px; margin-bottom: 28px;
-    }
-    .placeholder-body h2 { font-size: 2rem; color: var(--text-dark); margin-bottom: 16px; }
-    .placeholder-body p { font-size: 1rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 36px; }
-    .btn-back {
-      display: inline-block;
-      background: var(--olive);
-      color: var(--nude-light);
-      padding: 12px 28px; border-radius: 50px;
-      font-size: 0.88rem; font-weight: 600;
-      transition: background 0.2s;
-    }
-    .btn-back:hover { background: var(--brown); }
 
-    /* FOOTER */
+    /* loading / error */
+    .state-msg {
+      text-align: center; padding: 80px 24px;
+      font-size: 1rem; color: var(--text-mid);
+    }
+    .state-msg .spinner {
+      width: 36px; height: 36px; border: 3px solid var(--nude);
+      border-top-color: var(--olive); border-radius: 50%;
+      animation: spin 0.8s linear infinite; margin: 0 auto 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* grid */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .post-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 32px;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(42,51,32,0.12);
+      border-color: var(--brown-light);
+    }
+    .post-meta {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .post-date {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--brown);
+    }
+    .post-tag {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; background: var(--nude);
+      color: var(--olive); padding: 3px 10px; border-radius: 50px;
+    }
+    [data-theme="dark"] .post-tag { background: rgba(59,74,47,0.5); color: var(--nude-light); }
+    .post-card h2 {
+      font-size: 1.35rem; line-height: 1.35; color: var(--text-dark);
+      margin: 0;
+    }
+    .post-excerpt {
+      font-size: 0.92rem; line-height: 1.7; color: var(--text-mid);
+      flex: 1;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .read-more {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.82rem; font-weight: 600; color: var(--brown);
+      margin-top: 4px;
+      transition: gap 0.2s;
+    }
+    .post-card:hover .read-more { gap: 10px; }
+
+    /* ── SINGLE POST VIEW ── */
+    .post-view { display: none; max-width: 720px; margin: 0 auto; padding: 72px 24px 100px; }
+    .post-view.active { display: block; }
+    .posts-grid-wrap.hidden { display: none; }
+
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 600; color: var(--brown);
+      margin-bottom: 40px; cursor: pointer; background: none; border: none; padding: 0;
+      transition: gap 0.2s;
+    }
+    .back-btn:hover { gap: 12px; }
+
+    .post-view-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .post-view h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 32px; }
+    .post-view-body { font-size: 1.02rem; line-height: 1.85; color: var(--text-mid); }
+    .post-view-body h1, .post-view-body h2, .post-view-body h3 {
+      color: var(--text-dark); margin: 2em 0 0.6em; line-height: 1.3;
+    }
+    .post-view-body h2 { font-size: 1.6rem; }
+    .post-view-body h3 { font-size: 1.25rem; }
+    .post-view-body p { margin-bottom: 1.4em; }
+    .post-view-body ul, .post-view-body ol { padding-left: 1.4em; margin-bottom: 1.4em; }
+    .post-view-body li { margin-bottom: 0.4em; }
+    .post-view-body blockquote {
+      border-left: 3px solid var(--brown); padding-left: 20px;
+      margin: 1.5em 0; color: var(--brown); font-style: italic;
+    }
+    .post-view-body a { color: var(--brown); text-decoration: underline; }
+    .post-view-body img { max-width: 100%; border-radius: 10px; margin: 1.5em 0; }
+    .post-view-body code {
+      background: var(--nude); color: var(--olive-dark); padding: 2px 6px; border-radius: 4px; font-size: 0.88em;
+    }
+    [data-theme="dark"] .post-view-body code { background: rgba(59,74,47,0.4); color: var(--nude); }
+    .post-view-body pre { background: var(--olive-dark); padding: 20px; border-radius: 10px; overflow-x: auto; margin: 1.5em 0; }
+    .post-view-body pre code { background: none; color: var(--nude-light); padding: 0; }
+    .divider { border: none; border-top: 1px solid var(--card-border); margin: 40px 0; }
+
+    /* ── FOOTER ── */
     footer {
       background: var(--nude);
       border-top: 1px solid rgba(59,74,47,0.1);
@@ -88,40 +196,211 @@
       font-size: 0.82rem; color: var(--text-mid);
     }
     footer a { color: var(--brown); }
+    [data-theme="dark"] footer { background: #1A2012; border-color: rgba(239,227,202,0.08); }
 
-    @media(max-width:700px) { .nav-links { display: none; } }
+    @media(max-width:700px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="onizeonline.html" class="nav-logo">Onize.</a>
+    <a href="index.html" class="nav-logo">Onize.</a>
     <div class="nav-links">
-      <a href="about.html" >About</a>
-      <a href="portfolio.html" >Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
       <a href="blog.html" class="active">Blog</a>
-      <a href="pricing.html" >Pricing</a>
-      <a href="project.html" >Project</a>
-      <a href="contact.html" >Contact</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="project.html">Project</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <button class="toggle-btn">🌙 Dark</button>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="toggle-btn" id="themeToggle">🌙 Dark</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="project.html">Project</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
   <div class="page-hero">
     <h1>Blog</h1>
     <p>Onize Muhammed · SaaS Content &amp; AI Visibility</p>
   </div>
 
-  <div class="placeholder-body">
-    <span class="coming-badge">Coming Soon</span>
-    <h2>This page is being built</h2>
-    <p>Great things are in the works. Check back soon or head back to the homepage.</p>
-    <a href="onizeonline.html" class="btn-back">← Back to Home</a>
+  <!-- BLOG LIST -->
+  <div class="blog-section">
+    <div class="posts-grid-wrap" id="postsGridWrap">
+      <div class="state-msg" id="stateMsg">
+        <div class="spinner"></div>
+        Loading posts…
+      </div>
+      <div class="posts-grid" id="postsGrid" style="display:none;"></div>
+    </div>
+
+    <!-- SINGLE POST -->
+    <div class="post-view" id="postView">
+      <button class="back-btn" id="backBtn">← Back to all posts</button>
+      <div class="post-view-meta" id="postViewMeta"></div>
+      <h1 id="postViewTitle"></h1>
+      <hr class="divider">
+      <div class="post-view-body" id="postViewBody"></div>
+    </div>
   </div>
 
   <footer>
-    © 2026 Onize Muhammed · <a href="onizeonline.html">OnizeOnline.com</a>
+    © 2026 Onize Muhammed · <a href="index.html">OnizeOnline.com</a>
   </footer>
 
+<script>
+  // ── THEME TOGGLE ──────────────────────────────────────────────
+  const html = document.documentElement;
+  const toggleBtn = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  toggleBtn.textContent = savedTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+  toggleBtn.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    toggleBtn.textContent = next === 'dark' ? '☀️ Light' : '🌙 Dark';
+  });
+
+  // ── HAMBURGER ────────────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+  // ── FETCH POSTS FROM GITHUB ───────────────────────────────────
+  const REPO = 'onizem17-design/onizeonline';
+  const POSTS_PATH = '_posts';
+  const API = `https://api.github.com/repos/${REPO}/contents/${POSTS_PATH}`;
+
+  const stateMsg   = document.getElementById('stateMsg');
+  const postsGrid  = document.getElementById('postsGrid');
+  const postsGridWrap = document.getElementById('postsGridWrap');
+  const postView   = document.getElementById('postView');
+  const backBtn    = document.getElementById('backBtn');
+
+  // Parse YAML-style frontmatter
+  function parseFrontmatter(text) {
+    const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+    if (!match) return { data: {}, content: text };
+    const raw = match[1];
+    const content = match[2];
+    const data = {};
+    raw.split('\n').forEach(line => {
+      const colonIdx = line.indexOf(':');
+      if (colonIdx === -1) return;
+      const key = line.slice(0, colonIdx).trim();
+      let val = line.slice(colonIdx + 1).trim();
+      // strip surrounding quotes
+      if ((val.startsWith('"') && val.endsWith('"')) ||
+          (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      data[key] = val;
+    });
+    return { data, content };
+  }
+
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    if (isNaN(d)) return dateStr;
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function excerpt(content, words = 28) {
+    const plain = content.replace(/#{1,6}\s/g, '').replace(/\*{1,2}|_{1,2}|`/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    return plain.split(/\s+/).slice(0, words).join(' ') + '…';
+  }
+
+  async function loadPosts() {
+    try {
+      const res = await fetch(API, { headers: { 'Accept': 'application/vnd.github.v3+json' } });
+      if (!res.ok) throw new Error(`GitHub API error ${res.status}`);
+      const files = await res.json();
+
+      const mdFiles = files.filter(f => f.name.endsWith('.md')).sort((a, b) => b.name.localeCompare(a.name));
+
+      if (mdFiles.length === 0) {
+        stateMsg.innerHTML = '<p>No posts yet. Publish your first post in the CMS!</p>';
+        return;
+      }
+
+      // Fetch all post contents in parallel
+      const posts = await Promise.all(mdFiles.map(async file => {
+        const raw = await fetch(file.download_url).then(r => r.text());
+        const { data, content } = parseFrontmatter(raw);
+        return { ...data, content, filename: file.name };
+      }));
+
+      stateMsg.style.display = 'none';
+      postsGrid.style.display = 'grid';
+
+      posts.forEach(post => {
+        const card = document.createElement('div');
+        card.className = 'post-card';
+        const dateStr = formatDate(post.date || post.publishDate || '');
+        const tags = post.tags ? post.tags.replace(/[\[\]"']/g, '').split(',').map(t => t.trim()).filter(Boolean) : [];
+        const tagHTML = tags.slice(0, 2).map(t => `<span class="post-tag">${t}</span>`).join('');
+        const bodyExcerpt = post.description || post.excerpt || excerpt(post.content);
+
+        card.innerHTML = `
+          <div class="post-meta">
+            ${dateStr ? `<span class="post-date">${dateStr}</span>` : ''}
+            ${tagHTML}
+          </div>
+          <h2>${post.title || 'Untitled'}</h2>
+          <p class="post-excerpt">${bodyExcerpt}</p>
+          <span class="read-more">Read more →</span>
+        `;
+        card.addEventListener('click', () => openPost(post));
+        postsGrid.appendChild(card);
+      });
+
+    } catch (err) {
+      stateMsg.innerHTML = `<p style="color:var(--brown)">Couldn't load posts. Please try again later.<br><small>${err.message}</small></p>`;
+    }
+  }
+
+  function openPost(post) {
+    postsGridWrap.classList.add('hidden');
+    postView.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const dateStr = formatDate(post.date || post.publishDate || '');
+    const tags = post.tags ? post.tags.replace(/[\[\]"']/g, '').split(',').map(t => t.trim()).filter(Boolean) : [];
+    const tagHTML = tags.slice(0, 3).map(t => `<span class="post-tag">${t}</span>`).join('');
+
+    document.getElementById('postViewMeta').innerHTML = `
+      ${dateStr ? `<span class="post-date">${dateStr}</span>` : ''}
+      ${tagHTML}
+    `;
+    document.getElementById('postViewTitle').textContent = post.title || 'Untitled';
+    document.getElementById('postViewBody').innerHTML = marked.parse(post.content || '');
+    document.title = `${post.title || 'Post'} — Onize Muhammed`;
+  }
+
+  backBtn.addEventListener('click', () => {
+    postView.classList.remove('active');
+    postsGridWrap.classList.remove('hidden');
+    document.title = 'Blog — Onize Muhammed';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  loadPosts();
+</script>
 </body>
 </html>
