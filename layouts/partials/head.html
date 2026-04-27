@@ -1,11 +1,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} — Onize Muhammed{{ end }}</title>
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ with .Params.seo_title }}{{ . }} — Onize Muhammed{{ else }}{{ .Title }} — Onize Muhammed{{ end }}{{ end }}</title>
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}"/>
 <meta name="author" content="{{ site.Params.author }}"/>
 
 <!-- Open Graph -->
-<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} — Onize Muhammed{{ end }}"/>
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ with .Params.seo_title }}{{ . }} — Onize Muhammed{{ else }}{{ .Title }} — Onize Muhammed{{ end }}{{ end }}"/>
 <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}"/>
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}"/>
 <meta property="og:url" content="{{ .Permalink }}"/>
@@ -13,7 +13,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} — Onize Muhammed{{ end }}"/>
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ with .Params.seo_title }}{{ . }} — Onize Muhammed{{ else }}{{ .Title }} — Onize Muhammed{{ end }}{{ end }}"/>
 <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}"/>
 
 <!-- Canonical URL -->

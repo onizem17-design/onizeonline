@@ -14,16 +14,21 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - label: Title
+      - label: Title (H1 — shown on page)
         name: title
         widget: string
+      - label: SEO Title (meta title — shown in Google)
+        name: seo_title
+        widget: string
+        required: false
+        hint: "Leave blank to use the H1 title. Keep under 60 characters for best results."
       - label: Date
         name: date
         widget: datetime
       - label: Description
         name: description
         widget: text
-        hint: "Used as meta description and excerpt on blog listing page"
+        hint: "Shown in Google search results and on the blog listing page. Keep under 160 characters."
       - label: Featured Image
         name: image
         widget: image
