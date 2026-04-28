@@ -1,0 +1,140 @@
+{{ define "styles" }}
+<style>
+  /* ─── PORTFOLIO HERO ─── */
+  .portfolio-hero { background: var(--olive-dark); padding: 140px 24px 80px; text-align: center; }
+  .portfolio-hero .eyebrow {
+    display: inline-block; background: rgba(239,227,202,0.12); color: var(--brown-light);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 20px;
+  }
+  .portfolio-hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--nude-light); margin-bottom: 16px; line-height: 1.1; }
+  .portfolio-hero h1 em { color: var(--brown-light); font-style: italic; }
+  .portfolio-hero p { font-size: 1.05rem; color: rgba(239,227,202,0.6); max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+  /* ─── CASE STUDIES ─── */
+  .portfolio-section { padding: 100px 24px; background: var(--bg); }
+  .portfolio-inner { max-width: 1140px; margin: 0 auto; }
+  .portfolio-grid { display: flex; flex-direction: column; gap: 32px; }
+  .project-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 24px; padding: 44px 48px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(59,74,47,0.1); }
+  .project-card:nth-child(even) .project-img { order: 1; }
+  .project-card:nth-child(even) .project-info { order: 2; }
+  .project-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  .project-tag {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 50px;
+    background: var(--nude); color: var(--brown);
+  }
+  [data-theme="dark"] .project-tag { background: var(--olive-mid); color: var(--nude-light); }
+  .project-client { font-size: 0.82rem; color: var(--text-light); margin-left: auto; align-self: center; }
+  .project-info h3 { font-size: 1.6rem; margin-bottom: 14px; line-height: 1.2; }
+  .project-info p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.75; margin-bottom: 28px; }
+  .project-results { display: flex; gap: 32px; margin-bottom: 28px; }
+  .project-stat .stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--olive); line-height: 1; }
+  [data-theme="dark"] .project-stat .stat-num { color: var(--brown-light); }
+  .project-stat .stat-label { font-size: 0.78rem; color: var(--text-light); margin-top: 4px; }
+  .project-img {
+    border-radius: 16px; background: var(--nude); min-height: 280px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .project-img { background: var(--olive-mid); }
+  .project-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+  .project-img-placeholder { font-size: 0.82rem; color: var(--text-light); text-align: center; padding: 32px; }
+
+  /* ─── BRANDS STRIP ─── */
+  .brands-strip { background: var(--bg-alt); padding: 72px 24px; }
+  [data-theme="dark"] .brands-strip { background: var(--olive); }
+  .brands-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
+  .brands-inner p { font-size: 0.72rem; letter-spacing: 2.5px; font-weight: 600; text-transform: uppercase; color: var(--text-light); margin-bottom: 32px; }
+  .brand-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+  .brand-pill { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--text-mid); padding: 8px 20px; border: 1px solid var(--card-border); border-radius: 50px; }
+  [data-theme="dark"] .brand-pill { color: var(--nude); }
+
+  /* ─── CTA ─── */
+  .portfolio-cta { background: var(--olive-dark); padding: 100px 24px; text-align: center; }
+  .portfolio-cta h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); color: var(--nude-light); margin-bottom: 16px; }
+  .portfolio-cta h2 em { color: var(--brown-light); font-style: italic; }
+  .portfolio-cta p { color: rgba(239,227,202,0.6); font-size: 1rem; margin-bottom: 36px; line-height: 1.7; }
+
+  @media(max-width: 900px) {
+    .project-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 28px; }
+    .project-card:nth-child(even) .project-img,
+    .project-card:nth-child(even) .project-info { order: unset; }
+    .project-results { flex-wrap: wrap; gap: 20px; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- HERO -->
+  <section class="portfolio-hero">
+    <span class="eyebrow">{{ .Params.hero_eyebrow }}</span>
+    <h1>{{ .Params.hero_headline | safeHTML }}</h1>
+    <p>{{ .Params.hero_sub }}</p>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="portfolio-section">
+    <div class="portfolio-inner container">
+      <div class="portfolio-grid">
+        {{ range .Params.projects }}
+        <div class="project-card reveal">
+          <div class="project-info">
+            <div class="project-meta">
+              {{ range .tags }}<span class="project-tag">{{ . }}</span>{{ end }}
+              <span class="project-client">{{ .client }}</span>
+            </div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+            {{ if .results }}
+            <div class="project-results">
+              {{ range .results }}
+              <div class="project-stat">
+                <div class="stat-num">{{ .number }}</div>
+                <div class="stat-label">{{ .label }}</div>
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+            {{ with .cta_url }}
+            <a href="{{ . }}" class="btn-outline">View case study →</a>
+            {{ end }}
+          </div>
+          <div class="project-img">
+            {{ with .image }}
+              <img src="{{ . }}" alt="{{ $.client }}"/>
+            {{ else }}
+              <div class="project-img-placeholder">[ Project image ]</div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="brands-strip">
+    <div class="brands-inner container">
+      <p class="reveal">Brands I've worked with</p>
+      <div class="brand-pills reveal">
+        {{ range .Params.brands }}<span class="brand-pill">{{ . }}</span>{{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="portfolio-cta">
+    <div class="reveal">
+      <h2>{{ .Params.cta_heading | safeHTML }}</h2>
+      <p>{{ .Params.cta_sub }}</p>
+      <a href="/contact/" class="btn-primary">{{ .Params.cta_button }}</a>
+    </div>
+  </section>
+{{ end }}

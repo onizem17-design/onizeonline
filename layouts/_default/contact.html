@@ -1,0 +1,210 @@
+{{ define "styles" }}
+<style>
+  /* ─── CONTACT HERO ─── */
+  .contact-hero { background: var(--olive-dark); padding: 140px 24px 80px; text-align: center; }
+  .contact-hero .eyebrow {
+    display: inline-block; background: rgba(239,227,202,0.12); color: var(--brown-light);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 20px;
+  }
+  .contact-hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--nude-light); margin-bottom: 16px; line-height: 1.1; }
+  .contact-hero h1 em { color: var(--brown-light); font-style: italic; }
+  .contact-hero p { font-size: 1.05rem; color: rgba(239,227,202,0.6); max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+  /* ─── CONTACT BODY ─── */
+  .contact-section { padding: 100px 24px; background: var(--bg); }
+  .contact-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; }
+
+  /* Left column — info */
+  .contact-info h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 16px; }
+  .contact-info h2 em { color: var(--brown); font-style: italic; }
+  .contact-info > p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.8; margin-bottom: 40px; }
+  .contact-methods { display: flex; flex-direction: column; gap: 20px; }
+  .contact-method {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 16px; padding: 22px 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .contact-method:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(59,74,47,0.08); }
+  .method-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .method-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--brown); margin-bottom: 4px; }
+  .method-value { font-size: 0.95rem; color: var(--text); font-weight: 500; }
+  .method-value a { color: var(--text); transition: color 0.2s; }
+  .method-value a:hover { color: var(--brown); }
+  .method-note { font-size: 0.8rem; color: var(--text-light); margin-top: 4px; }
+
+  /* Right column — form */
+  .contact-form-wrap {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 24px; padding: 48px 44px;
+  }
+  .contact-form-wrap h3 { font-size: 1.4rem; margin-bottom: 8px; }
+  .contact-form-wrap > p { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 32px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 13px 16px; border-radius: 10px;
+    border: 1.5px solid var(--card-border); background: var(--bg);
+    font-family: 'Inter', sans-serif; font-size: 0.92rem; color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--brown); box-shadow: 0 0 0 3px rgba(139,99,71,0.1);
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit { width: 100%; margin-top: 8px; cursor: pointer; font-family: 'Inter', sans-serif; }
+  .form-success { display: none; text-align: center; padding: 40px 20px; }
+  .form-success-icon { font-size: 3rem; margin-bottom: 16px; }
+  .form-success h4 { font-size: 1.3rem; margin-bottom: 8px; }
+  .form-success p { font-size: 0.9rem; color: var(--text-sub); }
+
+  /* ─── WHAT TO EXPECT ─── */
+  .expect-section { background: var(--bg-alt); padding: 80px 24px; }
+  [data-theme="dark"] .expect-section { background: var(--olive); }
+  .expect-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
+  .expect-inner h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 48px; }
+  .expect-inner h2 em { color: var(--brown); font-style: italic; }
+  .expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .expect-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 20px; padding: 32px 24px; text-align: left;
+  }
+  .expect-step { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--brown); opacity: 0.35; margin-bottom: 12px; line-height: 1; }
+  .expect-card h4 { font-size: 1rem; margin-bottom: 8px; }
+  .expect-card p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.7; }
+
+  @media(max-width: 900px) {
+    .contact-inner { grid-template-columns: 1fr; }
+    .contact-form-wrap { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .expect-grid { grid-template-columns: 1fr; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- HERO -->
+  <section class="contact-hero">
+    <span class="eyebrow">{{ .Params.hero_eyebrow }}</span>
+    <h1>{{ .Params.hero_headline | safeHTML }}</h1>
+    <p>{{ .Params.hero_sub }}</p>
+  </section>
+
+  <!-- CONTACT BODY -->
+  <section class="contact-section">
+    <div class="contact-inner container">
+
+      <!-- Left: Info -->
+      <div class="contact-info reveal">
+        <h2>{{ .Params.info_heading | safeHTML }}</h2>
+        <p>{{ .Params.info_text }}</p>
+        <div class="contact-methods">
+          {{ with .Params.email }}
+          <div class="contact-method">
+            <span class="method-icon">✉️</span>
+            <div>
+              <div class="method-label">Email</div>
+              <div class="method-value"><a href="mailto:{{ . }}">{{ . }}</a></div>
+              <div class="method-note">I reply within 24 hours</div>
+            </div>
+          </div>
+          {{ end }}
+          {{ with .Params.booking_url }}
+          <div class="contact-method">
+            <span class="method-icon">📅</span>
+            <div>
+              <div class="method-label">Book a call</div>
+              <div class="method-value"><a href="{{ . }}" target="_blank">{{ $.Params.booking_label }}</a></div>
+              <div class="method-note">{{ $.Params.booking_note }}</div>
+            </div>
+          </div>
+          {{ end }}
+          {{ with .Params.linkedin_url }}
+          <div class="contact-method">
+            <span class="method-icon">💼</span>
+            <div>
+              <div class="method-label">LinkedIn</div>
+              <div class="method-value"><a href="{{ . }}" target="_blank">Connect with me</a></div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap reveal">
+        <h3>{{ .Params.form_heading }}</h3>
+        <p>{{ .Params.form_sub }}</p>
+        <form id="contact-form" action="{{ .Params.form_action }}" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option value="">— Select a service —</option>
+              {{ range .Params.service_options }}
+              <option value="{{ . }}">{{ . }}</option>
+              {{ end }}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell me about your project</label>
+            <textarea id="message" name="message" placeholder="What are you working on? What does success look like?" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">{{ .Params.form_button }}</button>
+        </form>
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">🎉</div>
+          <h4>Message received!</h4>
+          <p>I'll get back to you within 24 hours. Talk soon!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="expect-section">
+    <div class="expect-inner container">
+      <h2 class="reveal">{{ .Params.expect_heading | safeHTML }}</h2>
+      <div class="expect-grid">
+        {{ range $i, $step := .Params.expect_steps }}
+        <div class="expect-card reveal">
+          <div class="expect-step">{{ printf "%02d" (add $i 1) }}</div>
+          <h4>{{ $step.title }}</h4>
+          <p>{{ $step.description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      const action = form.getAttribute('action');
+      if (!action || action === '#') {
+        e.preventDefault();
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }
+    });
+  }
+</script>
+{{ end }}

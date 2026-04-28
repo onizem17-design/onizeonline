@@ -1,0 +1,146 @@
+{{ define "styles" }}
+<style>
+  /* ─── PROJECT / CASE STUDY HERO ─── */
+  .project-hero { background: var(--olive-dark); padding: 140px 24px 80px; }
+  .project-hero-inner { max-width: 860px; margin: 0 auto; }
+  .project-hero .eyebrow {
+    display: inline-block; background: rgba(239,227,202,0.12); color: var(--brown-light);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 20px;
+  }
+  .project-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); color: var(--nude-light); margin-bottom: 20px; line-height: 1.1; }
+  .project-hero h1 em { color: var(--brown-light); font-style: italic; }
+  .project-hero p { font-size: 1.05rem; color: rgba(239,227,202,0.6); line-height: 1.7; max-width: 600px; }
+  .project-meta-strip {
+    display: flex; flex-wrap: wrap; gap: 28px; margin-top: 48px; padding-top: 32px;
+    border-top: 1px solid rgba(239,227,202,0.12);
+  }
+  .meta-item label { font-size: 0.68rem; letter-spacing: 1.5px; font-weight: 600; text-transform: uppercase; color: rgba(239,227,202,0.4); display: block; margin-bottom: 6px; }
+  .meta-item span { font-size: 0.9rem; color: var(--nude-light); font-weight: 500; }
+
+  /* ─── RESULTS BANNER ─── */
+  .results-banner { background: var(--bg-alt); padding: 64px 24px; }
+  [data-theme="dark"] .results-banner { background: var(--olive); }
+  .results-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; text-align: center; }
+  .result-item .result-num { font-family: 'DM Serif Display', serif; font-size: 3rem; color: var(--olive); line-height: 1; }
+  [data-theme="dark"] .result-item .result-num { color: var(--brown-light); }
+  .result-item .result-label { font-size: 0.85rem; color: var(--text-sub); margin-top: 8px; line-height: 1.4; }
+
+  /* ─── CASE STUDY BODY ─── */
+  .case-body { padding: 100px 24px; background: var(--bg); }
+  .case-inner { max-width: 860px; margin: 0 auto; }
+  .case-section { margin-bottom: 72px; }
+  .case-section-tag { font-size: 0.72rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; color: var(--brown); margin-bottom: 12px; }
+  .case-section h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 20px; }
+  .case-section p { font-size: 0.97rem; color: var(--text-sub); line-height: 1.85; margin-bottom: 14px; }
+  .case-section ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  .case-section ul li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; }
+  .case-section ul li::before { content: '→'; color: var(--brown); flex-shrink: 0; }
+  .case-section img { border-radius: 16px; margin: 32px 0; box-shadow: 0 12px 40px rgba(59,74,47,0.1); }
+  .case-quote {
+    border-left: 3px solid var(--brown); padding: 24px 32px;
+    background: var(--bg-alt); border-radius: 0 16px 16px 0;
+    margin: 36px 0;
+  }
+  [data-theme="dark"] .case-quote { background: var(--olive); }
+  .case-quote p { font-size: 1.05rem; font-style: italic; color: var(--text); line-height: 1.7; margin: 0 0 12px; }
+  .case-quote cite { font-size: 0.82rem; color: var(--text-light); font-style: normal; }
+
+  /* ─── NEXT PROJECT ─── */
+  .next-project { background: var(--olive-dark); padding: 100px 24px; text-align: center; }
+  .next-project h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); color: var(--nude-light); margin-bottom: 16px; }
+  .next-project h2 em { color: var(--brown-light); font-style: italic; }
+  .next-project p { color: rgba(239,227,202,0.6); margin-bottom: 36px; line-height: 1.7; }
+
+  @media(max-width: 900px) {
+    .project-meta-strip { gap: 20px; }
+    .results-inner { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- HERO -->
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <span class="eyebrow reveal">{{ .Params.hero_eyebrow }}</span>
+      <h1 class="reveal">{{ .Params.hero_headline | safeHTML }}</h1>
+      <p class="reveal">{{ .Params.hero_sub }}</p>
+      <div class="project-meta-strip reveal">
+        {{ with .Params.client }}<div class="meta-item"><label>Client</label><span>{{ . }}</span></div>{{ end }}
+        {{ with .Params.service }}<div class="meta-item"><label>Service</label><span>{{ . }}</span></div>{{ end }}
+        {{ with .Params.industry }}<div class="meta-item"><label>Industry</label><span>{{ . }}</span></div>{{ end }}
+        {{ with .Params.timeline }}<div class="meta-item"><label>Timeline</label><span>{{ . }}</span></div>{{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  {{ with .Params.results }}
+  <section class="results-banner">
+    <div class="results-inner container">
+      {{ range . }}
+      <div class="result-item reveal">
+        <div class="result-num">{{ .number }}</div>
+        <div class="result-label">{{ .label }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- CASE STUDY BODY -->
+  <section class="case-body">
+    <div class="case-inner container">
+
+      <!-- Challenge -->
+      {{ with .Params.challenge_text }}
+      <div class="case-section reveal">
+        <p class="case-section-tag">The Challenge</p>
+        <h2>{{ $.Params.challenge_heading }}</h2>
+        <p>{{ . }}</p>
+      </div>
+      {{ end }}
+
+      <!-- Approach -->
+      {{ with .Params.approach_text }}
+      <div class="case-section reveal">
+        <p class="case-section-tag">The Approach</p>
+        <h2>{{ $.Params.approach_heading }}</h2>
+        <p>{{ . }}</p>
+        {{ with $.Params.approach_bullets }}
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <!-- Results -->
+      {{ with .Params.outcome_text }}
+      <div class="case-section reveal">
+        <p class="case-section-tag">The Results</p>
+        <h2>{{ $.Params.outcome_heading }}</h2>
+        <p>{{ . }}</p>
+      </div>
+      {{ end }}
+
+      <!-- Client quote -->
+      {{ with .Params.testimonial_quote }}
+      <div class="case-quote reveal">
+        <p>"{{ . }}"</p>
+        <cite>— {{ $.Params.testimonial_name }}, {{ $.Params.testimonial_role }}</cite>
+      </div>
+      {{ end }}
+
+    </div>
+  </section>
+
+  <!-- NEXT / CTA -->
+  <section class="next-project">
+    <div class="reveal">
+      <h2>{{ .Params.cta_heading | safeHTML }}</h2>
+      <p>{{ .Params.cta_sub }}</p>
+      <a href="/contact/" class="btn-primary" style="margin-right:12px;">{{ .Params.cta_button }}</a>
+      <a href="/portfolio/" class="btn-outline" style="border-color:rgba(239,227,202,0.4);color:var(--nude-light);">← Back to portfolio</a>
+    </div>
+  </section>
+{{ end }}

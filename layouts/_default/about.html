@@ -1,0 +1,171 @@
+{{ define "styles" }}
+<style>
+  /* ─── ABOUT HERO ─── */
+  .about-hero {
+    background: var(--olive-dark); padding: 140px 24px 80px; text-align: center;
+  }
+  .about-hero .eyebrow {
+    display: inline-block; background: rgba(239,227,202,0.12); color: var(--brown-light);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 20px;
+  }
+  .about-hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--nude-light); margin-bottom: 16px; line-height: 1.1;
+  }
+  .about-hero h1 em { color: var(--brown-light); font-style: italic; }
+  .about-hero p { font-size: 1.05rem; color: rgba(239,227,202,0.6); max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+  /* ─── BIO SECTION ─── */
+  .bio-section { padding: 100px 24px; background: var(--bg); }
+  .bio-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
+  .bio-photo-wrap {
+    border-radius: 24px; overflow: hidden; background: var(--nude);
+    min-height: 420px; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 16px 48px rgba(59,74,47,0.12);
+  }
+  [data-theme="dark"] .bio-photo-wrap { background: var(--olive-mid); }
+  .bio-photo-placeholder { font-size: 0.85rem; color: var(--text-light); text-align: center; padding: 40px; }
+  .bio-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .bio-text .section-tag { font-size: 0.72rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; color: var(--brown); margin-bottom: 16px; }
+  .bio-text h2 { font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 20px; }
+  .bio-text h2 em { color: var(--brown); font-style: italic; }
+  .bio-text p { font-size: 0.97rem; color: var(--text-sub); line-height: 1.85; margin-bottom: 16px; }
+  .fun-fact {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--bg-alt); border-radius: 16px; padding: 20px 24px; margin-top: 28px;
+    border-left: 3px solid var(--brown);
+  }
+  [data-theme="dark"] .fun-fact { background: var(--olive); }
+  .fun-fact-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+  .fun-fact p { margin: 0; font-size: 0.92rem; font-style: italic; color: var(--text-sub); }
+
+  /* ─── EXPERTISE ─── */
+  .expertise-section { background: var(--bg-alt); padding: 100px 24px; }
+  [data-theme="dark"] .expertise-section { background: var(--olive); }
+  .expertise-inner { max-width: 1140px; margin: 0 auto; }
+  .expertise-inner > .section-tag { font-size: 0.72rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; color: var(--brown); margin-bottom: 16px; }
+  .expertise-inner > h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin-bottom: 48px; }
+  .expertise-inner > h2 em { color: var(--brown); font-style: italic; }
+  .expertise-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .expertise-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 20px; padding: 32px 28px;
+    display: flex; align-items: flex-start; gap: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .expertise-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(59,74,47,0.1); }
+  .expertise-num { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--brown); opacity: 0.4; flex-shrink: 0; line-height: 1; }
+  .expertise-card p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin: 0; }
+
+  /* ─── VALUES ─── */
+  .values-section { background: var(--bg); padding: 100px 24px; }
+  .values-inner { max-width: 1140px; margin: 0 auto; }
+  .values-header { text-align: center; margin-bottom: 56px; }
+  .values-header h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); }
+  .values-header h2 em { color: var(--brown); font-style: italic; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .value-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 20px; padding: 36px 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .value-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(59,74,47,0.1); }
+  .value-icon { font-size: 2rem; margin-bottom: 16px; }
+  .value-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+  .value-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.7; }
+
+  /* ─── CTA BAND ─── */
+  .about-cta { background: var(--olive-dark); padding: 100px 24px; text-align: center; }
+  .about-cta h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); color: var(--nude-light); margin-bottom: 16px; }
+  .about-cta h2 em { color: var(--brown-light); font-style: italic; }
+  .about-cta p { color: rgba(239,227,202,0.6); font-size: 1rem; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .about-cta .btn-primary { margin-right: 12px; }
+
+  /* Responsive */
+  @media(max-width: 900px) {
+    .bio-inner { grid-template-columns: 1fr; }
+    .bio-photo-wrap { min-height: 280px; }
+    .expertise-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- HERO -->
+  <section class="about-hero">
+    <span class="eyebrow">{{ .Params.hero_eyebrow }}</span>
+    <h1>{{ .Params.hero_headline | safeHTML }}</h1>
+    <p>{{ .Params.hero_sub }}</p>
+  </section>
+
+  <!-- BIO -->
+  <section class="bio-section">
+    <div class="bio-inner container">
+      <div class="bio-photo-wrap reveal">
+        {{ with .Params.photo }}
+          <img src="{{ . }}" alt="Onize Muhammed"/>
+        {{ else }}
+          <div class="bio-photo-placeholder">[ Your photo here ]</div>
+        {{ end }}
+      </div>
+      <div class="bio-text reveal">
+        <p class="section-tag">{{ .Params.bio_tag }}</p>
+        <h2>{{ .Params.bio_heading | safeHTML }}</h2>
+        {{ range .Params.bio_paragraphs }}
+          <p>{{ . }}</p>
+        {{ end }}
+        {{ with .Params.fun_fact }}
+        <div class="fun-fact">
+          <span class="fun-fact-icon">💡</span>
+          <p>{{ . }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="expertise-section">
+    <div class="expertise-inner container">
+      <p class="section-tag reveal">{{ .Params.expertise_tag }}</p>
+      <h2 class="reveal">{{ .Params.expertise_heading | safeHTML }}</h2>
+      <div class="expertise-grid">
+        {{ range $i, $item := .Params.expertise_items }}
+        <div class="expertise-card reveal">
+          <span class="expertise-num">{{ printf "%02d" (add $i 1) }}</span>
+          <p>{{ $item }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values-section">
+    <div class="values-inner container">
+      <div class="values-header reveal">
+        <h2>{{ .Params.values_heading | safeHTML }}</h2>
+      </div>
+      <div class="values-grid">
+        {{ range .Params.values }}
+        <div class="value-card reveal">
+          <div class="value-icon">{{ .icon }}</div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="reveal">
+      <h2>{{ .Params.cta_heading | safeHTML }}</h2>
+      <p>{{ .Params.cta_sub }}</p>
+      <a href="/contact/" class="btn-primary">{{ .Params.cta_button }}</a>
+      <a href="/portfolio/" class="btn-outline" style="border-color:rgba(239,227,202,0.4);color:var(--nude-light);">See my work →</a>
+    </div>
+  </section>
+{{ end }}

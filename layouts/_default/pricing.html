@@ -1,0 +1,180 @@
+{{ define "styles" }}
+<style>
+  /* ─── PRICING HERO ─── */
+  .pricing-hero { background: var(--olive-dark); padding: 140px 24px 80px; text-align: center; }
+  .pricing-hero .eyebrow {
+    display: inline-block; background: rgba(239,227,202,0.12); color: var(--brown-light);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 20px;
+  }
+  .pricing-hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--nude-light); margin-bottom: 16px; line-height: 1.1; }
+  .pricing-hero h1 em { color: var(--brown-light); font-style: italic; }
+  .pricing-hero p { font-size: 1.05rem; color: rgba(239,227,202,0.6); max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+  /* ─── PACKAGES ─── */
+  .packages-section { padding: 100px 24px; background: var(--bg); }
+  .packages-inner { max-width: 1140px; margin: 0 auto; }
+  .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .package-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 24px; padding: 40px 32px;
+    display: flex; flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .package-card:hover { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(59,74,47,0.12); }
+  .package-card.featured {
+    border-color: var(--brown); background: var(--olive-dark);
+  }
+  .featured-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--brown); color: white;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 50px;
+  }
+  .package-icon { font-size: 2rem; margin-bottom: 20px; }
+  .package-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
+  .package-card.featured h3 { color: var(--nude-light); }
+  .package-sub {
+    font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase;
+    font-weight: 600; color: var(--brown); margin-bottom: 20px;
+  }
+  .package-card.featured .package-sub { color: var(--brown-light); }
+  .package-price {
+    font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+    color: var(--olive); margin-bottom: 6px;
+  }
+  .package-card.featured .package-price { color: var(--nude-light); }
+  .package-price-note { font-size: 0.78rem; color: var(--text-light); margin-bottom: 28px; }
+  .package-card.featured .package-price-note { color: rgba(239,227,202,0.45); }
+  .package-divider { border: none; border-top: 1px solid var(--card-border); margin-bottom: 28px; }
+  .package-card.featured .package-divider { border-color: rgba(239,227,202,0.1); }
+  .package-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; margin-bottom: 32px; }
+  .package-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--text-sub); line-height: 1.5; }
+  .package-card.featured .package-features li { color: rgba(239,227,202,0.7); }
+  .package-features li::before { content: '✓'; color: var(--brown); font-weight: 700; flex-shrink: 0; }
+  .package-card.featured .package-features li::before { color: var(--brown-light); }
+  .package-cta { margin-top: auto; }
+  .package-card.featured .btn-primary { background: var(--brown); }
+  .package-card.featured .btn-outline { border-color: rgba(239,227,202,0.35); color: var(--nude-light); }
+  .package-card.featured .btn-outline:hover { background: rgba(239,227,202,0.1); }
+  .packages-note { text-align: center; margin-top: 40px; font-size: 0.85rem; color: var(--text-light); }
+
+  /* ─── FAQ ─── */
+  .faq-section { background: var(--bg-alt); padding: 100px 24px; }
+  [data-theme="dark"] .faq-section { background: var(--olive); }
+  .faq-inner { max-width: 780px; margin: 0 auto; }
+  .faq-header { text-align: center; margin-bottom: 56px; }
+  .faq-header h2 { font-size: clamp(1.9rem, 3vw, 2.4rem); }
+  .faq-header h2 em { color: var(--brown); font-style: italic; }
+  .faq-list { display: flex; flex-direction: column; gap: 16px; }
+  .faq-item {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 16px; overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: 22px 28px; display: flex; justify-content: space-between; align-items: center;
+    font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--text);
+    transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--brown); }
+  .faq-icon { font-size: 1.4rem; color: var(--brown); transition: transform 0.3s; flex-shrink: 0; }
+  .faq-a { padding: 0 28px; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; }
+  .faq-a p { font-size: 0.93rem; color: var(--text-sub); line-height: 1.75; padding-bottom: 22px; }
+  .faq-item.open .faq-a { max-height: 300px; padding-top: 0; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* ─── CTA ─── */
+  .pricing-cta { background: var(--olive-dark); padding: 100px 24px; text-align: center; }
+  .pricing-cta h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); color: var(--nude-light); margin-bottom: 16px; }
+  .pricing-cta h2 em { color: var(--brown-light); font-style: italic; }
+  .pricing-cta p { color: rgba(239,227,202,0.6); font-size: 1rem; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+  @media(max-width: 900px) {
+    .packages-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- HERO -->
+  <section class="pricing-hero">
+    <span class="eyebrow">{{ .Params.hero_eyebrow }}</span>
+    <h1>{{ .Params.hero_headline | safeHTML }}</h1>
+    <p>{{ .Params.hero_sub }}</p>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages-section">
+    <div class="packages-inner container">
+      <div class="packages-grid">
+        {{ range .Params.packages }}
+        <div class="package-card{{ if .featured }} featured{{ end }} reveal">
+          {{ if .featured }}<span class="featured-badge">Most popular</span>{{ end }}
+          <div class="package-icon">{{ .icon }}</div>
+          <h3>{{ .name }}</h3>
+          <p class="package-sub">{{ .subtitle }}</p>
+          <div class="package-price">{{ .price }}</div>
+          <p class="package-price-note">{{ .price_note }}</p>
+          <hr class="package-divider"/>
+          <ul class="package-features">
+            {{ range .features }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          <div class="package-cta">
+            {{ if .featured }}
+              <a href="/contact/" class="btn-primary" style="width:100%;display:block;text-align:center;">{{ .cta }}</a>
+            {{ else }}
+              <a href="/contact/" class="btn-outline" style="width:100%;display:block;text-align:center;">{{ .cta }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <p class="packages-note reveal">{{ .Params.packages_note }}</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-inner container">
+      <div class="faq-header reveal">
+        <h2>{{ .Params.faq_heading | safeHTML }}</h2>
+      </div>
+      <div class="faq-list">
+        {{ range .Params.faqs }}
+        <div class="faq-item reveal">
+          <button class="faq-q">
+            {{ .question }}
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><p>{{ .answer }}</p></div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pricing-cta">
+    <div class="reveal">
+      <h2>{{ .Params.cta_heading | safeHTML }}</h2>
+      <p>{{ .Params.cta_sub }}</p>
+      <a href="/contact/" class="btn-primary">{{ .Params.cta_button }}</a>
+    </div>
+  </section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+{{ end }}
