@@ -135,6 +135,359 @@ collections:
                 name: cta
                 widget: string
 
+      - name: about
+        label: About Page
+        file: content/about.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: text
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+          - label: Hero Subtext
+            name: hero_sub
+            widget: text
+          - label: Bio Section Tag
+            name: bio_tag
+            widget: string
+          - label: Bio Heading
+            name: bio_heading
+            widget: string
+          - label: Bio Paragraphs
+            name: bio_paragraphs
+            widget: list
+            hint: "Each item is one paragraph"
+          - label: Fun Fact / Highlight
+            name: fun_fact
+            widget: text
+            required: false
+          - label: Expertise Section Tag
+            name: expertise_tag
+            widget: string
+          - label: Expertise Heading
+            name: expertise_heading
+            widget: string
+          - label: Expertise Items
+            name: expertise_items
+            widget: list
+            hint: "Each item is one expertise point"
+          - label: Values Section Heading
+            name: values_heading
+            widget: string
+          - label: Values
+            name: values
+            widget: list
+            fields:
+              - label: Icon (emoji)
+                name: icon
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+          - label: CTA Heading
+            name: cta_heading
+            widget: string
+          - label: CTA Subtext
+            name: cta_sub
+            widget: text
+          - label: CTA Button Text
+            name: cta_button
+            widget: string
+
+      - name: portfolio
+        label: Portfolio Page
+        file: content/portfolio.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: text
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+          - label: Hero Subtext
+            name: hero_sub
+            widget: text
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - label: Client Name
+                name: client
+                widget: string
+              - label: Project Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Tags
+                name: tags
+                widget: list
+              - label: Results
+                name: results
+                widget: list
+                required: false
+                fields:
+                  - label: Number (e.g. 150%)
+                    name: number
+                    widget: string
+                  - label: Label
+                    name: label
+                    widget: string
+              - label: Case Study URL
+                name: cta_url
+                widget: string
+                required: false
+              - label: Featured Image
+                name: image
+                widget: image
+                required: false
+          - label: Client Brands
+            name: brands
+            widget: list
+          - label: CTA Heading
+            name: cta_heading
+            widget: string
+          - label: CTA Subtext
+            name: cta_sub
+            widget: text
+          - label: CTA Button Text
+            name: cta_button
+            widget: string
+
+      - name: pricing
+        label: Pricing Page
+        file: content/pricing.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: text
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+          - label: Hero Subtext
+            name: hero_sub
+            widget: text
+          - label: Packages
+            name: packages
+            widget: list
+            fields:
+              - label: Icon (emoji)
+                name: icon
+                widget: string
+              - label: Package Name
+                name: name
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+              - label: Price
+                name: price
+                widget: string
+              - label: Price Note
+                name: price_note
+                widget: string
+              - label: Mark as Featured / Most Popular
+                name: featured
+                widget: boolean
+                default: false
+                required: false
+              - label: Features (bullet points)
+                name: features
+                widget: list
+              - label: Button Text
+                name: cta
+                widget: string
+          - label: Packages Note (shown below grid)
+            name: packages_note
+            widget: string
+          - label: FAQ Section Heading
+            name: faq_heading
+            widget: string
+          - label: FAQs
+            name: faqs
+            widget: list
+            fields:
+              - label: Question
+                name: question
+                widget: string
+              - label: Answer
+                name: answer
+                widget: text
+          - label: CTA Heading
+            name: cta_heading
+            widget: string
+          - label: CTA Subtext
+            name: cta_sub
+            widget: text
+          - label: CTA Button Text
+            name: cta_button
+            widget: string
+
+      - name: contact
+        label: Contact Page
+        file: content/contact.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: text
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+          - label: Hero Subtext
+            name: hero_sub
+            widget: text
+          - label: Info Section Heading
+            name: info_heading
+            widget: string
+          - label: Info Text
+            name: info_text
+            widget: text
+          - label: Email Address
+            name: email
+            widget: string
+          - label: Booking Link URL
+            name: booking_url
+            widget: string
+            required: false
+          - label: Booking Link Label
+            name: booking_label
+            widget: string
+            required: false
+          - label: Booking Note
+            name: booking_note
+            widget: string
+            required: false
+          - label: LinkedIn URL
+            name: linkedin_url
+            widget: string
+            required: false
+          - label: Form Heading
+            name: form_heading
+            widget: string
+          - label: Form Subtext
+            name: form_sub
+            widget: string
+          - label: Form Button Text
+            name: form_button
+            widget: string
+          - label: Service Options (dropdown)
+            name: service_options
+            widget: list
+          - label: "What Happens Next — Heading"
+            name: expect_heading
+            widget: string
+          - label: "What Happens Next — Steps"
+            name: expect_steps
+            widget: list
+            fields:
+              - label: Step Title
+                name: title
+                widget: string
+              - label: Step Description
+                name: description
+                widget: text
+
+      - name: project
+        label: Featured Case Study
+        file: content/project.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: text
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+          - label: Hero Subtext
+            name: hero_sub
+            widget: text
+          - label: Client Name
+            name: client
+            widget: string
+          - label: Service Provided
+            name: service
+            widget: string
+          - label: Industry
+            name: industry
+            widget: string
+            required: false
+          - label: Timeline
+            name: timeline
+            widget: string
+            required: false
+          - label: Results (top stats)
+            name: results
+            widget: list
+            fields:
+              - label: Number (e.g. 150%)
+                name: number
+                widget: string
+              - label: Label
+                name: label
+                widget: string
+          - label: Challenge Section Heading
+            name: challenge_heading
+            widget: string
+          - label: Challenge Text
+            name: challenge_text
+            widget: text
+          - label: Approach Section Heading
+            name: approach_heading
+            widget: string
+          - label: Approach Text
+            name: approach_text
+            widget: text
+          - label: Approach Bullet Points
+            name: approach_bullets
+            widget: list
+            required: false
+          - label: Results Section Heading
+            name: outcome_heading
+            widget: string
+          - label: Results Text
+            name: outcome_text
+            widget: text
+          - label: Client Testimonial Quote
+            name: testimonial_quote
+            widget: text
+            required: false
+          - label: Testimonial — Client Name
+            name: testimonial_name
+            widget: string
+            required: false
+          - label: Testimonial — Role & Company
+            name: testimonial_role
+            widget: string
+            required: false
+          - label: CTA Heading
+            name: cta_heading
+            widget: string
+          - label: CTA Subtext
+            name: cta_sub
+            widget: text
+          - label: CTA Button Text
+            name: cta_button
+            widget: string
+
   - name: testimonials
     label: Testimonials
     folder: _testimonials

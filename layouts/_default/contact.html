@@ -183,7 +183,7 @@
       <div class="expect-grid">
         {{ range $i, $step := .Params.expect_steps }}
         <div class="expect-card reveal">
-          <div class="expect-step">{{ printf "%02d" (add $i 1) }}</div>
+          <div class="expect-step">{{ printf "%02d" (math.Add $i 1) }}</div>
           <h4>{{ $step.title }}</h4>
           <p>{{ $step.description }}</p>
         </div>

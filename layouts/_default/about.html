@@ -133,7 +133,7 @@
       <div class="expertise-grid">
         {{ range $i, $item := .Params.expertise_items }}
         <div class="expertise-card reveal">
-          <span class="expertise-num">{{ printf "%02d" (add $i 1) }}</span>
+          <span class="expertise-num">{{ printf "%02d" (math.Add $i 1) }}</span>
           <p>{{ $item }}</p>
         </div>
         {{ end }}
