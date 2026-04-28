@@ -21,10 +21,25 @@
   .post-body blockquote { border-left: 3px solid var(--brown); padding-left: 20px; margin: 1.5em 0; color: var(--brown); font-style: italic; font-size: 1.1rem; }
   .post-body a { color: var(--brown); text-decoration: underline; }
   .post-body img { max-width: 100%; border-radius: 10px; margin: 1.5em 0; }
+  .post-body h4 { font-size: 1.1rem; }
+  .post-body h5, .post-body h6 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .post-body hr { border: none; border-top: 1px solid var(--card-border); margin: 2em 0; }
   .post-body code { background: var(--nude); color: var(--olive-dark); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }
   [data-theme="dark"] .post-body code { background: rgba(59,74,47,0.4); color: var(--nude); }
   .post-body pre { background: var(--olive-dark); padding: 20px; border-radius: 10px; overflow-x: auto; margin: 1.5em 0; }
   .post-body pre code { background: none; color: var(--nude-light); padding: 0; }
+
+  /* ─── TABLES ─── */
+  .post-body table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.93rem; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(59,74,47,0.07); }
+  .post-body thead { background: var(--olive-dark); }
+  .post-body thead th { color: var(--nude-light); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.8px; text-transform: uppercase; padding: 14px 18px; text-align: left; }
+  .post-body tbody tr { border-bottom: 1px solid var(--card-border); transition: background 0.15s; }
+  .post-body tbody tr:last-child { border-bottom: none; }
+  .post-body tbody tr:hover { background: var(--bg-alt); }
+  .post-body td { padding: 13px 18px; color: var(--text-mid); line-height: 1.5; vertical-align: top; }
+  .post-body td:first-child { font-weight: 500; color: var(--text-dark); }
+  [data-theme="dark"] .post-body tbody tr:hover { background: rgba(59,74,47,0.2); }
+
   .divider { border: none; border-top: 1px solid var(--card-border); margin: 48px 0; }
   .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: var(--brown); margin-bottom: 48px; transition: gap 0.2s; }
   .back-link:hover { gap: 12px; }
