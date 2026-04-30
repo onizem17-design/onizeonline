@@ -236,7 +236,13 @@
         <div class="testi-card reveal">
           <p class="testi-text">"{{ .quote }}"</p>
           <div class="testi-author">
-            <div class="testi-avatar">{{ .initial }}</div>
+            <div class="testi-avatar">
+              {{ with .photo }}
+                <img src="{{ . }}" alt="{{ $.name }}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/>
+              {{ else }}
+                {{ .initial }}
+              {{ end }}
+            </div>
             <div>
               <div class="testi-name">{{ .name }}</div>
               <div class="testi-role">{{ .role }}</div>

@@ -120,6 +120,11 @@ collections:
               - label: Initial (single letter avatar)
                 name: initial
                 widget: string
+              - label: Client Photo
+                name: photo
+                widget: image
+                required: false
+                hint: "Upload a headshot. If provided, it replaces the initial avatar."
           - label: Services
             name: services
             widget: list
