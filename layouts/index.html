@@ -153,7 +153,11 @@
       <div class="hero-photo-col">
         <div class="speech-bubble">Hi, I'm Onize, your content partner ✨</div>
         <div class="hero-photo-wrap">
-          <img src="/images/uploads/image.jpg" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
+          {{ with .Params.hero_photo }}
+            <img src="{{ . }}" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
+          {{ else }}
+            <img src="/images/uploads/image.jpg" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
+          {{ end }}
         </div>
       </div>
       <div class="hero-card">

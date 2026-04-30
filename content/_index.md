@@ -2,6 +2,7 @@
 title: "Onize Muhammed – SaaS Content & AI Visibility Strategist"
 description: "SaaS content that's visible across Google and AI platforms — and wins signups."
 
+hero_photo: "/images/uploads/image.jpg"
 hero_eyebrow: "SaaS Content · AEO · AI Visibility"
 hero_headline: "SaaS content that's visible across Google and AI platforms — and wins signups"
 hero_cta: "SAY LESS. I'M IN."

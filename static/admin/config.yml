@@ -47,6 +47,11 @@ collections:
         label: Homepage
         file: content/_index.md
         fields:
+          - label: Hero Photo
+            name: hero_photo
+            widget: image
+            required: false
+            hint: "Your headshot shown in the homepage hero section"
           - label: Hero Eyebrow Text
             name: hero_eyebrow
             widget: string
