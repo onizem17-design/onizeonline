@@ -33,12 +33,20 @@ testimonials:
     name: Client Name
     role: Head of Content · Brand Name
     initial: R
-  - quote: I'm particularly impressed by the ability to follow briefs to a T, yet
-      adapt and reorganize information on the fly based on what she knows about
-      our ICP. Never more than one round of feedback.
-    name: Client Name
-    role: Head of Marketing · Brand Name
-    initial: N
+  - quote: >-
+      Good writing requires even better thinking — Onize does both. I've worked
+      with her on several projects, both as editor and manager and watched her
+      grow to become a strong, reliable SaaS writer. 
+
+
+      She always amazes me with how well she spots new, better angles to an article and even walks the extra mile to thoroughly understand a topic. Plus, she conveys her thoughts clearly when writing and handles feedback like a pro.
+
+
+      I 100% recommend her for any SaaS content writing projects where you need a strong writer and critical thinker!
+    name: Mae Josémaria Oparaocha
+    role: Senior Content Writer & Strategist for MarTech and SaaS Brand
+    initial: i
+    photo: https://www.linkedin.com/in/maejosemaria/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Ba3zeSGmKSt6x8xFPt22IfA%3D%3D
   - quote: Always on time, super dependable, and consistently went above and beyond.
       She took feedback really fast and always came back stronger — the kind of
       person who makes your work easier.
