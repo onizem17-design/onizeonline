@@ -59,8 +59,30 @@
   .stat-desc { font-size: 0.8rem; color: rgba(239,227,202,0.55); margin-top: 6px; line-height: 1.4; }
   .stat-badge { display: inline-block; background: var(--brown); color: white; font-size: 0.65rem; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; margin-bottom: 6px; }
 
+  /* ─── INTRO ─── */
+  .intro-section {
+    background: var(--olive-dark); padding: 120px 24px 80px; text-align: center;
+  }
+  [data-theme="dark"] .intro-section { background: #1A2012; }
+  .intro-inner { max-width: 700px; margin: 0 auto; }
+  .intro-inner h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: var(--nude-light); line-height: 1.3; margin-bottom: 24px;
+  }
+  .intro-inner h2 em { font-style: italic; color: var(--brown-light); }
+  .intro-sub {
+    font-size: 1rem; color: rgba(239,227,202,0.75); line-height: 1.75; margin-bottom: 20px;
+  }
+  .intro-section .hero-bullets {
+    text-align: left; max-width: 500px; margin: 0 auto 36px;
+  }
+  .intro-section .hero-bullets li { color: rgba(239,227,202,0.85); }
+  .intro-section .hero-bullets li::before { color: var(--brown-light); }
+  .intro-section .btn-primary { margin-top: 8px; }
+
   /* ─── VALUE ─── */
-  .value-section { padding: 120px 24px 100px; background: var(--bg); }
+  .value-section { padding: 100px 24px; background: var(--bg); }
   .value-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .section-tag { font-size: 0.72rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; color: var(--brown); margin-bottom: 16px; }
   .value-inner h2 { font-size: clamp(2rem, 3vw, 2.8rem); color: var(--text); margin-bottom: 20px; }
@@ -131,15 +153,8 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-copy">
-      <h1>I'm <span>Onize</span>, your partner in moving your company towards its online visibility and revenue through Content strategies and writing</h1>
-      <p class="hero-sub">Whether you want AI assisted content or fully human content engine, one thing is sure, you won't get pieces that simply check the box.</p>
-      <p class="hero-lead">But ones that:</p>
-      <ul class="hero-bullets">
-        <li>Reveal the pains of your target audience</li>
-        <li>Show how your software solves them</li>
-        <li>Wrapped in cohesive storytelling</li>
-        <li>Well optimized for search engine and AI visibility</li>
-      </ul>
+      <span class="hero-eyebrow">{{ .Params.hero_eyebrow }}</span>
+      <h1>{{ .Params.hero_headline }}</h1>
       <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
     </div>
     <div class="hero-photo-float">
@@ -148,6 +163,21 @@
       {{ else }}
         <img src="/images/uploads/image.jpg" alt="Onize Muhammed"/>
       {{ end }}
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="intro-inner">
+      <h2>I'm <em>Onize</em>, your partner in moving your company towards its online visibility and revenue through Content strategies and writing</h2>
+      <p class="intro-sub">Whether you want AI assisted content or fully human content engine, one thing is sure, you won't get pieces that simply check the box. But ones that:</p>
+      <ul class="hero-bullets">
+        <li>Reveal the pains of your target audience</li>
+        <li>Show how your software solves them</li>
+        <li>Wrapped in cohesive storytelling</li>
+        <li>Well optimized for search engine and AI visibility</li>
+      </ul>
+      <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
     </div>
   </section>
 
