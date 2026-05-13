@@ -33,6 +33,7 @@ testimonials:
     name: Client Name
     role: Head of Content · Brand Name
     initial: R
+    photo: https://media.licdn.com/dms/image/v2/D5603AQG_uszynqcoWQ/profile-displayphoto-shrink_800_800/B56ZOhco9uGkAc-/0/1733580460496?e=1780531200&v=beta&t=gHLkLZJD9fQ5lVBQmZBGgvh-AYzRLYwNLDPRIvPV5fc
   - quote: >-
       Good writing requires even better thinking — Onize does both. I've worked
       with her on several projects, both as editor and manager and watched her
@@ -46,7 +47,7 @@ testimonials:
     name: Mae Josémaria Oparaocha
     role: Senior Content Writer & Strategist for MarTech and SaaS Brand
     initial: i
-    photo: https://www.linkedin.com/in/maejosemaria/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Ba3zeSGmKSt6x8xFPt22IfA%3D%3D
+    photo: https://media.licdn.com/dms/image/v2/D4D03AQGSCqNv0CvSmw/profile-displayphoto-shrink_400_400/B4DZcR8HL7GYAk-/0/1748352661970?e=1779926400&v=beta&t=f_gsexQefpU2zMTARdKJf_FQQG59erNshPGS63RvhkA
   - quote: Always on time, super dependable, and consistently went above and beyond.
       She took feedback really fast and always came back strong
     name: Client Name
