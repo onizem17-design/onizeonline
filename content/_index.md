@@ -31,7 +31,7 @@ testimonials:
 
       What sets her apart is her ability to push back thoughtfully when a brief lacks clarity or compromises quality. This is rare and incredibly valuable, as it strengthens not just the content but the overall strategy. Truly grateful for everything Onize has done for my portfolio.
     name: Client Name
-    role: Head of Content · Brand Name
+    role: Content Marketing Manager, TripleDart
     initial: R
     photo: https://media.licdn.com/dms/image/v2/D5603AQG_uszynqcoWQ/profile-displayphoto-shrink_800_800/B56ZOhco9uGkAc-/0/1733580460496?e=1780531200&v=beta&t=gHLkLZJD9fQ5lVBQmZBGgvh-AYzRLYwNLDPRIvPV5fc
   - quote: >-
@@ -45,14 +45,9 @@ testimonials:
 
       I 100% recommend her for any SaaS content writing projects where you need a strong writer and critical thinker!
     name: Mae Josémaria Oparaocha
-    role: Senior Content Writer & Strategist for MarTech and SaaS Brand
+    role: Senior Content Writer & Strategist, Phoenix Content
     initial: i
     photo: https://media.licdn.com/dms/image/v2/D4D03AQGSCqNv0CvSmw/profile-displayphoto-shrink_400_400/B4DZcR8HL7GYAk-/0/1748352661970?e=1779926400&v=beta&t=f_gsexQefpU2zMTARdKJf_FQQG59erNshPGS63RvhkA
-  - quote: Always on time, super dependable, and consistently went above and beyond.
-      She took feedback really fast and always came back strong
-    name: Client Name
-    role: Head of Content · Brand Name
-    initial: L
 title: Onize Muhammed – SaaS Content & AI Visibility Strategist
 ai_bullets:
   - Map a content strategy around prompts your target audience are searching on
