@@ -47,8 +47,8 @@ testimonials:
     role: Senior Content Writer & Strategist for MarTech and SaaS Brand
     initial: i
     photo: https://www.linkedin.com/in/maejosemaria/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Ba3zeSGmKSt6x8xFPt22IfA%3D%3D
-  - quote: "Always on time, super dependable, and consistently went above and
-      beyond. She took feedback really fast and always came back stronger. "
+  - quote: Always on time, super dependable, and consistently went above and beyond.
+      She took feedback really fast and always came back strong
     name: Client Name
     role: Head of Content · Brand Name
     initial: L
