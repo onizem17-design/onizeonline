@@ -1,8 +1,9 @@
 ---
 hero_photo: /images/uploads/image.jpg
-hero_eyebrow: SaaS Content · AEO · AI Visibility
-hero_headline: SaaS content that's visible across Google and AI platforms — and wins signups
-hero_cta: SAY LESS. I'M IN.
+hero_eyebrow: SaaS Content · SEO · AI Visibility
+hero_headline: Get familiar with seeing your content show up on Google and AI
+  platforms — and win signups
+hero_cta: Oh yes, I want that.
 value_heading: Scaled content doesn't have to be garbage
 value_intro: "AI Content shouldn't be a trade off between quality and quantity,
   but that's if you bring in an expert eyes that can:"
