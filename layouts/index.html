@@ -237,10 +237,11 @@
           <p class="testi-text">"{{ .quote }}"</p>
           <div class="testi-author">
             <div class="testi-avatar">
+              {{ $name := .name }}
               {{ with .photo }}
-                <img src="{{ . }}" alt="{{ $.name }}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/>
+                <img src="{{ . }}" alt="{{ $name }}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/>
               {{ else }}
-                {{ .initial }}
+                {{ $.initial }}
               {{ end }}
             </div>
             <div>

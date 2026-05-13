@@ -30,6 +30,7 @@ collections:
       - label: Description
         name: description
         widget: text
+        required: false
         hint: "Shown in Google search results and on the blog listing page. Keep under 160 characters."
       - label: Featured Image
         name: image
@@ -42,6 +43,8 @@ collections:
       - label: Body
         name: body
         widget: markdown
+        required: false
+
   - name: pages
     label: Pages
     files:
@@ -57,32 +60,41 @@ collections:
           - label: Hero Eyebrow Text
             name: hero_eyebrow
             widget: string
+            required: false
           - label: Hero Headline
             name: hero_headline
             widget: string
+            required: false
           - label: Hero Button Text
             name: hero_cta
             widget: string
+            required: false
           - label: Value Section Heading
             name: value_heading
             widget: string
+            required: false
           - label: Value Section Intro
             name: value_intro
             widget: text
+            required: false
           - label: Value Bullet Points
             name: value_bullets
             widget: list
+            required: false
             hint: "Each item is one bullet point"
           - label: Value Section Button Text
             name: value_cta
             widget: string
+            required: false
           - label: Client Brands
             name: brands
             widget: list
+            required: false
             hint: "Brand names shown in the social proof bar"
           - label: Stats
             name: stats
             widget: list
+            required: false
             fields:
               - label: Number (e.g. 150%)
                 name: number
@@ -100,28 +112,36 @@ collections:
               - label: Description
                 name: description
                 widget: string
+                required: false
           - label: AI Section Heading
             name: ai_heading
             widget: string
+            required: false
           - label: AI Section Bullet Points
             name: ai_bullets
             widget: list
+            required: false
           - label: Testimonials
             name: testimonials
             widget: list
+            required: false
             fields:
               - label: Quote
                 name: quote
                 widget: text
+                required: false
               - label: Client Name
                 name: name
                 widget: string
+                required: false
               - label: Role & Company
                 name: role
                 widget: string
+                required: false
               - label: Initial (single letter avatar)
                 name: initial
                 widget: string
+                required: false
               - label: Client Photo
                 name: photo
                 widget: image
@@ -130,22 +150,28 @@ collections:
           - label: Services
             name: services
             widget: list
+            required: false
             fields:
               - label: Icon (emoji)
                 name: icon
                 widget: string
+                required: false
               - label: Service Title
                 name: title
                 widget: string
+                required: false
               - label: Subtitle
                 name: subtitle
                 widget: string
+                required: false
               - label: Bullet Points
                 name: bullets
                 widget: list
+                required: false
               - label: Button Text
                 name: cta
                 widget: string
+                required: false
 
       - name: about
         label: About Page
@@ -154,24 +180,31 @@ collections:
           - label: SEO Description
             name: description
             widget: text
+            required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
             widget: string
+            required: false
           - label: Hero Headline
             name: hero_headline
             widget: string
+            required: false
           - label: Hero Subtext
             name: hero_sub
             widget: text
+            required: false
           - label: Bio Section Tag
             name: bio_tag
             widget: string
+            required: false
           - label: Bio Heading
             name: bio_heading
             widget: string
+            required: false
           - label: Bio Paragraphs
             name: bio_paragraphs
             widget: list
+            required: false
             hint: "Each item is one paragraph"
           - label: Fun Fact / Highlight
             name: fun_fact
@@ -180,38 +213,49 @@ collections:
           - label: Expertise Section Tag
             name: expertise_tag
             widget: string
+            required: false
           - label: Expertise Heading
             name: expertise_heading
             widget: string
+            required: false
           - label: Expertise Items
             name: expertise_items
             widget: list
+            required: false
             hint: "Each item is one expertise point"
           - label: Values Section Heading
             name: values_heading
             widget: string
+            required: false
           - label: Values
             name: values
             widget: list
+            required: false
             fields:
               - label: Icon (emoji)
                 name: icon
                 widget: string
+                required: false
               - label: Title
                 name: title
                 widget: string
+                required: false
               - label: Description
                 name: description
                 widget: text
+                required: false
           - label: CTA Heading
             name: cta_heading
             widget: string
+            required: false
           - label: CTA Subtext
             name: cta_sub
             widget: text
+            required: false
           - label: CTA Button Text
             name: cta_button
             widget: string
+            required: false
 
       - name: portfolio
         label: Portfolio Page
@@ -220,31 +264,40 @@ collections:
           - label: SEO Description
             name: description
             widget: text
+            required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
             widget: string
+            required: false
           - label: Hero Headline
             name: hero_headline
             widget: string
+            required: false
           - label: Hero Subtext
             name: hero_sub
             widget: text
+            required: false
           - label: Projects
             name: projects
             widget: list
+            required: false
             fields:
               - label: Client Name
                 name: client
                 widget: string
+                required: false
               - label: Project Title
                 name: title
                 widget: string
+                required: false
               - label: Description
                 name: description
                 widget: text
+                required: false
               - label: Tags
                 name: tags
                 widget: list
+                required: false
               - label: Results
                 name: results
                 widget: list
@@ -253,9 +306,11 @@ collections:
                   - label: Number (e.g. 150%)
                     name: number
                     widget: string
+                    required: false
                   - label: Label
                     name: label
                     widget: string
+                    required: false
               - label: Case Study URL
                 name: cta_url
                 widget: string
@@ -267,15 +322,19 @@ collections:
           - label: Client Brands
             name: brands
             widget: list
+            required: false
           - label: CTA Heading
             name: cta_heading
             widget: string
+            required: false
           - label: CTA Subtext
             name: cta_sub
             widget: text
+            required: false
           - label: CTA Button Text
             name: cta_button
             widget: string
+            required: false
 
       - name: pricing
         label: Pricing Page
@@ -284,34 +343,44 @@ collections:
           - label: SEO Description
             name: description
             widget: text
+            required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
             widget: string
+            required: false
           - label: Hero Headline
             name: hero_headline
             widget: string
+            required: false
           - label: Hero Subtext
             name: hero_sub
             widget: text
+            required: false
           - label: Packages
             name: packages
             widget: list
+            required: false
             fields:
               - label: Icon (emoji)
                 name: icon
                 widget: string
+                required: false
               - label: Package Name
                 name: name
                 widget: string
+                required: false
               - label: Subtitle
                 name: subtitle
                 widget: string
+                required: false
               - label: Price
                 name: price
                 widget: string
+                required: false
               - label: Price Note
                 name: price_note
                 widget: string
+                required: false
               - label: Mark as Featured / Most Popular
                 name: featured
                 widget: boolean
@@ -320,34 +389,44 @@ collections:
               - label: Features (bullet points)
                 name: features
                 widget: list
+                required: false
               - label: Button Text
                 name: cta
                 widget: string
+                required: false
           - label: Packages Note (shown below grid)
             name: packages_note
             widget: string
+            required: false
           - label: FAQ Section Heading
             name: faq_heading
             widget: string
+            required: false
           - label: FAQs
             name: faqs
             widget: list
+            required: false
             fields:
               - label: Question
                 name: question
                 widget: string
+                required: false
               - label: Answer
                 name: answer
                 widget: text
+                required: false
           - label: CTA Heading
             name: cta_heading
             widget: string
+            required: false
           - label: CTA Subtext
             name: cta_sub
             widget: text
+            required: false
           - label: CTA Button Text
             name: cta_button
             widget: string
+            required: false
 
       - name: contact
         label: Contact Page
@@ -356,24 +435,31 @@ collections:
           - label: SEO Description
             name: description
             widget: text
+            required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
             widget: string
+            required: false
           - label: Hero Headline
             name: hero_headline
             widget: string
+            required: false
           - label: Hero Subtext
             name: hero_sub
             widget: text
+            required: false
           - label: Info Section Heading
             name: info_heading
             widget: string
+            required: false
           - label: Info Text
             name: info_text
             widget: text
+            required: false
           - label: Email Address
             name: email
             widget: string
+            required: false
           - label: Booking Link URL
             name: booking_url
             widget: string
@@ -393,28 +479,36 @@ collections:
           - label: Form Heading
             name: form_heading
             widget: string
+            required: false
           - label: Form Subtext
             name: form_sub
             widget: string
+            required: false
           - label: Form Button Text
             name: form_button
             widget: string
+            required: false
           - label: Service Options (dropdown)
             name: service_options
             widget: list
+            required: false
           - label: "What Happens Next — Heading"
             name: expect_heading
             widget: string
+            required: false
           - label: "What Happens Next — Steps"
             name: expect_steps
             widget: list
+            required: false
             fields:
               - label: Step Title
                 name: title
                 widget: string
+                required: false
               - label: Step Description
                 name: description
                 widget: text
+                required: false
 
       - name: project
         label: Featured Case Study
@@ -423,21 +517,27 @@ collections:
           - label: SEO Description
             name: description
             widget: text
+            required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
             widget: string
+            required: false
           - label: Hero Headline
             name: hero_headline
             widget: string
+            required: false
           - label: Hero Subtext
             name: hero_sub
             widget: text
+            required: false
           - label: Client Name
             name: client
             widget: string
+            required: false
           - label: Service Provided
             name: service
             widget: string
+            required: false
           - label: Industry
             name: industry
             widget: string
@@ -449,25 +549,32 @@ collections:
           - label: Results (top stats)
             name: results
             widget: list
+            required: false
             fields:
               - label: Number (e.g. 150%)
                 name: number
                 widget: string
+                required: false
               - label: Label
                 name: label
                 widget: string
+                required: false
           - label: Challenge Section Heading
             name: challenge_heading
             widget: string
+            required: false
           - label: Challenge Text
             name: challenge_text
             widget: text
+            required: false
           - label: Approach Section Heading
             name: approach_heading
             widget: string
+            required: false
           - label: Approach Text
             name: approach_text
             widget: text
+            required: false
           - label: Approach Bullet Points
             name: approach_bullets
             widget: list
@@ -475,9 +582,11 @@ collections:
           - label: Results Section Heading
             name: outcome_heading
             widget: string
+            required: false
           - label: Results Text
             name: outcome_text
             widget: text
+            required: false
           - label: Client Testimonial Quote
             name: testimonial_quote
             widget: text
@@ -493,12 +602,15 @@ collections:
           - label: CTA Heading
             name: cta_heading
             widget: string
+            required: false
           - label: CTA Subtext
             name: cta_sub
             widget: text
+            required: false
           - label: CTA Button Text
             name: cta_button
             widget: string
+            required: false
 
   - name: testimonials
     label: Testimonials
@@ -511,9 +623,11 @@ collections:
       - label: Title and Company
         name: title
         widget: string
+        required: false
       - label: Quote
         name: quote
         widget: text
+        required: false
       - label: Photo
         name: photo
         widget: image
