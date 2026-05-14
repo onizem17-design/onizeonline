@@ -5,9 +5,26 @@ hero_eyebrow: SaaS Content · SEO · AI Visibility
 hero_headline: Get familiar with seeing your content show up on Google and AI
   platforms — and win signups
 hero_cta: Oh yes, I want that.
-value_heading: Scaled content doesn't have to be garbage
-value_intro: "AI Content shouldn't be a trade off between quality and quantity,
-  but that's if you bring in an expert eyes that can:"
+value_heading: Garbage content is killing your brand reputation and revenue
+value_intro: >-
+  If the content on your website is not building positive sentiment for your
+  brand and helping your target audience make faster buying decisions, it's
+  failing.
+
+
+  And No! It's a factor of how you created it: AI assisted or not. It's a factor of the skillset of your content expert. 
+
+
+  A good content engine should be built around the: 
+
+
+  * Pain points of your target audience
+
+  * Solutions your software offer
+
+  * Tell a consistent, cohesive and engaging story
+
+  * Well optimized for search engine and AI visibility
 value_bullets:
   - Build you a strategy based on real customer pain point (no compromise!)
   - Build content workflows based on years of pruned and reliable process
