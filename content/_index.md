@@ -2,10 +2,10 @@
 hero_photo: /images/uploads/image.jpg
 speech_bubble: 👋Hi, I'm Onize, your content strategy and writing partner
 hero_eyebrow: SaaS Content · SEO · AI Visibility
-hero_headline: Get familiar with seeing your content show up on Google and AI
-  platforms — and win signups
+hero_headline: "# Get familiar with seeing your content show up on Google and AI
+  platforms — and win signups"
 hero_cta: Oh yes, I want that.
-value_heading: Garbage content is killing your brand reputation and revenue
+value_heading: "## Garbage content is killing your brand reputation and revenue"
 value_intro: >-
   If the content on your website is not building positive sentiment for your
   brand and helping your target audience make faster buying decisions, it's
@@ -15,21 +15,13 @@ value_intro: >-
   And No! It's a factor of how you created it: AI assisted or not. It's a factor of the skillset of your content expert. 
 
 
-  A good content engine should be built around the: 
-
-
-  * Pain points of your target audience
-
-  * Solutions your software offer
-
-  * Tell a consistent, cohesive and engaging story
-
-  * Well optimized for search engine and AI visibility
+  A good content engine should be built around the:
 value_bullets:
-  - Build you a strategy based on real customer pain point (no compromise!)
-  - Build content workflows based on years of pruned and reliable process
-  - Take AI outputs from good enough to gems that position your brand as a
-    trusted and valuable resource
+  - Pain points of your target audience
+  - Solutions your software offer
+  - Tell a consistent
+  - cohesive and engaging story
+  - Well optimized for search engine and AI visibility
 value_cta: Say no more. Let's talk →
 brands:
   - Tripledart
