@@ -45,6 +45,11 @@ body::before {
   content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   box-shadow: inset 0 0 60px 15px rgba(139,99,71,0.15), inset 0 0 120px 30px rgba(139,99,71,0.08);
   pointer-events: none; z-index: 9999;
+  animation: borderGlow 4s ease-in-out infinite;
+}
+@keyframes borderGlow {
+  0%, 100% { box-shadow: inset 0 0 60px 15px rgba(139,99,71,0.15), inset 0 0 120px 30px rgba(139,99,71,0.08); }
+  50% { box-shadow: inset 0 0 80px 25px rgba(139,99,71,0.22), inset 0 0 150px 40px rgba(139,99,71,0.12); }
 }
 h1,h2,h3,h4 { font-family: 'DM Serif Display', serif; line-height: 1.15; }
 a { text-decoration: none; color: inherit; }
