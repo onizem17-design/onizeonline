@@ -7,21 +7,22 @@ hero_headline: "# Get familiar with seeing your content show up on Google and AI
 hero_cta: Oh yes, I want that.
 value_heading: "## Garbage content is killing your brand reputation and revenue"
 value_intro: >-
-  If the content on your website is not building positive sentiment for your
-  brand and helping your target audience make faster buying decisions, it's
-  failing.
+  
+
+  If your content isn't building positive sentiment and helping your audience make faster buying decisions, it's failing.
 
 
-  And No! It's a factor of how you created it: AI assisted or not. It's a factor of the skillset of your content expert. 
+  And no, it's not about whether it's AI-assisted or not. It's about the skillset behind it.
 
 
-  A good content engine should be built around the:
+  A strong content engine is built around:
 value_bullets:
-  - Pain points of your target audience
-  - Solutions your software offer
-  - Tell a consistent
-  - cohesive and engaging story
-  - Well optimized for search engine and AI visibility
+  - Your audience's pain points
+  - The solutions your software provides
+  - A consistent
+  - cohesive
+  - and engaging story
+  - Search engines and AI platforms optimization
 value_cta: Say no more. Let's talk →
 brands:
   - Tripledart
