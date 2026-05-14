@@ -4,7 +4,7 @@ speech_bubble: 👋Hi, I'm Onize, your content strategy and writing partner
 hero_eyebrow: SaaS Content · SEO · AI Visibility
 hero_headline: "# Get familiar with seeing your content show up on Google and AI
   platforms — and win signups"
-hero_cta: Oh yes, I want that.
+hero_cta: Oh yes, I want that
 value_heading: "## Garbage content is killing your brand reputation and revenue"
 value_intro: >-
   If your content isn't building positive sentiment and helping your audience
@@ -25,8 +25,6 @@ value_intro: >-
 
   * Search engines and AI platforms optimization
 value_bullets: []
-value_bullet_style: arrow
-value_closing: "And that's me."
 value_cta: Say no more. Let's talk →
 brands:
   - Tripledart
