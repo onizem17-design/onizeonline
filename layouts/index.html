@@ -196,7 +196,7 @@
   <!-- SOCIAL PROOF -->
   <section class="proof-bar">
     <div class="proof-bar-inner">
-      <p class="proof-label reveal">I've helped these brands</p>
+      <p class="proof-label reveal">{{ with .Params.proof_label }}{{ . }}{{ else }}I've helped these brands{{ end }}</p>
       <div class="brand-logos reveal">
         {{ range .Params.brands }}<span class="brand-logo">{{ . }}</span>{{ end }}
       </div>

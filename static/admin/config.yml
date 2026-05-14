@@ -107,6 +107,11 @@ collections:
             name: value_cta
             widget: string
             required: false
+          - label: Social Proof Label
+            name: proof_label
+            widget: string
+            required: false
+            hint: "Text shown above the brand logos (e.g. 'I've helped these brands')"
           - label: Client Brands
             name: brands
             widget: list
