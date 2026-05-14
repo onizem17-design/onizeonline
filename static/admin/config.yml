@@ -89,7 +89,7 @@ collections:
             default: "arrow"
             required: false
             hint: "Choose the bullet style for the value section list"
-- label: Value Section Button Text
+          - label: Value Section Button Text
             name: value_cta
             widget: string
             required: false
