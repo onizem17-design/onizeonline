@@ -14,20 +14,16 @@ value_intro: >-
   And no, it's not about whether it's AI-assisted or not. It's about the skillset behind it.
 
 
-  A strong content engine is built around:\
+  A strong content engine is built around:
 
-  \
 
   * Your audience's pain points
 
+  * The solutions your software provides
 
-  \* The solutions your software provides
+  * Consistent, cohesive, and engaging stories
 
-
-  \* A consistent, cohesive, and engaging story
-
-
-  \* Search engines and AI platforms optimization
+  * Search engines and AI platforms optimization
 value_bullets: []
 value_bullet_style: arrow
 value_closing: "And that's me."
