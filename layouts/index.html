@@ -2,48 +2,64 @@
 <style>
   /* ─── HERO ─── */
   .hero {
-    position: relative;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 140px 24px 100px; background: var(--nude-light);
-    overflow: visible;
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; padding: 80px 0 0; background: var(--nude-light);
   }
   [data-theme="dark"] .hero { background: var(--olive-dark); }
-  .hero-copy {
-    max-width: 720px; text-align: center; margin: 0 auto;
+  .hero-stage {
+    position: relative; z-index: 2;
+    display: flex; align-items: flex-end; justify-content: center;
+    max-width: 1000px; width: 100%; padding: 120px 40px 0;
   }
-  .hero-copy h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-    color: var(--olive-dark); line-height: 1.2; margin-bottom: 28px;
+  .hero-photo-col { position: relative; flex-shrink: 0; z-index: 2; margin-right: -48px; }
+  .hero-photo-wrap {
+    width: 290px; height: 480px; overflow: hidden;
+    border-radius: 4px 4px 0 0; box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    background: var(--nude);
   }
-  [data-theme="dark"] .hero-copy h1 { color: var(--nude-light); }
-  .hero-copy h1 span { color: var(--brown); font-style: italic; }
-  .hero-sub {
-    font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 12px;
+  .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .hero-photo-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #d4c8ae 0%, var(--brown-light) 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.85); font-size: 0.82rem; font-weight: 500; gap: 10px;
+    text-align: center; padding: 20px;
   }
-  [data-theme="dark"] .hero-sub { color: var(--nude); }
-  .hero-lead { font-weight: 600; color: var(--text-dark); margin-bottom: 8px; font-size: 1rem; }
-  [data-theme="dark"] .hero-lead { color: var(--nude-light); }
-  .hero-bullets {
-    list-style: none; display: flex; flex-direction: column; gap: 10px;
-    text-align: left; max-width: 540px; margin: 0 auto 36px;
+  .speech-bubble {
+    position: absolute; top: 52px; left: -168px;
+    background: var(--olive-dark); color: var(--nude-light);
+    padding: 11px 16px; border-radius: 14px 14px 4px 14px;
+    font-size: 0.8rem; font-weight: 500; line-height: 1.4; width: 155px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    animation: float 3s ease-in-out infinite; z-index: 5;
   }
-  .hero-bullets li {
-    font-size: 0.95rem; color: var(--text-mid); line-height: 1.5;
-    display: flex; align-items: flex-start; gap: 10px;
+  .speech-bubble::after {
+    content: ''; position: absolute; top: 14px; right: -10px;
+    border-width: 8px 0 8px 10px; border-style: solid;
+    border-color: transparent transparent transparent var(--olive-dark);
   }
-  [data-theme="dark"] .hero-bullets li { color: var(--nude); }
-  .hero-bullets li::before { content: '→'; color: var(--brown); flex-shrink: 0; font-weight: 600; }
-  .hero-photo-float {
-    position: relative; z-index: 10;
-    width: 180px; height: 180px;
-    border-radius: 50%; overflow: hidden;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.2);
-    border: 4px solid var(--white);
-    margin: 40px auto -90px;
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  [data-theme="dark"] .speech-bubble { background: var(--brown); }
+  [data-theme="dark"] .speech-bubble::after { border-color: transparent transparent transparent var(--brown); }
+  .hero-card {
+    background: var(--white); padding: 56px 52px 56px 72px;
+    border-radius: 2px 2px 0 0; box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+    max-width: 460px; flex-shrink: 0; z-index: 3; align-self: flex-end;
   }
-  [data-theme="dark"] .hero-photo-float { border-color: var(--olive-dark); }
-  .hero-photo-float img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  [data-theme="dark"] .hero-card { background: var(--olive-dark); }
+  .hero-eyebrow {
+    display: inline-block; background: var(--nude); color: var(--brown);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 50px; margin-bottom: 20px;
+  }
+  [data-theme="dark"] .hero-eyebrow { background: var(--olive-mid); color: var(--nude-light); }
+  .hero-card h1 {
+    font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    color: var(--olive-dark); line-height: 1.15; margin-bottom: 32px;
+  }
+  [data-theme="dark"] .hero-card h1 { color: var(--nude-light); }
+  .hero-card h1 span { color: var(--brown); font-style: italic; }
 
   /* ─── SOCIAL PROOF ─── */
   .proof-bar { background: var(--olive-dark); padding: 48px 24px; }
@@ -58,28 +74,6 @@
   .stat-num span { color: var(--brown-light); }
   .stat-desc { font-size: 0.8rem; color: rgba(239,227,202,0.55); margin-top: 6px; line-height: 1.4; }
   .stat-badge { display: inline-block; background: var(--brown); color: white; font-size: 0.65rem; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; margin-bottom: 6px; }
-
-  /* ─── INTRO ─── */
-  .intro-section {
-    background: var(--olive-dark); padding: 120px 24px 80px; text-align: center;
-  }
-  [data-theme="dark"] .intro-section { background: #1A2012; }
-  .intro-inner { max-width: 700px; margin: 0 auto; }
-  .intro-inner h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    color: var(--nude-light); line-height: 1.3; margin-bottom: 24px;
-  }
-  .intro-inner h2 em { font-style: italic; color: var(--brown-light); }
-  .intro-sub {
-    font-size: 1rem; color: rgba(239,227,202,0.75); line-height: 1.75; margin-bottom: 20px;
-  }
-  .intro-section .hero-bullets {
-    text-align: left; max-width: 500px; margin: 0 auto 36px;
-  }
-  .intro-section .hero-bullets li { color: rgba(239,227,202,0.85); }
-  .intro-section .hero-bullets li::before { color: var(--brown-light); }
-  .intro-section .btn-primary { margin-top: 8px; }
 
   /* ─── VALUE ─── */
   .value-section { padding: 100px 24px; background: var(--bg); }
@@ -138,9 +132,12 @@
 
   /* Responsive */
   @media(max-width: 900px) {
-    .hero { padding: 120px 20px 80px; }
-    .hero-copy h1 { font-size: 1.6rem; }
-    .hero-photo-float { width: 140px; height: 140px; margin: 32px auto -70px; }
+    .hero-stage { flex-direction: column; align-items: center; padding: 100px 20px 0; }
+    .hero-photo-col { margin-right: 0; margin-bottom: -20px; z-index: 3; }
+    .hero-photo-wrap { width: 220px; height: 300px; border-radius: 4px; }
+    .speech-bubble { left: -10px; top: -60px; width: 140px; font-size: 0.75rem; }
+    .speech-bubble::after { display: none; }
+    .hero-card { padding: 36px 28px; text-align: center; border-radius: 8px 8px 0 0; width: 100%; max-width: 100%; }
     .value-inner { grid-template-columns: 1fr; }
     .testi-grid, .services-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2,1fr); }
@@ -152,32 +149,22 @@
 {{ define "main" }}
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-copy">
-      <span class="hero-eyebrow">{{ .Params.hero_eyebrow }}</span>
-      <h1>{{ .Params.hero_headline }}</h1>
-      <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
-    </div>
-    <div class="hero-photo-float">
-      {{ with .Params.hero_photo }}
-        <img src="{{ . }}" alt="Onize Muhammed"/>
-      {{ else }}
-        <img src="/images/uploads/image.jpg" alt="Onize Muhammed"/>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- INTRO -->
-  <section class="intro-section">
-    <div class="intro-inner">
-      <h2>I'm <em>Onize</em>, your partner in moving your company towards its online visibility and revenue through Content strategies and writing</h2>
-      <p class="intro-sub">Whether you want AI assisted content or fully human content engine, one thing is sure, you won't get pieces that simply check the box. But ones that:</p>
-      <ul class="hero-bullets">
-        <li>Reveal the pains of your target audience</li>
-        <li>Show how your software solves them</li>
-        <li>Wrapped in cohesive storytelling</li>
-        <li>Well optimized for search engine and AI visibility</li>
-      </ul>
-      <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
+    <div class="hero-stage reveal">
+      <div class="hero-photo-col">
+        <div class="speech-bubble">Hi, I'm Onize, your content partner ✨</div>
+        <div class="hero-photo-wrap">
+          {{ with .Params.hero_photo }}
+            <img src="{{ . }}" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
+          {{ else }}
+            <img src="/images/uploads/image.jpg" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
+          {{ end }}
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="hero-eyebrow">{{ .Params.hero_eyebrow }}</span>
+        <h1>{{ .Params.hero_headline }}</h1>
+        <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
+      </div>
     </div>
   </section>
 
