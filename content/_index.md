@@ -9,6 +9,7 @@ hero_headline: "# Get familiar with seeing your content show up on Google and AI
   platforms — and win signups"
 hero_cta: Oh yes, I want that
 value_heading: "## Garbage content is killing your brand reputation and revenue"
+proof_label: Brands and agencies I've worked with brands and worked
 brands:
   - Tripledart
   - Docupilot
