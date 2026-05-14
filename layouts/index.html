@@ -151,7 +151,7 @@
   <section class="hero" id="home">
     <div class="hero-stage reveal">
       <div class="hero-photo-col">
-        <div class="speech-bubble">Hi, I'm Onize, your content partner ✨</div>
+        <div class="speech-bubble">{{ with .Params.speech_bubble }}{{ . }}{{ else }}Hi, I'm Onize, your content partner ✨{{ end }}</div>
         <div class="hero-photo-wrap">
           {{ with .Params.hero_photo }}
             <img src="{{ . }}" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
@@ -160,8 +160,7 @@
           {{ end }}
         </div>
       </div>
-      <div class="hero-card">
-        <span class="hero-eyebrow">{{ .Params.hero_eyebrow }}</span>
+      <div class="hero-card" style="text-align: center;">
         <h1>{{ .Params.hero_headline }}</h1>
         <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
       </div>

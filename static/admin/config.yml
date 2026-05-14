@@ -57,6 +57,11 @@ collections:
             widget: image
             required: false
             hint: "Your headshot shown in the homepage hero section"
+          - label: Speech Bubble Text
+            name: speech_bubble
+            widget: string
+            required: false
+            hint: "The floating speech bubble next to your photo (e.g. Hi, I'm Onize, your content partner)"
           - label: Hero Eyebrow Text
             name: hero_eyebrow
             widget: string
