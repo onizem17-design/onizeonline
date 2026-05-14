@@ -2,9 +2,10 @@
 <style>
   /* ─── HERO ─── */
   .hero {
-    position: relative; min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden; padding: 56px 0 0; background: var(--nude-light);
+    position: relative; z-index: 1;
+    display: flex; align-items: flex-end; justify-content: center;
+    overflow: visible; padding: 56px 0 0; background: var(--nude-light);
+    min-height: 80vh;
   }
   [data-theme="dark"] .hero { background: var(--olive-dark); }
   .hero-stage {
@@ -76,7 +77,7 @@
   .stat-badge { display: inline-block; background: var(--brown); color: white; font-size: 0.65rem; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; margin-bottom: 6px; }
 
   /* ─── VALUE ─── */
-  .value-section { padding: 100px 24px; background: rgba(59,74,47,0.12); margin-top: -120px; position: relative; z-index: 5; }
+  .value-section { padding: 100px 24px; background: rgba(59,74,47,0.12); overflow: hidden; position: relative; z-index: 0; }
   [data-theme="dark"] .value-section { background: rgba(59,74,47,0.35); }
   .value-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .section-tag { font-size: 0.72rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; color: var(--brown); margin-bottom: 16px; }
@@ -90,7 +91,7 @@
   .value-content[data-bullet="dot"] ul li::before { content: '•'; }
   .value-content[data-bullet="check"] ul li::before { content: '✓'; }
   .value-content[data-bullet="dash"] ul li::before { content: '—'; }
-  .value-img-wrap { border-radius: 24px; overflow: hidden; background: var(--nude); min-height: 380px; display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 48px rgba(59,74,47,0.1); }
+  .value-img-wrap { border-radius: 24px; overflow: hidden; background: var(--nude); min-height: 280px; max-height: 100%; display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 48px rgba(59,74,47,0.1); }
   [data-theme="dark"] .value-img-wrap { background: var(--olive-mid); }
   .value-img-placeholder { font-size: 0.85rem; color: var(--text-light); text-align: center; padding: 40px; }
 
