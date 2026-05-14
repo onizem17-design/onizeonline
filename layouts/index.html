@@ -181,7 +181,6 @@
       <div class="reveal">
         <h2>{{ .Params.value_heading | markdownify }}</h2>
         <div class="value-content" data-bullet="{{ with .Params.value_bullet_style }}{{ . }}{{ else }}arrow{{ end }}">{{ .Params.value_intro | markdownify }}</div>
-        {{ with .Params.value_closing }}<p style="font-weight:500; color:var(--text);">{{ . | markdownify }}</p>{{ end }}
         <br/>
         <a href="#contact" class="btn-primary">{{ .Params.value_cta }}</a>
       </div>

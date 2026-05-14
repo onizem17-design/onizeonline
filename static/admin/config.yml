@@ -89,12 +89,7 @@ collections:
             default: "arrow"
             required: false
             hint: "Choose the bullet style for the value section list"
-          - label: Value Closing Text
-            name: value_closing
-            widget: string
-            required: false
-            hint: "Text shown after the bullet points (e.g. 'And that's me.')"
-          - label: Value Section Button Text
+- label: Value Section Button Text
             name: value_cta
             widget: string
             required: false
