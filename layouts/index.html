@@ -66,8 +66,11 @@
   .proof-bar { background: var(--olive-dark); padding: 48px 24px; }
   .proof-bar-inner { max-width: 1140px; margin: 0 auto; }
   .proof-label { text-align: center; font-size: 0.72rem; letter-spacing: 2.5px; font-weight: 600; text-transform: uppercase; color: rgba(239,227,202,0.5); margin-bottom: 28px; }
-  .brand-logos { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px 32px; margin-bottom: 48px; }
-  .brand-logo { font-family: 'DM Serif Display', serif; font-size: 1rem; color: rgba(239,227,202,0.7); padding: 6px 16px; border: 1px solid rgba(239,227,202,0.15); border-radius: 50px; transition: all 0.2s; }
+  .brand-logos { overflow: hidden; margin-bottom: 48px; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+  .brand-track { display: flex; align-items: center; gap: 32px; width: max-content; animation: marquee 15s linear infinite; }
+  .brand-track:hover { animation-play-state: paused; }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .brand-logo { font-family: 'DM Serif Display', serif; font-size: 1rem; color: rgba(239,227,202,0.7); padding: 6px 16px; border: 1px solid rgba(239,227,202,0.15); border-radius: 50px; white-space: nowrap; flex-shrink: 0; transition: all 0.2s; }
   .brand-logo:hover { color: var(--nude-light); border-color: rgba(239,227,202,0.4); }
   .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; border-top: 1px solid rgba(239,227,202,0.1); padding-top: 40px; }
   .stat-item { text-align: center; }
@@ -198,7 +201,10 @@
     <div class="proof-bar-inner">
       <p class="proof-label reveal">{{ with .Params.proof_label }}{{ . }}{{ else }}I've helped these brands{{ end }}</p>
       <div class="brand-logos reveal">
-        {{ range .Params.brands }}<span class="brand-logo">{{ . }}</span>{{ end }}
+        <div class="brand-track">
+          {{ range .Params.brands }}<span class="brand-logo">{{ . }}</span>{{ end }}
+          {{ range .Params.brands }}<span class="brand-logo">{{ . }}</span>{{ end }}
+        </div>
       </div>
       <div class="stats-grid">
         {{ range .Params.stats }}
