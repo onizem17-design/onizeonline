@@ -29,6 +29,8 @@ value_intro: >-
 
   \* Search engines and AI platforms optimization
 value_bullets: []
+value_bullet_style: arrow
+value_closing: "And that's me."
 value_cta: Say no more. Let's talk →
 brands:
   - Tripledart
