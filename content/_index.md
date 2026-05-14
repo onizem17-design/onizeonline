@@ -15,21 +15,13 @@ value_intro: >-
   And No! It's a factor of how you created it: AI assisted or not. It's a factor of the skillset of your content expert. 
 
 
-  A good content engine should be built around the: 
-
-
-  * Pain points of your target audience
-
-  * Solutions your software offer
-
-  * Tell a consistent, cohesive and engaging story
-
-  * Well optimized for search engine and AI visibility
+  A good content engine should be built around the:
 value_bullets:
-  - Build you a strategy based on real customer pain point (no compromise!)
-  - Build content workflows based on years of pruned and reliable process
-  - Take AI outputs from good enough to gems that position your brand as a
-    trusted and valuable resource
+  - Pain points of your target audience
+  - Solutions your software offer
+  - Tell a consistent
+  - cohesive and engaging story
+  - Well optimized for search engine and AI visibility
 value_cta: Say no more. Let's talk →
 brands:
   - Tripledart
