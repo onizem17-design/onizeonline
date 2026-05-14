@@ -2,10 +2,10 @@
 hero_photo: /images/uploads/image.jpg
 speech_bubble: 👋Hi, I'm Onize, your content strategy and writing partner
 hero_eyebrow: SaaS Content · SEO · AI Visibility
-hero_headline: Get familiar with seeing your content show up on Google and AI
-  platforms — and win signups
+hero_headline: "# Get familiar with seeing your content show up on Google and AI
+  platforms — and win signups"
 hero_cta: Oh yes, I want that.
-value_heading: Garbage content is killing your brand reputation and revenue
+value_heading: "## Garbage content is killing your brand reputation and revenue"
 value_intro: >-
   If the content on your website is not building positive sentiment for your
   brand and helping your target audience make faster buying decisions, it's
