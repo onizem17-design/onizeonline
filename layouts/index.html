@@ -151,7 +151,7 @@
   <section class="hero" id="home">
     <div class="hero-stage reveal">
       <div class="hero-photo-col">
-        <div class="speech-bubble">{{ with .Params.speech_bubble }}{{ . }}{{ else }}Hi, I'm Onize, your content partner ✨{{ end }}</div>
+        <div class="speech-bubble">{{ with .Params.speech_bubble }}{{ . | markdownify }}{{ else }}Hi, I'm Onize, your content partner ✨{{ end }}</div>
         <div class="hero-photo-wrap">
           {{ with .Params.hero_photo }}
             <img src="{{ . }}" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
@@ -161,7 +161,7 @@
         </div>
       </div>
       <div class="hero-card" style="text-align: center;">
-        <h1>{{ .Params.hero_headline }}</h1>
+        <h1>{{ .Params.hero_headline | markdownify }}</h1>
         <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
       </div>
     </div>
@@ -171,10 +171,10 @@
   <section class="value-section" id="about">
     <div class="value-inner container">
       <div class="reveal">
-        <h2>{{ .Params.value_heading }}</h2>
-        <p>{{ .Params.value_intro }}</p>
+        <h2>{{ .Params.value_heading | markdownify }}</h2>
+        <div>{{ .Params.value_intro | markdownify }}</div>
         <ul class="value-list">
-          {{ range .Params.value_bullets }}<li>{{ . }}</li>{{ end }}
+          {{ range .Params.value_bullets }}<li>{{ . | markdownify }}</li>{{ end }}
         </ul>
         <p style="font-weight:500; color:var(--text);">And that's me.</p>
         <br/>
@@ -215,9 +215,9 @@
         <div class="value-img-placeholder">[ Insert your image here ]</div>
       </div>
       <div class="reveal">
-        <h2>{{ .Params.ai_heading }}</h2>
+        <h2>{{ .Params.ai_heading | markdownify }}</h2>
         <ul class="value-list" style="margin-top: 24px;">
-          {{ range .Params.ai_bullets }}<li>{{ . }}</li>{{ end }}
+          {{ range .Params.ai_bullets }}<li>{{ . | markdownify }}</li>{{ end }}
         </ul>
       </div>
     </div>
@@ -233,7 +233,7 @@
       <div class="testi-grid">
         {{ range .Params.testimonials }}
         <div class="testi-card reveal">
-          <p class="testi-text">"{{ .quote }}"</p>
+          <div class="testi-text">{{ .quote | markdownify }}</div>
           <div class="testi-author">
             <div class="testi-avatar">
               {{ $name := .name }}

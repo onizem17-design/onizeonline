@@ -29,7 +29,7 @@ collections:
         widget: datetime
       - label: Description
         name: description
-        widget: text
+        widget: markdown
         required: false
         hint: "Shown in Google search results and on the blog listing page. Keep under 160 characters."
       - label: Featured Image
@@ -59,16 +59,16 @@ collections:
             hint: "Your headshot shown in the homepage hero section"
           - label: Speech Bubble Text
             name: speech_bubble
-            widget: string
+            widget: markdown
             required: false
-            hint: "The floating speech bubble next to your photo (e.g. Hi, I'm Onize, your content partner)"
+            hint: "The floating speech bubble next to your photo"
           - label: Hero Eyebrow Text
             name: hero_eyebrow
-            widget: string
+            widget: markdown
             required: false
           - label: Hero Headline
             name: hero_headline
-            widget: string
+            widget: markdown
             required: false
           - label: Hero Button Text
             name: hero_cta
@@ -76,11 +76,11 @@ collections:
             required: false
           - label: Value Section Heading
             name: value_heading
-            widget: string
+            widget: markdown
             required: false
           - label: Value Section Intro
             name: value_intro
-            widget: text
+            widget: markdown
             required: false
           - label: Value Bullet Points
             name: value_bullets
@@ -120,7 +120,7 @@ collections:
                 required: false
           - label: AI Section Heading
             name: ai_heading
-            widget: string
+            widget: markdown
             required: false
           - label: AI Section Bullet Points
             name: ai_bullets
@@ -133,7 +133,7 @@ collections:
             fields:
               - label: Quote
                 name: quote
-                widget: text
+                widget: markdown
                 required: false
               - label: Client Name
                 name: name
@@ -184,7 +184,7 @@ collections:
         fields:
           - label: SEO Description
             name: description
-            widget: text
+            widget: markdown
             required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
@@ -196,7 +196,7 @@ collections:
             required: false
           - label: Hero Subtext
             name: hero_sub
-            widget: text
+            widget: markdown
             required: false
           - label: Bio Section Tag
             name: bio_tag
@@ -213,7 +213,7 @@ collections:
             hint: "Each item is one paragraph"
           - label: Fun Fact / Highlight
             name: fun_fact
-            widget: text
+            widget: markdown
             required: false
           - label: Expertise Section Tag
             name: expertise_tag
@@ -247,7 +247,7 @@ collections:
                 required: false
               - label: Description
                 name: description
-                widget: text
+                widget: markdown
                 required: false
           - label: CTA Heading
             name: cta_heading
@@ -255,7 +255,7 @@ collections:
             required: false
           - label: CTA Subtext
             name: cta_sub
-            widget: text
+            widget: markdown
             required: false
           - label: CTA Button Text
             name: cta_button
@@ -268,7 +268,7 @@ collections:
         fields:
           - label: SEO Description
             name: description
-            widget: text
+            widget: markdown
             required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
@@ -280,7 +280,7 @@ collections:
             required: false
           - label: Hero Subtext
             name: hero_sub
-            widget: text
+            widget: markdown
             required: false
           - label: Projects
             name: projects
@@ -297,7 +297,7 @@ collections:
                 required: false
               - label: Description
                 name: description
-                widget: text
+                widget: markdown
                 required: false
               - label: Tags
                 name: tags
@@ -334,7 +334,7 @@ collections:
             required: false
           - label: CTA Subtext
             name: cta_sub
-            widget: text
+            widget: markdown
             required: false
           - label: CTA Button Text
             name: cta_button
@@ -347,7 +347,7 @@ collections:
         fields:
           - label: SEO Description
             name: description
-            widget: text
+            widget: markdown
             required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
@@ -359,7 +359,7 @@ collections:
             required: false
           - label: Hero Subtext
             name: hero_sub
-            widget: text
+            widget: markdown
             required: false
           - label: Packages
             name: packages
@@ -418,7 +418,7 @@ collections:
                 required: false
               - label: Answer
                 name: answer
-                widget: text
+                widget: markdown
                 required: false
           - label: CTA Heading
             name: cta_heading
@@ -426,7 +426,7 @@ collections:
             required: false
           - label: CTA Subtext
             name: cta_sub
-            widget: text
+            widget: markdown
             required: false
           - label: CTA Button Text
             name: cta_button
@@ -439,7 +439,7 @@ collections:
         fields:
           - label: SEO Description
             name: description
-            widget: text
+            widget: markdown
             required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
@@ -451,7 +451,7 @@ collections:
             required: false
           - label: Hero Subtext
             name: hero_sub
-            widget: text
+            widget: markdown
             required: false
           - label: Info Section Heading
             name: info_heading
@@ -459,7 +459,7 @@ collections:
             required: false
           - label: Info Text
             name: info_text
-            widget: text
+            widget: markdown
             required: false
           - label: Email Address
             name: email
@@ -512,7 +512,7 @@ collections:
                 required: false
               - label: Step Description
                 name: description
-                widget: text
+                widget: markdown
                 required: false
 
       - name: project
@@ -521,7 +521,7 @@ collections:
         fields:
           - label: SEO Description
             name: description
-            widget: text
+            widget: markdown
             required: false
           - label: Hero Eyebrow
             name: hero_eyebrow
@@ -533,7 +533,7 @@ collections:
             required: false
           - label: Hero Subtext
             name: hero_sub
-            widget: text
+            widget: markdown
             required: false
           - label: Client Name
             name: client
@@ -570,7 +570,7 @@ collections:
             required: false
           - label: Challenge Text
             name: challenge_text
-            widget: text
+            widget: markdown
             required: false
           - label: Approach Section Heading
             name: approach_heading
@@ -578,7 +578,7 @@ collections:
             required: false
           - label: Approach Text
             name: approach_text
-            widget: text
+            widget: markdown
             required: false
           - label: Approach Bullet Points
             name: approach_bullets
@@ -590,11 +590,11 @@ collections:
             required: false
           - label: Results Text
             name: outcome_text
-            widget: text
+            widget: markdown
             required: false
           - label: Client Testimonial Quote
             name: testimonial_quote
-            widget: text
+            widget: markdown
             required: false
           - label: Testimonial — Client Name
             name: testimonial_name
@@ -610,7 +610,7 @@ collections:
             required: false
           - label: CTA Subtext
             name: cta_sub
-            widget: text
+            widget: markdown
             required: false
           - label: CTA Button Text
             name: cta_button
@@ -631,7 +631,7 @@ collections:
         required: false
       - label: Quote
         name: quote
-        widget: text
+        widget: markdown
         required: false
       - label: Photo
         name: photo
