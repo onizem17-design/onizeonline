@@ -1,6 +1,6 @@
 ---
 hero_photo: /images/uploads/image.jpg
-speech_bubble: "Hi, I'm Onize, your content partner ✨"
+speech_bubble: 👋Hi, I'm Onize, your content strategy and writing partner
 hero_eyebrow: SaaS Content · SEO · AI Visibility
 hero_headline: Get familiar with seeing your content show up on Google and AI
   platforms — and win signups
