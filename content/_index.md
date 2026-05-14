@@ -1,4 +1,7 @@
 ---
+value_bullet_style: arrow
+value_cta: Say no more, let's talk
+value_bullets: []
 hero_photo: /images/uploads/image.jpg
 speech_bubble: 👋Hi, I'm Onize, your content strategy and writing partner
 hero_eyebrow: SaaS Content · SEO · AI Visibility
@@ -6,32 +9,25 @@ hero_headline: "# Get familiar with seeing your content show up on Google and AI
   platforms — and win signups"
 hero_cta: Oh yes, I want that
 value_heading: "## Garbage content is killing your brand reputation and revenue"
-value_intro: >-
-  If your content isn't building positive sentiment and helping your audience
-  make faster buying decisions, it's failing.
-
-
-  And no, it's not about whether it's AI-assisted or not. It's about the skillset behind it.
-
-
-  A strong content engine is built around:
-
-
-  * Your audience's pain points
-
-  * The solutions your software provides
-
-  * Consistent, cohesive, and engaging stories
-
-  * Search engines and AI platforms optimization
-value_bullets: []
-value_bullet_style: arrow
-value_cta: Say no more. Let's talk →
+proof_label: Brands and agencies I've worked with
 brands:
   - Tripledart
   - Docupilot
   - SaleDuo
-  - MobileText Alert
+  - Mobile Text Alert
+  - Your Content Mart
+  - Phoenix Content
+stats:
+  - number: xxx%
+    description: Traffic
+  - number: xxx
+    description: User signup
+  - badge: true
+    badge_text: Cited in AI
+    description: Mentioned and cited in Google AI overview, Google AI mode, ChatGPT,
+      Claude, Perplexity
+  - number: "1"
+    description: Average revision round per article
 ai_heading: "Search Visibility has gone beyond Google, your brand strategy has
   to align. I can help you:"
 testimonials:
@@ -70,17 +66,24 @@ ai_bullets:
   - Audit your website to find AI visibility gaps
   - Optimize your existing article to show up on AI platforms
 description: SaaS content that's visible across Google and AI platforms — and wins signups.
-stats:
-  - number: xxx%
-    description: Traffic
-  - number: xxx
-    description: User signup
-  - badge: true
-    badge_text: Cited in AI
-    description: Mentioned and cited in Google AI overview, Google AI mode, ChatGPT,
-      Claude, Perplexity
-  - number: "1"
-    description: Average revision round per article
+value_intro: >-
+  If your content isn't building positive sentiment and helping your audience
+  make faster buying decisions, it's failing.
+
+
+  And no, it's not about whether it's AI-assisted or not. It's about the skillset behind it.
+
+
+  A strong content engine is built around:
+
+
+  * Your audience's pain points
+
+  * The solutions your software provides
+
+  * Consistent, cohesive, and engaging stories
+
+  * Search engines and AI platforms optimization
 services:
   - icon: ✍️
     title: SaaS Content Writing
