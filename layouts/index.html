@@ -81,11 +81,11 @@
   [data-theme="dark"] .value-section { background: rgba(59,74,47,0.35); }
   .value-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .section-tag { font-size: 0.72rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; color: var(--brown); margin-bottom: 16px; }
-  .value-inner h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text); margin-bottom: 20px; }
+  .value-inner h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--val-color, #000000); margin-bottom: 20px; }
   .value-inner h2 em { font-style: italic; color: var(--brown); }
-  .value-inner p { color: var(--text-sub); line-height: 1.8; font-size: 1rem; margin-bottom: 24px; }
+  .value-inner p { color: var(--val-color, #000000); line-height: 1.8; font-size: 1rem; margin-bottom: 24px; }
   .value-content ul { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
-  .value-content ul li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: var(--text-sub); line-height: 1.5; }
+  .value-content ul li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: var(--val-color, #000000); line-height: 1.5; }
   .value-content ul li::before { color: var(--brown); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
   .value-content[data-bullet="arrow"] ul li::before { content: '→'; }
   .value-content[data-bullet="dot"] ul li::before { content: '•'; }
@@ -169,15 +169,17 @@
           {{ end }}
         </div>
       </div>
-      <div class="hero-card" style="text-align: center;">
-        <h1>{{ .Params.hero_headline | markdownify }}</h1>
+      <div class="hero-card" style="text-align: center;{{ with .Params.hero_text_color }}{{ if eq . "black" }} --hero-color:#000000;{{ else if eq . "brown" }} --hero-color:#8B6347;{{ else if eq . "white" }} --hero-color:#FFFFFF;{{ else }} --hero-color:#2A3320;{{ end }}{{ end }}">
+        <h1 style="{{ with .Params.hero_text_color }}color: var(--hero-color);{{ end }}">{{ .Params.hero_headline | markdownify }}</h1>
         <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
       </div>
     </div>
   </section>
 
   <!-- VALUE PROP -->
-  <section class="value-section" id="about">
+  {{ $valColor := "#000000" }}
+  {{ with .Params.value_text_color }}{{ if eq . "dark olive" }}{{ $valColor = "#2A3320" }}{{ else if eq . "brown" }}{{ $valColor = "#8B6347" }}{{ else if eq . "white" }}{{ $valColor = "#FFFFFF" }}{{ else }}{{ $valColor = "#000000" }}{{ end }}{{ end }}
+  <section class="value-section" id="about" style="color: {{ $valColor }}; --val-color: {{ $valColor }};">
     <div class="value-inner container">
       <div class="reveal">
         <h2>{{ .Params.value_heading | markdownify }}</h2>

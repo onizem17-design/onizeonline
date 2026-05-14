@@ -70,6 +70,13 @@ collections:
             name: hero_headline
             widget: markdown
             required: false
+          - label: Hero Text Color
+            name: hero_text_color
+            widget: select
+            options: ["dark olive", "black", "brown", "white"]
+            default: "dark olive"
+            required: false
+            hint: "Text color for the hero headline"
           - label: Hero Button Text
             name: hero_cta
             widget: string
@@ -78,6 +85,13 @@ collections:
             name: value_heading
             widget: markdown
             required: false
+          - label: Value Section Text Color
+            name: value_text_color
+            widget: select
+            options: ["black", "dark olive", "brown", "white"]
+            default: "black"
+            required: false
+            hint: "Text color for the value section"
           - label: Value Section Intro
             name: value_intro
             widget: markdown
@@ -120,6 +134,13 @@ collections:
                 name: description
                 widget: string
                 required: false
+          - label: AI Section Text Color
+            name: ai_text_color
+            widget: select
+            options: ["white", "cream", "black", "brown"]
+            default: "white"
+            required: false
+            hint: "Text color for the AI section"
           - label: AI Section Heading
             name: ai_heading
             widget: markdown
