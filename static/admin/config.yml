@@ -199,6 +199,11 @@ collections:
             widget: list
             required: false
             fields:
+              - label: Testimonial Title
+                name: title
+                widget: string
+                required: false
+                hint: "A short highlight heading for this testimonial"
               - label: Quote
                 name: quote
                 widget: markdown

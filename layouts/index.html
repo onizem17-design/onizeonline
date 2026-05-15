@@ -111,15 +111,16 @@
   .testimonials-header h2 { font-size: 2rem; color: var(--nude-light); }
   .see-all { font-size: 0.85rem; color: var(--brown-light); font-weight: 500; display: flex; align-items: center; gap: 6px; transition: gap 0.2s; }
   .see-all:hover { gap: 10px; }
-  .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .testi-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(239,227,202,0.1); border-radius: 20px; padding: 28px; transition: border-color 0.2s; }
+  .testi-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
+  .testi-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(239,227,202,0.1); border-radius: 24px; padding: 40px; display: flex; flex-direction: column; transition: border-color 0.2s; }
   .testi-card:hover { border-color: rgba(196,149,106,0.4); }
-  .testi-text { font-size: 0.92rem; color: #FFFFFF; line-height: 1.7; margin-bottom: 24px; }
+  .testi-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--brown-light); line-height: 1.3; margin-bottom: 20px; }
+  .testi-text { font-size: 0.95rem; color: #FFFFFF; line-height: 1.8; margin-bottom: 28px; flex: 1; }
   .testi-text strong { color: #FFFFFF; }
-  .testi-author { display: flex; align-items: center; gap: 12px; }
-  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--olive-mid); overflow: hidden; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--nude-light); }
-  .testi-name { font-size: 0.88rem; font-weight: 600; color: #FFFFFF; }
-  .testi-role { font-size: 0.78rem; color: #FFFFFF; }
+  .testi-author { display: flex; align-items: center; gap: 14px; padding-top: 20px; border-top: 1px solid rgba(239,227,202,0.1); }
+  .testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--olive-mid); overflow: hidden; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--nude-light); }
+  .testi-name { font-size: 0.92rem; font-weight: 600; color: #FFFFFF; }
+  .testi-role { font-size: 0.8rem; color: rgba(239,227,202,0.7); }
 
   /* ─── SERVICES ─── */
   .services { background: var(--bg); padding: 100px 24px; }
@@ -254,6 +255,7 @@
       <div class="testi-grid">
         {{ range .Params.testimonials }}
         <div class="testi-card reveal">
+          {{ with .title }}<div class="testi-title">{{ . }}</div>{{ end }}
           <div class="testi-text">{{ .quote | markdownify }}</div>
           <div class="testi-author">
             <div class="testi-avatar">
