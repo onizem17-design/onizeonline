@@ -160,10 +160,11 @@
 
 {{ define "main" }}
   <!-- HERO -->
+  {{ if ne .Params.hide_hero true }}
   <section class="hero" id="home">
     <div class="hero-stage reveal">
       <div class="hero-photo-col">
-        <div class="speech-bubble">{{ with .Params.speech_bubble }}{{ . | markdownify }}{{ else }}Hi, I'm Onize, your content partner ✨{{ end }}</div>
+        {{ with .Params.speech_bubble }}<div class="speech-bubble">{{ . | markdownify }}</div>{{ end }}
         <div class="hero-photo-wrap">
           {{ with .Params.hero_photo }}
             <img src="{{ . }}" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
@@ -173,41 +174,44 @@
         </div>
       </div>
       <div class="hero-card" style="text-align: center;{{ with .Params.hero_text_color }}{{ if eq . "black" }} --hero-color:#000000;{{ else if eq . "brown" }} --hero-color:#8B6347;{{ else if eq . "white" }} --hero-color:#FFFFFF;{{ else }} --hero-color:#2A3320;{{ end }}{{ end }}">
-        <h1 style="{{ with .Params.hero_text_color }}color: var(--hero-color);{{ end }}">{{ .Params.hero_headline | markdownify }}</h1>
-        <a href="#contact" class="btn-primary">{{ .Params.hero_cta }}</a>
+        {{ with .Params.hero_headline }}<h1 style="{{ with $.Params.hero_text_color }}color: var(--hero-color);{{ end }}">{{ . | markdownify }}</h1>{{ end }}
+        {{ with .Params.hero_cta }}<a href="#contact" class="btn-primary">{{ . }}</a>{{ end }}
       </div>
     </div>
   </section>
+  {{ end }}
 
   <!-- VALUE PROP -->
+  {{ if ne .Params.hide_value true }}
   {{ $valColor := "#000000" }}
   {{ with .Params.value_text_color }}{{ if eq . "dark olive" }}{{ $valColor = "#2A3320" }}{{ else if eq . "brown" }}{{ $valColor = "#8B6347" }}{{ else if eq . "white" }}{{ $valColor = "#FFFFFF" }}{{ else }}{{ $valColor = "#000000" }}{{ end }}{{ end }}
   <section class="value-section" id="about" style="color: {{ $valColor }}; --val-color: {{ $valColor }};">
     <div class="value-inner container">
       <div class="reveal">
-        <h2>{{ .Params.value_heading | markdownify }}</h2>
-        <div class="value-content" data-bullet="{{ with .Params.value_bullet_style }}{{ . }}{{ else }}arrow{{ end }}">{{ .Params.value_intro | markdownify }}</div>
-        <br/>
-        <a href="#contact" class="btn-primary">{{ .Params.value_cta }}</a>
+        {{ with .Params.value_heading }}<h2>{{ . | markdownify }}</h2>{{ end }}
+        {{ with .Params.value_intro }}<div class="value-content" data-bullet="{{ with $.Params.value_bullet_style }}{{ . }}{{ else }}arrow{{ end }}">{{ . | markdownify }}</div>{{ end }}
+        {{ with .Params.value_cta }}<br/><a href="#contact" class="btn-primary">{{ . }}</a>{{ end }}
       </div>
       <div class="value-img-wrap reveal">
         <div class="value-img-placeholder">[ Insert your workspace / brand photo here ]</div>
       </div>
     </div>
   </section>
+  {{ end }}
 
   <!-- SOCIAL PROOF -->
+  {{ if ne .Params.hide_proof true }}
   <section class="proof-bar">
     <div class="proof-bar-inner">
-      <p class="proof-label reveal">{{ with .Params.proof_label }}{{ . }}{{ else }}I've helped these brands{{ end }}</p>
-      <div class="brand-logos reveal">
+      {{ with .Params.proof_label }}<p class="proof-label reveal">{{ . }}</p>{{ end }}
+      {{ with .Params.brands }}<div class="brand-logos reveal">
         <div class="brand-track">
-          {{ range .Params.brands }}<span class="brand-logo">{{ . }}</span>{{ end }}
-          {{ range .Params.brands }}<span class="brand-logo">{{ . }}</span>{{ end }}
+          {{ range . }}<span class="brand-logo">{{ . }}</span>{{ end }}
+          {{ range . }}<span class="brand-logo">{{ . }}</span>{{ end }}
         </div>
-      </div>
-      <div class="stats-grid">
-        {{ range .Params.stats }}
+      </div>{{ end }}
+      {{ with .Params.stats }}<div class="stats-grid">
+        {{ range . }}
         <div class="stat-item reveal">
           {{ if .badge }}
             <div class="stat-badge">{{ .badge_text }}</div>
@@ -217,31 +221,35 @@
           <div class="stat-desc">{{ .description }}</div>
         </div>
         {{ end }}
-      </div>
+      </div>{{ end }}
     </div>
   </section>
+  {{ end }}
 
   <!-- AI VISIBILITY -->
+  {{ if ne .Params.hide_ai true }}
   <section class="ai-section">
     <div class="value-inner container">
       <div class="value-img-wrap reveal">
         <div class="value-img-placeholder">[ Insert your image here ]</div>
       </div>
       <div class="reveal">
-        <h2>{{ .Params.ai_heading | markdownify }}</h2>
-        <ul class="value-list" style="margin-top: 24px;">
-          {{ range .Params.ai_bullets }}<li>{{ . | markdownify }}</li>{{ end }}
-        </ul>
+        {{ with .Params.ai_heading }}<h2>{{ . | markdownify }}</h2>{{ end }}
+        {{ with .Params.ai_bullets }}<ul class="value-list" style="margin-top: 24px;">
+          {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+        </ul>{{ end }}
       </div>
     </div>
   </section>
+  {{ end }}
 
   <!-- TESTIMONIALS -->
+  {{ if ne .Params.hide_testimonials true }}
   <section class="testimonials" id="work">
     <div class="testimonials-inner container">
       <div class="testimonials-header reveal">
-        <h2>What clients say</h2>
-        <a href="#" class="see-all">See all testimonials →</a>
+        {{ with .Params.testimonials_heading }}<h2>{{ . }}</h2>{{ else }}<h2>What clients say</h2>{{ end }}
+        {{ with .Params.testimonials_link }}<a href="#" class="see-all">{{ . }} →</a>{{ end }}
       </div>
       <div class="testi-grid">
         {{ range .Params.testimonials }}
@@ -267,11 +275,13 @@
       </div>
     </div>
   </section>
+  {{ end }}
 
   <!-- SERVICES -->
+  {{ if ne .Params.hide_services true }}
   <section class="services" id="services">
     <div class="services-inner container">
-      <div class="services-header reveal"><h2>Hire me for<em>…</em></h2></div>
+      <div class="services-header reveal">{{ with .Params.services_heading }}<h2>{{ . | markdownify }}</h2>{{ else }}<h2>Hire me for<em>…</em></h2>{{ end }}</div>
       <div class="services-grid">
         {{ range .Params.services }}
         <div class="service-card reveal">
@@ -288,6 +298,7 @@
       <div class="see-pricing reveal"><a href="/pricing/">→ See full pricing</a></div>
     </div>
   </section>
+  {{ end }}
 {{ end }}
 
 {{ define "footer" }}

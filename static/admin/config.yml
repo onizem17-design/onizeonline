@@ -52,6 +52,36 @@ collections:
         label: Homepage
         file: content/_index.md
         fields:
+          - label: "🚫 Hide Hero Section"
+            name: hide_hero
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide Value Section"
+            name: hide_value
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide Social Proof Bar"
+            name: hide_proof
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide AI Section"
+            name: hide_ai
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide Testimonials"
+            name: hide_testimonials
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide Services Section"
+            name: hide_services
+            widget: boolean
+            default: false
+            required: false
           - label: Hero Photo
             name: hero_photo
             widget: image
@@ -154,6 +184,16 @@ collections:
             name: ai_bullets
             widget: list
             required: false
+          - label: Testimonials Section Heading
+            name: testimonials_heading
+            widget: string
+            required: false
+            hint: "Heading above testimonials (e.g. 'What clients say')"
+          - label: Testimonials Link Text
+            name: testimonials_link
+            widget: string
+            required: false
+            hint: "Text for the 'See all' link. Leave empty to hide."
           - label: Testimonials
             name: testimonials
             widget: list
@@ -180,6 +220,11 @@ collections:
                 widget: image
                 required: false
                 hint: "Upload a headshot. If provided, it replaces the initial avatar."
+          - label: Services Section Heading
+            name: services_heading
+            widget: string
+            required: false
+            hint: "Heading above services (e.g. 'Hire me for…')"
           - label: Services
             name: services
             widget: list
