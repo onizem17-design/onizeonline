@@ -17,17 +17,7 @@ brands:
   - Mobile Text Alert
   - Your Content Mart
   - Phoenix Content
-stats:
-  - number: xxx%
-    description: Traffic
-  - number: xxx
-    description: User signup
-  - badge: true
-    badge_text: Cited in AI
-    description: Mentioned and cited in Google AI overview, Google AI mode, ChatGPT,
-      Claude, Perplexity
-  - number: "1"
-    description: Average revision round per article
+stats: []
 ai_heading: "Search Visibility has gone beyond Google, your brand strategy has
   to align. I can help you:"
 testimonials:
@@ -85,14 +75,6 @@ value_intro: >-
 
   * Search engines and AI platforms optimization
 services:
-  - icon: ✍️
-    title: SaaS Content Writing
-    subtitle: Content That Converts
-    bullets:
-      - Write content from scratch that ranks and resonates
-      - Humanize and optimize AI-generated content
-      - Refresh and update old content for new traffic
-    cta: Hire a Content Writer
   - icon: 🔭
     title: Search Visibility Strategy
     subtitle: SEO + AEO
