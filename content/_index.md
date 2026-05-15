@@ -43,7 +43,7 @@ ai_bullets:
     AI platforms like ChatGPT, Claude, Perplexity and Google AI mode
   - Audit your website to find AI visibility gaps
   - Optimize your existing article to show up on AI platforms
-testimonials_heading: what clients say
+testimonials_heading: "## What clients say"
 testimonials:
   - quote: >-
       I've had the pleasure of working with Onize for more than two years, and
