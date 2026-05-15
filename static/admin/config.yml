@@ -186,7 +186,7 @@ collections:
             required: false
           - label: Testimonials Section Heading
             name: testimonials_heading
-            widget: string
+            widget: markdown
             required: false
             hint: "Heading above testimonials (e.g. 'What clients say')"
           - label: Testimonials Link Text
