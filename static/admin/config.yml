@@ -142,6 +142,13 @@ collections:
             widget: image
             required: false
             hint: "Image shown beside the value section text"
+          - label: Value Image Size
+            name: value_image_size
+            widget: select
+            options: ["small", "medium", "large", "full"]
+            default: "full"
+            required: false
+            hint: "How large the value section image appears"
           - label: Social Proof Label
             name: proof_label
             widget: string
@@ -190,6 +197,13 @@ collections:
             widget: image
             required: false
             hint: "Image shown beside the AI section text"
+          - label: AI Image Size
+            name: ai_image_size
+            widget: select
+            options: ["small", "medium", "large", "full"]
+            default: "full"
+            required: false
+            hint: "How large the AI section image appears"
           - label: AI Section Bullet Points
             name: ai_bullets
             widget: list
