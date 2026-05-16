@@ -27,6 +27,7 @@ value_intro: >-
   * Consistent, cohesive, and engaging stories
 
   * Search engines and AI platforms optimization
+value_image: /images/uploads/white-black-elegant-modern-corporate-cv-resume.jpg
 proof_label: Brands and agencies I've worked with
 brands:
   - Tripledart
