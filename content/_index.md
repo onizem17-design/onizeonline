@@ -9,6 +9,24 @@ hero_headline: "# Get familiar with seeing your content show up on Google and AI
   platforms — and win signups"
 hero_cta: Oh yes, I want that
 value_heading: "## Garbage content is killing your brand reputation and revenue"
+value_intro: >-
+  If your content isn't building positive sentiment and helping your audience
+  make faster buying decisions, it's failing.
+
+
+  And no, it's not about whether it's AI-assisted or not. It's about the skillset behind it.
+
+
+  A strong content engine is built around:
+
+
+  * Your audience's pain points
+
+  * The solutions your software provides
+
+  * Consistent, cohesive, and engaging stories
+
+  * Search engines and AI platforms optimization
 proof_label: Brands and agencies I've worked with
 brands:
   - Tripledart
@@ -20,6 +38,12 @@ brands:
 stats: []
 ai_heading: "Search Visibility has gone beyond Google, your brand strategy has
   to align. I can help you:"
+ai_bullets:
+  - Map a content strategy around prompts your target audience are searching on
+    AI platforms like ChatGPT, Claude, Perplexity and Google AI mode
+  - Audit your website to find AI visibility gaps
+  - Optimize your existing article to show up on AI platforms
+testimonials_heading: "## What clients say"
 testimonials:
   - quote: >-
       I've had the pleasure of working with Onize for more than two years, and
@@ -50,30 +74,7 @@ testimonials:
     initial: i
     photo: https://media.licdn.com/dms/image/v2/D4D03AQGSCqNv0CvSmw/profile-displayphoto-shrink_400_400/B4DZcR8HL7GYAk-/0/1748352661970?e=1779926400&v=beta&t=f_gsexQefpU2zMTARdKJf_FQQG59erNshPGS63RvhkA
 title: Onize Muhammed – SaaS Content & AI Visibility Strategist
-ai_bullets:
-  - Map a content strategy around prompts your target audience are searching on
-    AI platforms like ChatGPT, Claude, Perplexity and Google AI mode
-  - Audit your website to find AI visibility gaps
-  - Optimize your existing article to show up on AI platforms
 description: SaaS content that's visible across Google and AI platforms — and wins signups.
-value_intro: >-
-  If your content isn't building positive sentiment and helping your audience
-  make faster buying decisions, it's failing.
-
-
-  And no, it's not about whether it's AI-assisted or not. It's about the skillset behind it.
-
-
-  A strong content engine is built around:
-
-
-  * Your audience's pain points
-
-  * The solutions your software provides
-
-  * Consistent, cohesive, and engaging stories
-
-  * Search engines and AI platforms optimization
 services:
   - icon: 🔭
     title: Search Visibility Strategy
