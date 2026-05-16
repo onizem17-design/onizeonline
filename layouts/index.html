@@ -94,7 +94,7 @@
   .value-content[data-bullet="dot"] ul li::before { content: '•'; }
   .value-content[data-bullet="check"] ul li::before { content: '✓'; }
   .value-content[data-bullet="dash"] ul li::before { content: '—'; }
-  .value-img-wrap { border-radius: 24px; overflow: hidden; background: var(--nude); display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 48px rgba(59,74,47,0.1); }
+  .value-img-wrap { border-radius: 24px; overflow: hidden; background: var(--nude); display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 48px rgba(59,74,47,0.1); min-height: 0; }
   .value-img-wrap:has(img) { min-height: auto; }
   .value-img-wrap:not(:has(img)) { min-height: 280px; }
   [data-theme="dark"] .value-img-wrap { background: var(--olive-mid); }
@@ -196,10 +196,10 @@
         {{ with .Params.value_intro }}<div class="value-content" data-bullet="{{ with $.Params.value_bullet_style }}{{ . }}{{ else }}arrow{{ end }}">{{ . | markdownify }}</div>{{ end }}
         {{ with .Params.value_cta }}<br/><a href="#contact" class="btn-primary">{{ . }}</a>{{ end }}
       </div>
-      <div class="value-img-wrap reveal">
+      {{ $vSize := "100%" }}{{ with .Params.value_image_size }}{{ if eq . "small" }}{{ $vSize = "40%" }}{{ else if eq . "medium" }}{{ $vSize = "65%" }}{{ else if eq . "large" }}{{ $vSize = "85%" }}{{ end }}{{ end }}
+      <div class="value-img-wrap reveal" style="width:{{ $vSize }};margin:0 auto;">
         {{ with .Params.value_image }}
-          {{ $size := "100%" }}{{ with $.Params.value_image_size }}{{ if eq . "small" }}{{ $size = "40%" }}{{ else if eq . "medium" }}{{ $size = "65%" }}{{ else if eq . "large" }}{{ $size = "85%" }}{{ end }}{{ end }}
-          <img src="{{ . }}" alt="Value section image" style="width:{{ $size }};height:auto;object-fit:cover;margin:0 auto;display:block;"/>
+          <img src="{{ . }}" alt="Value section image" style="width:100%;height:auto;object-fit:cover;display:block;"/>
         {{ else }}
           <div class="value-img-placeholder">[ Upload an image via CMS ]</div>
         {{ end }}
@@ -239,10 +239,10 @@
   {{ if ne .Params.hide_ai true }}
   <section class="ai-section">
     <div class="value-inner container">
-      <div class="value-img-wrap reveal">
+      {{ $aSize := "100%" }}{{ with .Params.ai_image_size }}{{ if eq . "small" }}{{ $aSize = "40%" }}{{ else if eq . "medium" }}{{ $aSize = "65%" }}{{ else if eq . "large" }}{{ $aSize = "85%" }}{{ end }}{{ end }}
+      <div class="value-img-wrap reveal" style="width:{{ $aSize }};margin:0 auto;">
         {{ with .Params.ai_image }}
-          {{ $size := "100%" }}{{ with $.Params.ai_image_size }}{{ if eq . "small" }}{{ $size = "40%" }}{{ else if eq . "medium" }}{{ $size = "65%" }}{{ else if eq . "large" }}{{ $size = "85%" }}{{ end }}{{ end }}
-          <img src="{{ . }}" alt="AI section image" style="width:{{ $size }};height:auto;object-fit:cover;margin:0 auto;display:block;"/>
+          <img src="{{ . }}" alt="AI section image" style="width:100%;height:auto;object-fit:cover;display:block;"/>
         {{ else }}
           <div class="value-img-placeholder">[ Upload an image via CMS ]</div>
         {{ end }}
