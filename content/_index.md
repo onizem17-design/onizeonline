@@ -28,7 +28,7 @@ value_intro: >-
 
   * Search engines and AI platforms optimization
 value_image: /images/uploads/white-black-elegant-modern-corporate-cv-resume.jpg
-value_image_size: large
+value_image_size: medium
 proof_label: Brands and agencies I've worked with
 brands:
   - Tripledart
@@ -45,7 +45,7 @@ ai_bullets:
     AI platforms like ChatGPT, Claude, Perplexity and Google AI mode
   - Audit your website to find AI visibility gaps
   - Optimize your existing article to show up on AI platforms
-testimonials_heading: "### What clients say"
+testimonials_heading: "## What clients say"
 testimonials:
   - quote: >-
       I've had the pleasure of working with Onize for more than two years, and
