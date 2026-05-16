@@ -1,7 +1,4 @@
 ---
-value_bullet_style: arrow
-value_cta: Say no more, let's talk
-value_bullets: []
 hero_photo: /images/uploads/image.jpg
 speech_bubble: 👋Hi, I'm Onize, your content strategy and writing partner
 hero_eyebrow: SaaS Content · SEO · AI Visibility
@@ -27,6 +24,8 @@ value_intro: >-
   * Consistent, cohesive, and engaging stories
 
   * Search engines and AI platforms optimization
+value_bullet_style: arrow
+value_cta: Say no more, let's talk
 value_image: /images/uploads/white-black-elegant-modern-corporate-cv-resume.jpg
 value_image_size: large
 proof_label: Brands and agencies I've worked with
@@ -37,7 +36,6 @@ brands:
   - Mobile Text Alert
   - Your Content Mart
   - Phoenix Content
-stats: []
 ai_heading: "Search Visibility has gone beyond Google, your brand strategy has
   to align. I can help you:"
 ai_bullets:
@@ -45,7 +43,9 @@ ai_bullets:
     AI platforms like ChatGPT, Claude, Perplexity and Google AI mode
   - Audit your website to find AI visibility gaps
   - Optimize your existing article to show up on AI platforms
-testimonials_heading: "### What clients say"
+testimonials_heading: "## What clients say"
+services_heading: What I can help you do
+value_bullets: []
 testimonials:
   - quote: >-
       I've had the pleasure of working with Onize for more than two years, and
@@ -77,6 +77,7 @@ testimonials:
     photo: https://media.licdn.com/dms/image/v2/D4D03AQGSCqNv0CvSmw/profile-displayphoto-shrink_400_400/B4DZcR8HL7GYAk-/0/1748352661970?e=1779926400&v=beta&t=f_gsexQefpU2zMTARdKJf_FQQG59erNshPGS63RvhkA
 title: Onize Muhammed – SaaS Content & AI Visibility Strategist
 description: SaaS content that's visible across Google and AI platforms — and wins signups.
+stats: []
 services:
   - icon: 🔭
     title: Search Visibility Strategy
