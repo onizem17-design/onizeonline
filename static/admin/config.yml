@@ -137,6 +137,11 @@ collections:
             name: value_cta
             widget: string
             required: false
+          - label: Value Section Image
+            name: value_image
+            widget: image
+            required: false
+            hint: "Image shown beside the value section text"
           - label: Social Proof Label
             name: proof_label
             widget: string
@@ -180,6 +185,11 @@ collections:
             name: ai_heading
             widget: markdown
             required: false
+          - label: AI Section Image
+            name: ai_image
+            widget: image
+            required: false
+            hint: "Image shown beside the AI section text"
           - label: AI Section Bullet Points
             name: ai_bullets
             widget: list

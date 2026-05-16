@@ -194,7 +194,11 @@
         {{ with .Params.value_cta }}<br/><a href="#contact" class="btn-primary">{{ . }}</a>{{ end }}
       </div>
       <div class="value-img-wrap reveal">
-        <div class="value-img-placeholder">[ Insert your workspace / brand photo here ]</div>
+        {{ with .Params.value_image }}
+          <img src="{{ . }}" alt="Value section image" style="width:100%;height:100%;object-fit:cover;"/>
+        {{ else }}
+          <div class="value-img-placeholder">[ Upload an image via CMS ]</div>
+        {{ end }}
       </div>
     </div>
   </section>
@@ -232,7 +236,11 @@
   <section class="ai-section">
     <div class="value-inner container">
       <div class="value-img-wrap reveal">
-        <div class="value-img-placeholder">[ Insert your image here ]</div>
+        {{ with .Params.ai_image }}
+          <img src="{{ . }}" alt="AI section image" style="width:100%;height:100%;object-fit:cover;"/>
+        {{ else }}
+          <div class="value-img-placeholder">[ Upload an image via CMS ]</div>
+        {{ end }}
       </div>
       <div class="reveal">
         {{ with .Params.ai_heading }}<h2>{{ . | markdownify }}</h2>{{ end }}
