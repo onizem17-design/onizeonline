@@ -28,7 +28,7 @@ value_intro: >-
 
   * Search engines and AI platforms optimization
 value_image: /images/uploads/white-black-elegant-modern-corporate-cv-resume.jpg
-value_image_size: small
+value_image_size: medium
 proof_label: Brands and agencies I've worked with
 brands:
   - Tripledart
