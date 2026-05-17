@@ -254,6 +254,11 @@ collections:
             widget: string
             required: false
             hint: "Heading above services (e.g. 'Hire me for…')"
+          - label: Services Link Text
+            name: services_link
+            widget: string
+            required: false
+            hint: "Text for the link below services (e.g. 'See full pricing'). Leave empty to hide."
           - label: Services
             name: services
             widget: list

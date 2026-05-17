@@ -310,7 +310,7 @@
         </div>
         {{ end }}
       </div>
-      <div class="see-pricing reveal"><a href="/pricing/">→ See full pricing</a></div>
+      {{ with .Params.services_link }}<div class="see-pricing reveal"><a href="/pricing/">→ {{ . }}</a></div>{{ end }}
     </div>
   </section>
   {{ end }}
