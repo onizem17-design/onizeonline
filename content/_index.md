@@ -103,18 +103,7 @@ services_left_content: >-
   * Identify content bottlenecks and replace them with AI-powered workflows and automations
 value_bullets: []
 hero_eyebrow: SaaS Content · SEO · AI Visibility
-ai_bullets:
-  - Chasing traffic in2026 is like trying to fill a leaking bucket. It's going
-    and isn't coming back. So instead of writing content that ranks but no one
-    sees
-  - I'll help you build something that lasts. I understand how AI retrieves
-    content and how buyers think. That knowledge helps me write product-led
-    content that gets your brand mentioned in AI platforms and converts users
-    already prequalified from AI responses. I back that up with templates
-  - vibe-coded tools
-  - and proprietary data that make your content more useful than anything your
-    competitors are publishing. I'm not looking for a one-off project. I want to
-    work with you long enough to see results.
+ai_bullets: []
 testimonials_heading: "## What clients say"
 services_right_heading: Who I work with
 services_right_content: >-
