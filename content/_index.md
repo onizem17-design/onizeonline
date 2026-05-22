@@ -1,7 +1,29 @@
 ---
+value_bullet_style: arrow
+value_cta: Say no more, let's talk
+services_left_content: >-
+  * Well-researched, product-led and thought leadership articles
+
+  * Content refreshes — updated information, optimised for conversions and AI citation
+
+  * AI content humanisation — making generated content sound like your brand
+
+
+  * Audit your blog to surface performing and decaying content
+
+  * Generate content ideas based on customer pain points
+
+  * Identify AI search visibility gaps across platforms
+
+  * Map out a content plan and generate briefs
+
+
+  * Identify content bottlenecks and replace them with AI-powered workflows and automations
+value_bullets: []
 hero_photo: /images/uploads/image.jpg
 speech_bubble: 👋Hi, I'm Onize, your content strategy and writing partner
 hero_eyebrow: SaaS Content · SEO · AI Visibility
+services_left_heading: What I can do for you
 hero_headline: "# Get familiar with seeing your content show up on Google and AI
   platforms — and win signups"
 hero_cta: Oh yes, I want that
@@ -24,11 +46,8 @@ value_intro: >-
   * Consistent, cohesive, and engaging stories
 
   * Search engines and AI platforms optimization
-value_bullet_style: arrow
-value_cta: Say no more, let's talk
 value_image: /images/uploads/white-black-elegant-modern-corporate-cv-resume.jpg
 value_image_size: large
-proof_label: Brands and agencies I've worked with
 brands:
   - Tripledart
   - Docupilot
@@ -53,40 +72,21 @@ ai_heading: >-
 
 
   I'm not looking for a one-off project. I want to work with you long enough to see results.
-ai_bullets:
-  - Map a content strategy around prompts your target audience are searching on
-    AI platforms like ChatGPT, Claude, Perplexity and Google AI mode
-  - Audit your website to find AI visibility gaps
-  - Optimize your existing article to show up on AI platforms
-testimonials_heading: "## What clients say"
-services_left_heading: What I can do for you
-services_left_content: >-
-  * Well-researched, product-led and thought leadership articles
-
-  * Content refreshes — updated information, optimised for conversions and AI citation
-
-  * AI content humanisation — making generated content sound like your brand
-
-
-  * Audit your blog to surface performing and decaying content
-
-  * Generate content ideas based on customer pain points
-
-  * Identify AI search visibility gaps across platforms
-
-  * Map out a content plan and generate briefs
-
-
-  * Identify content bottlenecks and replace them with AI-powered workflows and automations
-services_right_heading: Who I work with
-services_right_content: >-
-  * SaaS content managers who need a writer that thinks beyond the brief and writes with business goals in mind
-
-  * SaaS startups building a content strategy and AI content workflows from scratch
-
-  * Solo marketers who need a reliable partner to take content execution off their plate
 services_cta: Book a Discovery Call
-value_bullets: []
+stats: []
+ai_bullets:
+  - Chasing traffic in 2026 is like trying to fill a leaking bucket. It's going
+    and isn't coming back. So instead of writing content that ranks but no one
+    sees
+  - I'll help you build something that lasts. I understand how AI retrieves
+    content and how buyers think. That knowledge helps me write product-led
+    content that gets your brand mentioned in AI platforms and converts users
+    already prequalified from AI responses. I back that up with templates
+  - vibe-coded tools
+  - and proprietary data that make your content more useful than anything your
+    competitors are publishing. I'm not looking for a one-off project. I want to
+    work with you long enough to see results.
+testimonials_heading: "## What clients say"
 testimonials:
   - quote: >-
       I've had the pleasure of working with Onize for more than two years, and
@@ -116,7 +116,15 @@ testimonials:
     role: Senior Content Writer & Strategist, Phoenix Content
     initial: i
     photo: https://media.licdn.com/dms/image/v2/D4D03AQGSCqNv0CvSmw/profile-displayphoto-shrink_400_400/B4DZcR8HL7GYAk-/0/1748352661970?e=1779926400&v=beta&t=f_gsexQefpU2zMTARdKJf_FQQG59erNshPGS63RvhkA
+services_right_content: >-
+  * SaaS content managers who need a writer that thinks beyond the brief and
+  writes with business goals in mind
+
+  * SaaS startups building a content strategy and AI content workflows from scratch
+
+  * Solo marketers who need a reliable partner to take content execution off their plate
 title: Onize Muhammed – SaaS Content & AI Visibility Strategist
+proof_label: Brands and agencies I've worked with
 description: SaaS content that's visible across Google and AI platforms — and wins signups.
-stats: []
+services_right_heading: Who I work with
 ---
