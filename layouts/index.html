@@ -238,18 +238,10 @@
   <!-- AI VISIBILITY -->
   {{ if ne .Params.hide_ai true }}
   <section class="ai-section">
-    <div class="value-inner container">
-      {{ $aSize := "100%" }}{{ with .Params.ai_image_size }}{{ if eq . "small" }}{{ $aSize = "40%" }}{{ else if eq . "medium" }}{{ $aSize = "65%" }}{{ else if eq . "large" }}{{ $aSize = "85%" }}{{ end }}{{ end }}
-      <div class="value-img-wrap reveal" style="width:{{ $aSize }};margin:0 auto;">
-        {{ with .Params.ai_image }}
-          <img src="{{ . }}" alt="AI section image" style="width:100%;height:auto;object-fit:cover;display:block;"/>
-        {{ else }}
-          <div class="value-img-placeholder">[ Upload an image via CMS ]</div>
-        {{ end }}
-      </div>
+    <div class="container" style="max-width: 800px; text-align: center;">
       <div class="reveal">
         {{ with .Params.ai_heading }}<h2>{{ . | markdownify }}</h2>{{ end }}
-        {{ with .Params.ai_bullets }}<ul class="value-list" style="margin-top: 24px;">
+        {{ with .Params.ai_bullets }}<ul class="value-list" style="margin-top: 24px; text-align: left; display: inline-block;">
           {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
         </ul>{{ end }}
       </div>
