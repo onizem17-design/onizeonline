@@ -249,41 +249,33 @@ collections:
                 widget: image
                 required: false
                 hint: "Upload a headshot. If provided, it replaces the initial avatar."
-          - label: Services Section Heading
-            name: services_heading
+          - label: "Left Column Heading (e.g. 'What I can do for you')"
+            name: services_left_heading
             widget: string
             required: false
-            hint: "Heading above services (e.g. 'Hire me for…')"
-          - label: Services Link Text
+          - label: Left Column Content
+            name: services_left_content
+            widget: markdown
+            required: false
+            hint: "Use bullet points (checkmarks added automatically). Separate groups with a blank line."
+          - label: "Right Column Heading (e.g. 'Who I work with')"
+            name: services_right_heading
+            widget: string
+            required: false
+          - label: Right Column Content
+            name: services_right_content
+            widget: markdown
+            required: false
+            hint: "Use bullet points (checkmarks added automatically)."
+          - label: Button Text
+            name: services_cta
+            widget: string
+            required: false
+          - label: Link Text (below button)
             name: services_link
             widget: string
             required: false
-            hint: "Text for the link below services (e.g. 'See full pricing'). Leave empty to hide."
-          - label: Services
-            name: services
-            widget: list
-            required: false
-            fields:
-              - label: Icon (emoji)
-                name: icon
-                widget: string
-                required: false
-              - label: Service Title
-                name: title
-                widget: string
-                required: false
-              - label: Subtitle
-                name: subtitle
-                widget: string
-                required: false
-              - label: Bullet Points
-                name: bullets
-                widget: list
-                required: false
-              - label: Button Text
-                name: cta
-                widget: string
-                required: false
+            hint: "Text for the link below the button (e.g. 'See full pricing'). Leave empty to hide."
 
       - name: about
         label: About Page

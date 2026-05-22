@@ -126,21 +126,18 @@
   .testi-role { font-size: 0.8rem; color: rgba(239,227,202,0.7); }
 
   /* ─── SERVICES ─── */
-  .services { background: var(--bg); padding: 100px 24px; }
+  .services { background: var(--nude); padding: 100px 24px; }
+  [data-theme="dark"] .services { background: rgba(59,74,47,0.25); }
   .services-inner { max-width: 1140px; margin: 0 auto; }
-  .services-header { text-align: center; margin-bottom: 60px; }
-  .services-header h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); }
-  .services-header h2 em { color: var(--brown); font-style: italic; }
-  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-  .service-card { background: var(--card-bg); border: 1px solid rgba(59,74,47,0.08); border-radius: 24px; padding: 36px 28px; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
-  .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(59,74,47,0.1); }
-  .service-icon { font-size: 2rem; margin-bottom: 20px; }
-  .service-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
-  .service-sub { font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; color: var(--brown); margin-bottom: 16px; }
-  .service-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.7; flex: 1; margin-bottom: 28px; }
-  .service-list { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 8px; }
-  .service-list li { font-size: 0.85rem; color: var(--text-sub); display: flex; align-items: flex-start; gap: 8px; }
-  .service-list li::before { content: '·'; color: var(--brown); font-size: 1.2rem; line-height: 1.2; }
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .services-col h3 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem, 2vw, 1.8rem); color: var(--text-dark); margin-bottom: 32px; }
+  [data-theme="dark"] .services-col h3 { color: var(--nude-light); }
+  .services-col ul { list-style: none; display: flex; flex-direction: column; gap: 18px; margin: 0 0 28px; }
+  .services-col ul:last-child { margin-bottom: 0; }
+  .services-col ul li { display: flex; align-items: flex-start; gap: 14px; font-size: 0.95rem; color: var(--text-mid); line-height: 1.65; }
+  .services-col ul li::before { content: '✓'; color: var(--brown); font-weight: 700; font-size: 1.05rem; flex-shrink: 0; margin-top: 1px; }
+  [data-theme="dark"] .services-col ul li { color: var(--nude); }
+  .services-cta { text-align: center; margin-top: 60px; }
   .see-pricing { text-align: center; margin-top: 48px; }
   .see-pricing a { font-size: 0.9rem; color: var(--brown); font-weight: 500; border-bottom: 1px solid currentColor; padding-bottom: 2px; transition: color 0.2s; }
   .see-pricing a:hover { color: var(--olive); }
@@ -155,7 +152,8 @@
     .speech-bubble { top: -48px; left: 0; border-radius: 14px 14px 14px 4px; width: 160px; font-size: 0.72rem; }
     .speech-bubble::after { top: auto; bottom: -10px; right: auto; left: 16px; border-width: 10px 8px 0 8px; border-color: var(--olive-dark) transparent transparent transparent; }
     .value-inner { grid-template-columns: 1fr; }
-    .testi-grid, .services-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; gap: 48px; }
     .stats-grid { grid-template-columns: repeat(2,1fr); }
     .testimonials-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
@@ -296,20 +294,17 @@
   {{ if ne .Params.hide_services true }}
   <section class="services" id="services">
     <div class="services-inner container">
-      <div class="services-header reveal">{{ with .Params.services_heading }}<h2>{{ . | markdownify }}</h2>{{ else }}<h2>Hire me for<em>…</em></h2>{{ end }}</div>
       <div class="services-grid">
-        {{ range .Params.services }}
-        <div class="service-card reveal">
-          <div class="service-icon">{{ .icon }}</div>
-          <h3>{{ .title }}</h3>
-          <p class="service-sub">{{ .subtitle }}</p>
-          <ul class="service-list">
-            {{ range .bullets }}<li>{{ . }}</li>{{ end }}
-          </ul>
-          <a href="#contact" class="btn-outline">{{ .cta }}</a>
+        <div class="services-col reveal">
+          {{ with .Params.services_left_heading }}<h3>{{ . }}</h3>{{ end }}
+          {{ with .Params.services_left_content }}<div class="services-checklist">{{ . | markdownify }}</div>{{ end }}
         </div>
-        {{ end }}
+        <div class="services-col reveal">
+          {{ with .Params.services_right_heading }}<h3>{{ . }}</h3>{{ end }}
+          {{ with .Params.services_right_content }}<div class="services-checklist">{{ . | markdownify }}</div>{{ end }}
+        </div>
       </div>
+      {{ with .Params.services_cta }}<div class="services-cta reveal"><a href="#contact" class="btn-primary">{{ . }}</a></div>{{ end }}
       {{ with .Params.services_link }}<div class="see-pricing reveal"><a href="/pricing/">→ {{ . }}</a></div>{{ end }}
     </div>
   </section>

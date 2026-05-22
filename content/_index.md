@@ -44,7 +44,33 @@ ai_bullets:
   - Audit your website to find AI visibility gaps
   - Optimize your existing article to show up on AI platforms
 testimonials_heading: "## What clients say"
-services_heading: What I can help you do
+services_left_heading: What I can do for you
+services_left_content: >-
+  * Well-researched, product-led and thought leadership articles
+
+  * Content refreshes — updated information, optimised for conversions and AI citation
+
+  * AI content humanisation — making generated content sound like your brand
+
+
+  * Audit your blog to surface performing and decaying content
+
+  * Generate content ideas based on customer pain points
+
+  * Identify AI search visibility gaps across platforms
+
+  * Map out a content plan and generate briefs
+
+
+  * Identify content bottlenecks and replace them with AI-powered workflows and automations
+services_right_heading: Who I work with
+services_right_content: >-
+  * SaaS content managers who need a writer that thinks beyond the brief and writes with business goals in mind
+
+  * SaaS startups building a content strategy and AI content workflows from scratch
+
+  * Solo marketers who need a reliable partner to take content execution off their plate
+services_cta: Book a Discovery Call
 value_bullets: []
 testimonials:
   - quote: >-
@@ -78,21 +104,4 @@ testimonials:
 title: Onize Muhammed – SaaS Content & AI Visibility Strategist
 description: SaaS content that's visible across Google and AI platforms — and wins signups.
 stats: []
-services:
-  - icon: 🔭
-    title: Search Visibility Strategy
-    subtitle: SEO + AEO
-    bullets:
-      - Generate content ideas based on customer pain points
-      - Define your brand positioning and job-to-be-done
-      - Find AI search visibility gaps across platforms
-    cta: Hire a Search Strategist
-  - icon: ⚙️
-    title: Content Workflows
-    subtitle: Automation & Systems
-    bullets:
-      - Identify content bottlenecks and manual processes
-      - Replace them with vibe-coded tools & agentic workflows
-      - Integrate MCPs to supercharge your content ops
-    cta: Hire a Content Engineer
 ---
