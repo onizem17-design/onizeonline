@@ -37,7 +37,7 @@ brands:
   - Phoenix Content
 stats: []
 ai_heading: >-
-  Traffic is down. AI is eating your clicks. Here's how I can help.
+  ## Traffic is down. AI is eating your clicks. Here's how I can help.
 
 
   Chasing traffic in 2026 is like trying to fill a leaking bucket. It's going and isn't coming back.
