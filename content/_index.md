@@ -1,6 +1,6 @@
 ---
 hero_photo: /images/uploads/image.jpg
-speech_bubble: 👋Hi, I'm Onize, your content strategy and writing partner
+speech_bubble: 👋Hi, I'm Onize, your content partner
 hero_headline: "# Get familiar with seeing your content show up on Google and AI
   platforms — and win signups"
 hero_cta: Oh yes, I want that
@@ -37,7 +37,7 @@ brands:
   - Phoenix Content
 stats: []
 ai_heading: >-
-  Traffic is down. AI is eating your clicks. Here's how I can help.
+  ## Traffic is down. AI is eating your clicks. Here's how I can help.
 
 
   Chasing traffic in 2026 is like trying to fill a leaking bucket. It's going and isn't coming back.
