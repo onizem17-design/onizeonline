@@ -36,8 +36,23 @@ brands:
   - Mobile Text Alert
   - Your Content Mart
   - Phoenix Content
-ai_heading: "Search Visibility has gone beyond Google, your brand strategy has
-  to align. I can help you:"
+ai_heading: >-
+  Traffic is down. AI is eating your clicks. Here's how I can help.
+
+
+  Chasing traffic in 2026 is like trying to fill a leaking bucket. It's going and isn't coming back.
+
+
+  So instead of writing content that ranks but no one sees, I'll help you build something that lasts.
+
+
+  I understand how AI retrieves content and how buyers think. That knowledge helps me write product-led content that gets your brand mentioned in AI platforms and converts users already prequalified from AI responses.
+
+
+  I back that up with templates, vibe-coded tools, and proprietary data that make your content more useful than anything your competitors are publishing.
+
+
+  I'm not looking for a one-off project. I want to work with you long enough to see results.
 ai_bullets:
   - Map a content strategy around prompts your target audience are searching on
     AI platforms like ChatGPT, Claude, Perplexity and Google AI mode
