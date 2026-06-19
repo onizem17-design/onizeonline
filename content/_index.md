@@ -36,6 +36,7 @@ brands:
   - Your Content Mart
   - Phoenix Content
 stats: []
+ai_image: /images/uploads/ai-search-visibility.svg
 ai_heading: >-
   ## Traffic is down. AI is eating your clicks. Here's how I can help.
 
@@ -67,7 +68,7 @@ testimonials:
     name: Client Name
     role: Content Marketing Manager, TripleDart
     initial: R
-    photo: https://media.licdn.com/dms/image/v2/D5603AQG_uszynqcoWQ/profile-displayphoto-shrink_800_800/B56ZOhco9uGkAc-/0/1733580460496?e=1780531200&v=beta&t=gHLkLZJD9fQ5lVBQmZBGgvh-AYzRLYwNLDPRIvPV5fc
+    photo: /images/uploads/naveen.jpg
   - quote: >-
       Good writing requires even better thinking — Onize does both. I've worked
       with her on several projects, both as editor and manager and watched her
@@ -81,7 +82,7 @@ testimonials:
     name: Mae Josémaria Oparaocha
     role: Senior Content Writer & Strategist, Phoenix Content
     initial: i
-    photo: https://media.licdn.com/dms/image/v2/D4D03AQGSCqNv0CvSmw/profile-displayphoto-shrink_400_400/B4DZcR8HL7GYAk-/0/1748352661970?e=1779926400&v=beta&t=f_gsexQefpU2zMTARdKJf_FQQG59erNshPGS63RvhkA
+    photo: /images/uploads/mae.jpg
 services_left_heading: What I can do for you
 services_left_content: >-
   * Well-researched, product-led and thought leadership articles

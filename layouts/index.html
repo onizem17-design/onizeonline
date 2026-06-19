@@ -238,10 +238,15 @@
   <!-- AI VISIBILITY -->
   {{ if ne .Params.hide_ai true }}
   <section class="ai-section">
-    <div class="container" style="max-width: 800px; text-align: center;">
+    <div class="value-inner container">
+      {{ with .Params.ai_image }}
+      <div class="value-img-wrap reveal" style="background: transparent; box-shadow: none;">
+        <img src="{{ . }}" alt="AI search visibility" style="width:100%;height:auto;object-fit:contain;display:block;"/>
+      </div>
+      {{ end }}
       <div class="reveal">
         {{ with .Params.ai_heading }}<h2>{{ . | markdownify }}</h2>{{ end }}
-        {{ with .Params.ai_bullets }}<ul class="value-list" style="margin-top: 24px; text-align: left; display: inline-block;">
+        {{ with .Params.ai_bullets }}<ul class="value-list" style="margin-top: 24px;">
           {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
         </ul>{{ end }}
       </div>
