@@ -65,10 +65,14 @@ testimonials:
 
 
       What sets her apart is her ability to push back thoughtfully when a brief lacks clarity or compromises quality. This is rare and incredibly valuable, as it strengthens not just the content but the overall strategy. Truly grateful for everything Onize has done for my portfolio.
-    name: Client Name
+    name: Naveen Alphonse
     role: Content Marketing Manager, TripleDart
     initial: R
+<<<<<<< HEAD
     photo: /images/uploads/naveen.jpg
+=======
+    photo: /images/uploads/naveen-photo.jpg
+>>>>>>> c2d94cf93676c992404fa91da1d82bb894a23287
   - quote: >-
       Good writing requires even better thinking — Onize does both. I've worked
       with her on several projects, both as editor and manager and watched her
@@ -81,8 +85,13 @@ testimonials:
       I 100% recommend her for any SaaS content writing projects where you need a strong writer and critical thinker!
     name: Mae Josémaria Oparaocha
     role: Senior Content Writer & Strategist, Phoenix Content
+<<<<<<< HEAD
     initial: i
     photo: /images/uploads/mae.jpg
+=======
+    initial: ""
+    photo: /images/uploads/mae-s-image.jpg
+>>>>>>> c2d94cf93676c992404fa91da1d82bb894a23287
 services_left_heading: What I can do for you
 services_left_content: >-
   * Well-researched, product-led and thought leadership articles
