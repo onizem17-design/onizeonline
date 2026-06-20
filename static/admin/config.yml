@@ -381,33 +381,104 @@ collections:
             name: hero_sub
             widget: markdown
             required: false
-          - label: Projects
-            name: projects
+          - label: Client Groups
+            name: client_groups
             widget: list
             required: false
             fields:
-              - label: Client Name
-                name: client
+              - label: Heading (use <span> for highlight)
+                name: heading
                 widget: string
                 required: false
-              - label: Project Title
-                name: title
-                widget: string
-                required: false
-              - label: Description
+              - label: Short Description
                 name: description
-                widget: markdown
+                widget: string
                 required: false
-              - label: Tags
-                name: tags
-                widget: list
-                required: false
-              - label: Results
-                name: results
+              - label: Articles
+                name: articles
                 widget: list
                 required: false
                 fields:
-                  - label: Number (e.g. 150%)
+                  - label: Article Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Article URL
+                    name: url
+                    widget: string
+                    required: false
+                  - label: Tag (e.g. Blog Post, Case Study)
+                    name: tag
+                    widget: string
+                    required: false
+              - label: See More URL
+                name: see_more_url
+                widget: string
+                required: false
+              - label: Testimonial Quote
+                name: testimonial_quote
+                widget: text
+                required: false
+              - label: Testimonial Name
+                name: testimonial_name
+                widget: string
+                required: false
+              - label: Testimonial Role
+                name: testimonial_role
+                widget: string
+                required: false
+              - label: Result Screenshot
+                name: screenshot
+                widget: image
+                required: false
+              - label: Screenshot Caption
+                name: screenshot_caption
+                widget: string
+                required: false
+          - label: FAQ Heading
+            name: faq_heading
+            widget: string
+            required: false
+          - label: FAQs
+            name: faqs
+            widget: list
+            required: false
+            fields:
+              - label: Question
+                name: question
+                widget: string
+                required: false
+              - label: Answer
+                name: answer
+                widget: text
+                required: false
+          - label: Achievements Heading
+            name: achievements_heading
+            widget: string
+            required: false
+          - label: Achievements
+            name: achievements
+            widget: list
+            required: false
+            fields:
+              - label: Heading
+                name: heading
+                widget: string
+                required: false
+              - label: Text
+                name: text
+                widget: markdown
+                required: false
+              - label: Image
+                name: image
+                widget: image
+                required: false
+              - label: Stats
+                name: stats
+                widget: list
+                required: false
+                fields:
+                  - label: Number
                     name: number
                     widget: string
                     required: false
@@ -415,18 +486,6 @@ collections:
                     name: label
                     widget: string
                     required: false
-              - label: Case Study URL
-                name: cta_url
-                widget: string
-                required: false
-              - label: Featured Image
-                name: image
-                widget: image
-                required: false
-          - label: Client Brands
-            name: brands
-            widget: list
-            required: false
           - label: CTA Heading
             name: cta_heading
             widget: string

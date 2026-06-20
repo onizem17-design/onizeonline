@@ -1,57 +1,47 @@
 ---
 title: "Portfolio"
-description: "Case studies and content work by Onize Muhammed — SaaS content writer and AI visibility strategist."
+description: "Published content and results by Onize Muhammed — SaaS content writer and AI visibility strategist."
 layout: portfolio
 
 hero_eyebrow: "Portfolio"
-hero_headline: "Work that <em>speaks</em> for itself"
-hero_sub: "A selection of content, strategies, and systems I've built for SaaS brands."
+hero_headline: "Here's the <em>proof</em>"
+hero_sub: "Real content. Real clients. Real results. Browse my work samples below — and yes, everything here was written by me."
 
-projects:
-  - client: "Tripledart"
-    title: "Scaling SEO content for a B2B performance marketing agency"
-    description: "Placeholder — add your case study details here. Describe the challenge, your approach, and the results you achieved for this client."
-    tags:
-      - "SEO"
-      - "Long-form content"
-    results:
-      - number: "xxx%"
-        label: "Traffic increase"
-      - number: "xxx"
-        label: "Demo requests"
-    cta_url: ""
-  - client: "Docupilot"
-    title: "Content that converts for a document automation SaaS"
-    description: "Placeholder — add your case study details here. Describe the challenge, your approach, and the results you achieved for this client."
-    tags:
-      - "SaaS content"
-      - "Conversion"
-    results:
-      - number: "xxx%"
-        label: "Organic growth"
-      - number: "xxx"
-        label: "Signups"
-    cta_url: ""
-  - client: "SaleDuo"
-    title: "Building authority content for an Amazon agency"
-    description: "Placeholder — add your case study details here. Describe the challenge, your approach, and the results you achieved for this client."
-    tags:
-      - "Content strategy"
-      - "Authority"
-    results:
-      - number: "xxx%"
-        label: "Engagement lift"
-      - number: "xxx"
-        label: "Articles published"
-    cta_url: ""
+client_groups:
+  - heading: "Content written for <span>Docupilot</span>"
+    description: "A document automation SaaS platform"
+    articles: []
+    see_more_url: ""
+    testimonial_quote: ""
+    testimonial_name: ""
+    testimonial_role: ""
+    screenshot: ""
+    screenshot_caption: ""
+  - heading: "Content written for <span>SaleDuo</span>"
+    description: "An Amazon growth agency"
+    articles: []
+    see_more_url: ""
+    testimonial_quote: ""
+    testimonial_name: ""
+    testimonial_role: ""
+    screenshot: ""
+    screenshot_caption: ""
 
-brands:
-  - "Tripledart"
-  - "Docupilot"
-  - "SaleDuo"
-  - "MobileText Alert"
+faq_heading: "Quick questions, straight answers"
+faqs:
+  - question: "What's your typical turnaround time?"
+    answer: "5–7 days for long-form pieces, 3 days for short-form. Rush jobs? We can talk."
+  - question: "What does your research and writing process look like?"
+    answer: "I start by understanding your product, audience, and the job-to-be-done. Then I dig into competitor content, customer pain points, and search intent before writing a single word. Every draft goes through an SEO and readability check."
+  - question: "Do you only write for SaaS companies?"
+    answer: "Primarily, yes. SaaS is where I do my best work because I understand the buying journey, the metrics that matter, and how to write content that actually moves signups."
+  - question: "Can you help with content strategy too, or just writing?"
+    answer: "Both. I can map out a full content plan, generate briefs, audit your existing blog, and identify AI visibility gaps — then execute the writing on top of that."
 
-cta_heading: "Want results <em>like these?</em>"
-cta_sub: "Let's build content that grows your traffic and shows up where your buyers are."
-cta_button: "Work with me →"
+achievements_heading: "Results I've contributed to"
+achievements: []
+
+cta_heading: "Like what you see?"
+cta_sub: "Let's build content that actually gets your brand found — on Google, AI platforms, and everywhere your buyers are looking."
+cta_button: "Let's talk →"
 ---

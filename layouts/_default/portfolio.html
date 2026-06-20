@@ -11,50 +11,123 @@
   .portfolio-hero h1 em { color: var(--brown-light); font-style: italic; }
   .portfolio-hero p { font-size: 1.05rem; color: rgba(239,227,202,0.6); max-width: 540px; margin: 0 auto; line-height: 1.7; }
 
-  /* ─── CASE STUDIES ─── */
-  .portfolio-section { padding: 100px 24px; background: var(--bg); }
-  .portfolio-inner { max-width: 1140px; margin: 0 auto; }
-  .portfolio-grid { display: flex; flex-direction: column; gap: 32px; }
-  .project-card {
-    background: var(--card-bg); border: 1px solid var(--card-border);
-    border-radius: 24px; padding: 44px 48px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(59,74,47,0.1); }
-  .project-card:nth-child(even) .project-img { order: 1; }
-  .project-card:nth-child(even) .project-info { order: 2; }
-  .project-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-  .project-tag {
-    font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 50px;
-    background: var(--nude); color: var(--brown);
-  }
-  [data-theme="dark"] .project-tag { background: var(--olive-mid); color: var(--nude-light); }
-  .project-client { font-size: 0.82rem; color: var(--text-light); margin-left: auto; align-self: center; }
-  .project-info h3 { font-size: 1.6rem; margin-bottom: 14px; line-height: 1.2; }
-  .project-info p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.75; margin-bottom: 28px; }
-  .project-results { display: flex; gap: 32px; margin-bottom: 28px; }
-  .project-stat .stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--olive); line-height: 1; }
-  [data-theme="dark"] .project-stat .stat-num { color: var(--brown-light); }
-  .project-stat .stat-label { font-size: 0.78rem; color: var(--text-light); margin-top: 4px; }
-  .project-img {
-    border-radius: 16px; background: var(--nude); min-height: 280px;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  [data-theme="dark"] .project-img { background: var(--olive-mid); }
-  .project-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
-  .project-img-placeholder { font-size: 0.82rem; color: var(--text-light); text-align: center; padding: 32px; }
+  /* ─── CLIENT GROUPS ─── */
+  .portfolio-section { padding: 80px 24px 40px; background: var(--bg); }
+  .portfolio-inner { max-width: 900px; margin: 0 auto; }
+  .client-group { margin-bottom: 64px; }
+  .client-group-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--olive); }
+  [data-theme="dark"] .client-group-header { border-bottom-color: var(--brown-light); }
+  .client-group-header h2 { font-size: clamp(1.3rem, 2vw, 1.6rem); color: var(--text-dark); line-height: 1.3; }
+  .client-group-header h2 span { color: var(--brown); }
+  [data-theme="dark"] .client-group-header h2 { color: var(--nude-light); }
+  .client-group-desc { font-size: 0.9rem; color: var(--text-mid); margin-top: 8px; line-height: 1.6; }
 
-  /* ─── BRANDS STRIP ─── */
-  .brands-strip { background: var(--bg-alt); padding: 72px 24px; }
-  [data-theme="dark"] .brands-strip { background: var(--olive); }
-  .brands-inner { max-width: 1140px; margin: 0 auto; text-align: center; }
-  .brands-inner p { font-size: 0.72rem; letter-spacing: 2.5px; font-weight: 600; text-transform: uppercase; color: var(--text-light); margin-bottom: 32px; }
-  .brand-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
-  .brand-pill { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--text-mid); padding: 8px 20px; border: 1px solid var(--card-border); border-radius: 50px; }
-  [data-theme="dark"] .brand-pill { color: var(--nude); }
+  .article-list { display: flex; flex-direction: column; gap: 0; }
+  .article-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 18px 24px;
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-bottom: none;
+    transition: background 0.15s;
+    text-decoration: none;
+  }
+  .article-item:first-child { border-radius: 16px 16px 0 0; }
+  .article-item:last-child { border-bottom: 1px solid var(--card-border); border-radius: 0 0 16px 16px; }
+  .article-item:only-child { border-radius: 16px; border-bottom: 1px solid var(--card-border); }
+  .article-item:hover { background: var(--nude); }
+  [data-theme="dark"] .article-item:hover { background: var(--olive-mid); }
+
+  .article-info { flex: 1; min-width: 0; }
+  .article-title { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); line-height: 1.4; }
+  [data-theme="dark"] .article-title { color: var(--nude-light); }
+  .article-client-tag { font-size: 0.72rem; color: var(--brown); font-weight: 600; margin-top: 4px; }
+  .article-arrow { font-size: 1rem; color: var(--brown); flex-shrink: 0; transition: transform 0.2s; }
+  .article-item:hover .article-arrow { transform: translate(3px, -3px); }
+
+  .see-more { display: inline-block; margin-top: 16px; font-size: 0.88rem; color: var(--brown); font-weight: 500; }
+  .see-more:hover { text-decoration: underline; }
+
+  /* ─── INLINE TESTIMONIAL ─── */
+  .inline-testimonial {
+    background: var(--olive-dark); border-radius: 16px; padding: 28px 32px;
+    margin-top: 20px; position: relative;
+  }
+  [data-theme="dark"] .inline-testimonial { background: var(--olive); }
+  .inline-testimonial::before {
+    content: '"'; font-family: 'DM Serif Display', serif;
+    font-size: 3rem; color: var(--brown-light); position: absolute;
+    top: 12px; left: 24px; line-height: 1; opacity: 0.5;
+  }
+  .inline-testimonial blockquote {
+    font-size: 0.88rem; color: var(--nude-light); line-height: 1.7;
+    margin: 0; padding-left: 8px; font-style: italic;
+  }
+  .inline-testimonial .testi-credit {
+    margin-top: 14px; padding-left: 8px;
+    font-size: 0.8rem; font-weight: 600; color: var(--brown-light);
+  }
+  .inline-testimonial .testi-credit span {
+    font-weight: 400; color: rgba(239,227,202,0.6);
+  }
+
+  /* ─── RESULT SCREENSHOT ─── */
+  .result-screenshot {
+    margin-top: 20px; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--card-border);
+  }
+  .result-screenshot img { width: 100%; height: auto; display: block; }
+  .result-caption {
+    padding: 10px 16px; background: var(--card-bg);
+    font-size: 0.78rem; color: var(--text-light);
+    border-top: 1px solid var(--card-border);
+  }
+
+  /* ─── ACHIEVEMENTS ─── */
+  .achievements { padding: 80px 24px 100px; background: var(--nude); }
+  [data-theme="dark"] .achievements { background: rgba(59,74,47,0.35); }
+  .achievements-inner { max-width: 900px; margin: 0 auto; }
+  .achievements-heading { font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text-dark); margin-bottom: 48px; text-align: center; }
+  [data-theme="dark"] .achievements-heading { color: var(--nude-light); }
+
+  .achievement-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 24px; padding: 40px; margin-bottom: 32px;
+  }
+  .achievement-stats { display: flex; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+  .achievement-stat { text-align: center; }
+  .achievement-stat .stat-num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--olive); line-height: 1; }
+  [data-theme="dark"] .achievement-stat .stat-num { color: var(--brown-light); }
+  .achievement-stat .stat-label { font-size: 0.78rem; color: var(--text-light); margin-top: 6px; }
+  .achievement-card h3 { font-size: 1.3rem; margin-bottom: 14px; color: var(--text-dark); }
+  [data-theme="dark"] .achievement-card h3 { color: var(--nude-light); }
+  .achievement-card p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; }
+  .achievement-img { border-radius: 12px; overflow: hidden; margin-top: 20px; }
+  .achievement-img img { width: 100%; height: auto; display: block; border-radius: 12px; }
+
+  /* ─── FAQ ─── */
+  .portfolio-faq { padding: 80px 24px; background: var(--bg); }
+  .faq-inner { max-width: 900px; margin: 0 auto; }
+  .faq-heading { font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text-dark); margin-bottom: 40px; }
+  [data-theme="dark"] .faq-heading { color: var(--nude-light); }
+  .faq-item { border-bottom: 1px solid var(--card-border); }
+  .faq-question {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0; font-size: 1rem; font-weight: 500;
+    color: var(--text-dark); text-align: left;
+    font-family: 'Inter', sans-serif;
+  }
+  [data-theme="dark"] .faq-question { color: var(--nude-light); }
+  .faq-question:hover { color: var(--brown); }
+  .faq-toggle { font-size: 1.4rem; color: var(--brown); transition: transform 0.3s; flex-shrink: 0; }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+  }
+  .faq-item.open .faq-answer { max-height: 500px; }
+  .faq-answer-inner {
+    padding: 0 0 20px; font-size: 0.92rem; color: var(--text-mid); line-height: 1.75;
+  }
 
   /* ─── CTA ─── */
   .portfolio-cta { background: var(--olive-dark); padding: 100px 24px; text-align: center; }
@@ -63,10 +136,9 @@
   .portfolio-cta p { color: rgba(239,227,202,0.6); font-size: 1rem; margin-bottom: 36px; line-height: 1.7; }
 
   @media(max-width: 900px) {
-    .project-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 28px; }
-    .project-card:nth-child(even) .project-img,
-    .project-card:nth-child(even) .project-info { order: unset; }
-    .project-results { flex-wrap: wrap; gap: 20px; }
+    .article-item { padding: 16px 18px; }
+    .achievement-stats { gap: 20px; }
+    .inline-testimonial { padding: 24px; }
   }
 </style>
 {{ end }}
@@ -74,67 +146,110 @@
 {{ define "main" }}
   <!-- HERO -->
   <section class="portfolio-hero">
-    <span class="eyebrow">{{ .Params.hero_eyebrow }}</span>
-    <h1>{{ .Params.hero_headline | safeHTML }}</h1>
-    <p>{{ .Params.hero_sub }}</p>
+    {{ with .Params.hero_eyebrow }}<span class="eyebrow">{{ . }}</span>{{ end }}
+    {{ with .Params.hero_headline }}<h1>{{ . | safeHTML }}</h1>{{ end }}
+    {{ with .Params.hero_sub }}<p>{{ . | markdownify }}</p>{{ end }}
   </section>
 
-  <!-- CASE STUDIES -->
+  <!-- CLIENT GROUPS -->
   <section class="portfolio-section">
-    <div class="portfolio-inner container">
-      <div class="portfolio-grid">
-        {{ range .Params.projects }}
-        <div class="project-card reveal">
-          <div class="project-info">
-            <div class="project-meta">
-              {{ range .tags }}<span class="project-tag">{{ . }}</span>{{ end }}
-              <span class="project-client">{{ .client }}</span>
+    <div class="portfolio-inner">
+      {{ range .Params.client_groups }}
+      <div class="client-group reveal">
+        <div class="client-group-header">
+          {{ with .heading }}<h2>{{ . | safeHTML }}</h2>{{ end }}
+          {{ with .description }}<p class="client-group-desc">{{ . }}</p>{{ end }}
+        </div>
+        {{ with .articles }}
+        <div class="article-list">
+          {{ range . }}
+          <a href="{{ .url }}" target="_blank" rel="noopener" class="article-item">
+            <div class="article-info">
+              <div class="article-title">{{ .title }}</div>
+              {{ with .tag }}<div class="article-client-tag">{{ . }}</div>{{ end }}
             </div>
-            <h3>{{ .title }}</h3>
-            <p>{{ .description }}</p>
-            {{ if .results }}
-            <div class="project-results">
-              {{ range .results }}
-              <div class="project-stat">
-                <div class="stat-num">{{ .number }}</div>
-                <div class="stat-label">{{ .label }}</div>
-              </div>
-              {{ end }}
-            </div>
-            {{ end }}
-            {{ with .cta_url }}
-            <a href="{{ . }}" class="btn-outline">View case study →</a>
-            {{ end }}
-          </div>
-          <div class="project-img">
-            {{ with .image }}
-              <img src="{{ . }}" alt="{{ $.client }}"/>
-            {{ else }}
-              <div class="project-img-placeholder">[ Project image ]</div>
-            {{ end }}
-          </div>
+            <span class="article-arrow">↗</span>
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ with .see_more_url }}<a href="{{ . }}" target="_blank" rel="noopener" class="see-more">See more →</a>{{ end }}
+
+        {{/* Inline testimonial */}}
+        {{ if .testimonial_quote }}
+        {{ $tName := .testimonial_name }}
+        {{ $tRole := .testimonial_role }}
+        <div class="inline-testimonial">
+          <blockquote>{{ .testimonial_quote }}</blockquote>
+          {{ with $tName }}<div class="testi-credit">{{ . }}{{ with $tRole }} <span>— {{ . }}</span>{{ end }}</div>{{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Result screenshot */}}
+        {{ if .screenshot }}
+        {{ $caption := .screenshot_caption }}
+        <div class="result-screenshot">
+          <img src="{{ .screenshot }}" alt="Results"/>
+          {{ with $caption }}<div class="result-caption">{{ . }}</div>{{ end }}
         </div>
         {{ end }}
       </div>
+      {{ end }}
     </div>
   </section>
 
-  <!-- BRANDS -->
-  <section class="brands-strip">
-    <div class="brands-inner container">
-      <p class="reveal">Brands I've worked with</p>
-      <div class="brand-pills reveal">
-        {{ range .Params.brands }}<span class="brand-pill">{{ . }}</span>{{ end }}
+  <!-- ACHIEVEMENTS -->
+  {{ with .Params.achievements }}
+  <section class="achievements">
+    <div class="achievements-inner">
+      {{ with $.Params.achievements_heading }}<h2 class="achievements-heading reveal">{{ . | safeHTML }}</h2>{{ end }}
+      {{ range . }}
+      <div class="achievement-card reveal">
+        {{ with .stats }}
+        <div class="achievement-stats">
+          {{ range . }}
+          <div class="achievement-stat">
+            <div class="stat-num">{{ .number }}</div>
+            <div class="stat-label">{{ .label }}</div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ with .heading }}<h3>{{ . }}</h3>{{ end }}
+        {{ with .text }}<p>{{ . | markdownify }}</p>{{ end }}
+        {{ with .image }}<div class="achievement-img"><img src="{{ . }}" alt="Results screenshot"/></div>{{ end }}
       </div>
+      {{ end }}
     </div>
   </section>
+  {{ end }}
+
+  <!-- FAQs -->
+  {{ with .Params.faqs }}
+  <section class="portfolio-faq">
+    <div class="faq-inner">
+      {{ with $.Params.faq_heading }}<h2 class="faq-heading reveal">{{ . }}</h2>{{ end }}
+      {{ range . }}
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          {{ .question }}
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">{{ .answer | markdownify }}</div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
 
   <!-- CTA -->
   <section class="portfolio-cta">
     <div class="reveal">
-      <h2>{{ .Params.cta_heading | safeHTML }}</h2>
-      <p>{{ .Params.cta_sub }}</p>
-      <a href="/contact/" class="btn-primary">{{ .Params.cta_button }}</a>
+      {{ with .Params.cta_heading }}<h2>{{ . | safeHTML }}</h2>{{ end }}
+      {{ with .Params.cta_sub }}<p>{{ . }}</p>{{ end }}
+      {{ with .Params.cta_button }}<a href="/contact/" class="btn-primary">{{ . }}</a>{{ end }}
     </div>
   </section>
 {{ end }}
