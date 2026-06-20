@@ -68,11 +68,7 @@ testimonials:
     name: Naveen Alphonse
     role: Content Marketing Manager, TripleDart
     initial: R
-<<<<<<< HEAD
     photo: /images/uploads/naveen.jpg
-=======
-    photo: /images/uploads/naveen-photo.jpg
->>>>>>> c2d94cf93676c992404fa91da1d82bb894a23287
   - quote: >-
       Good writing requires even better thinking — Onize does both. I've worked
       with her on several projects, both as editor and manager and watched her
@@ -85,13 +81,8 @@ testimonials:
       I 100% recommend her for any SaaS content writing projects where you need a strong writer and critical thinker!
     name: Mae Josémaria Oparaocha
     role: Senior Content Writer & Strategist, Phoenix Content
-<<<<<<< HEAD
     initial: i
     photo: /images/uploads/mae.jpg
-=======
-    initial: ""
-    photo: /images/uploads/mae-s-image.jpg
->>>>>>> c2d94cf93676c992404fa91da1d82bb894a23287
 services_left_heading: What I can do for you
 services_left_content: >-
   * Well-researched, product-led and thought leadership articles
