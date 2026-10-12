@@ -140,6 +140,23 @@
     .achievement-stats { gap: 20px; }
     .inline-testimonial { padding: 24px; }
   }
+  .sample-note { color: var(--text-sub); font-size: .86rem; line-height: 1.65; margin-top: 10px; }
+  .byline-note { border-left: 3px solid var(--brown); padding: 12px 20px; color: var(--text-sub); line-height: 1.7; margin-bottom: 40px; }
+  .section-heading { font-size: clamp(1.7rem,3vw,2.2rem); margin-bottom: 28px; }
+  .featured-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+  .featured-card { display: flex; flex-direction: column; border: 1px solid var(--card-border); background: var(--card-bg); padding: 28px; border-radius: 18px; color: var(--text); text-decoration: none; }
+  .featured-card h3 { font-size: 1.3rem; margin-top: 14px; line-height: 1.3; }
+  .read-link { margin-top: auto; padding-top: 24px; color: var(--brown); font-size: .85rem; font-weight: 600; }
+  .category-nav { position: static; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; background: none; padding: 0; box-shadow: none; }
+  .category-nav a { border: 1px solid var(--card-border); padding: 10px 14px; border-radius: 30px; color: var(--text); font-size: .8rem; }
+  .client-group { scroll-margin-top: 100px; }
+  .results-intro { line-height: 1.7; color: var(--text-sub); margin: -20px 0 32px; }
+  .faq-question { list-style: none; gap: 20px; }
+  .faq-question::-webkit-details-marker { display: none; }
+  details[open] .faq-question span { transform: rotate(45deg); }
+  .featured-card:hover { border-color: var(--brown); }
+  .featured-card:focus-visible, .article-item:focus-visible, .category-nav a:focus-visible, .faq-question:focus-visible { outline: 3px solid var(--brown-light); outline-offset: 4px; }
+  @media(max-width: 700px) { .featured-grid { grid-template-columns: 1fr; } .portfolio-hero { padding: 120px 24px 60px; } .portfolio-section, .achievements, .portfolio-faq { padding: 50px 20px; } .achievement-card { padding: 24px; } }
 </style>
 {{ end }}
 
@@ -148,16 +165,38 @@
   <section class="portfolio-hero">
     {{ with .Params.hero_eyebrow }}<span class="eyebrow">{{ . }}</span>{{ end }}
     {{ with .Params.hero_headline }}<h1>{{ . | safeHTML }}</h1>{{ end }}
-    {{ with .Params.hero_sub }}<p>{{ . | markdownify }}</p>{{ end }}
+    {{ with .Params.hero_sub }}<div class="hero-description">{{ . | markdownify }}</div>{{ end }}
   </section>
 
-  <!-- CLIENT GROUPS -->
+  <section class="portfolio-section" aria-label="Featured writing">
+    <div class="portfolio-inner">
+      {{ with .Params.byline_note }}<p class="byline-note">{{ . }}</p>{{ end }}
+      {{ $featured := slice }}
+      {{ range .Params.sample_categories }}{{ range .articles }}{{ if .featured }}{{ $featured = $featured | append . }}{{ end }}{{ end }}{{ end }}
+      {{ with first 3 $featured }}
+      <h2 class="section-heading">{{ $.Params.featured_heading }}</h2>
+      <div class="featured-grid">
+        {{ range . }}
+        <a class="featured-card" href="{{ .url }}" target="_blank" rel="noopener">
+          <span class="article-client-tag">{{ .tag }}</span><h3>{{ .title }}</h3>
+          {{ with .contribution }}<p class="sample-note">{{ . }}</p>{{ end }}
+          <span class="read-link">Read article ↗</span>
+        </a>
+        {{ end }}
+      </div>
+      {{ end }}
+      <nav class="category-nav" aria-label="Writing categories">
+        {{ range .Params.sample_categories }}<a href="#{{ .heading | anchorize }}">{{ .heading }}</a>{{ end }}
+      </nav>
+    </div>
+  </section>
+  <!-- SAMPLE CATEGORIES -->
   <section class="portfolio-section">
     <div class="portfolio-inner">
-      {{ range .Params.client_groups }}
-      <div class="client-group reveal">
+      {{ range .Params.sample_categories }}
+      <div class="client-group" id="{{ .heading | anchorize }}">
         <div class="client-group-header">
-          {{ with .heading }}<h2>{{ . | safeHTML }}</h2>{{ end }}
+          {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
           {{ with .description }}<p class="client-group-desc">{{ . }}</p>{{ end }}
         </div>
         {{ with .articles }}
@@ -167,6 +206,7 @@
             <div class="article-info">
               <div class="article-title">{{ .title }}</div>
               {{ with .tag }}<div class="article-client-tag">{{ . }}</div>{{ end }}
+              {{ with .contribution }}<p class="sample-note">{{ . }}</p>{{ end }}
             </div>
             <span class="article-arrow">↗</span>
           </a>
@@ -202,9 +242,10 @@
   {{ with .Params.achievements }}
   <section class="achievements">
     <div class="achievements-inner">
-      {{ with $.Params.achievements_heading }}<h2 class="achievements-heading reveal">{{ . | safeHTML }}</h2>{{ end }}
+      {{ with $.Params.achievements_heading }}<h2 class="achievements-heading">{{ . | safeHTML }}</h2>{{ end }}
+      {{ with $.Params.achievements_intro }}<p class="results-intro">{{ . }}</p>{{ end }}
       {{ range . }}
-      <div class="achievement-card reveal">
+      <div class="achievement-card">
         {{ with .stats }}
         <div class="achievement-stats">
           {{ range . }}
@@ -216,7 +257,7 @@
         </div>
         {{ end }}
         {{ with .heading }}<h3>{{ . }}</h3>{{ end }}
-        {{ with .text }}<p>{{ . | markdownify }}</p>{{ end }}
+        {{ with .text }}<div>{{ . | markdownify }}</div>{{ end }}
         {{ with .image }}<div class="achievement-img"><img src="{{ . }}" alt="Results screenshot"/></div>{{ end }}
       </div>
       {{ end }}
@@ -224,21 +265,21 @@
   </section>
   {{ end }}
 
+  {{ with .Params.testimonials }}
+  <section class="portfolio-section" aria-label="Editor testimonials"><div class="portfolio-inner">
+    <h2 class="section-heading">{{ $.Params.testimonials_heading }}</h2>
+    {{ range . }}<figure class="inline-testimonial"><blockquote>{{ .quote }}</blockquote>
+      <figcaption class="testi-credit">{{ .name }} <span>· {{ .role }}</span></figcaption></figure>{{ end }}
+  </div></section>{{ end }}
   <!-- FAQs -->
   {{ with .Params.faqs }}
   <section class="portfolio-faq">
     <div class="faq-inner">
-      {{ with $.Params.faq_heading }}<h2 class="faq-heading reveal">{{ . }}</h2>{{ end }}
+      {{ with $.Params.faq_heading }}<h2 class="faq-heading">{{ . }}</h2>{{ end }}
       {{ range . }}
-      <div class="faq-item reveal">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          {{ .question }}
-          <span class="faq-toggle">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">{{ .answer | markdownify }}</div>
-        </div>
-      </div>
+      <details class="faq-item"><summary class="faq-question">{{ .question }}<span aria-hidden="true">+</span></summary>
+        <div class="faq-answer-inner">{{ .answer | markdownify }}</div>
+      </details>
       {{ end }}
     </div>
   </section>
@@ -246,7 +287,7 @@
 
   <!-- CTA -->
   <section class="portfolio-cta">
-    <div class="reveal">
+    <div>
       {{ with .Params.cta_heading }}<h2>{{ . | safeHTML }}</h2>{{ end }}
       {{ with .Params.cta_sub }}<p>{{ . }}</p>{{ end }}
       {{ with .Params.cta_button }}<a href="/contact/" class="btn-primary">{{ . }}</a>{{ end }}

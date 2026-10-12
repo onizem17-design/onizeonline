@@ -381,12 +381,20 @@ collections:
             name: hero_sub
             widget: markdown
             required: false
-          - label: Client Groups
-            name: client_groups
+          - label: Byline Note
+            name: byline_note
+            widget: text
+            required: false
+          - label: Featured Samples Heading
+            name: featured_heading
+            widget: string
+            required: false
+          - label: Sample Categories
+            name: sample_categories
             widget: list
             required: false
             fields:
-              - label: Heading (use <span> for highlight)
+              - label: Category Heading
                 name: heading
                 widget: string
                 required: false
@@ -407,9 +415,19 @@ collections:
                     name: url
                     widget: string
                     required: false
-                  - label: Tag (e.g. Blog Post, Case Study)
+                  - label: Client / Publication
                     name: tag
                     widget: string
+                    required: false
+                  - label: Your Contribution
+                    name: contribution
+                    widget: text
+                    required: false
+                  - label: Feature This Sample
+                    name: featured
+                    widget: boolean
+                    default: false
+                    hint: "The first three featured samples appear at the top."
                     required: false
               - label: See More URL
                 name: see_more_url
@@ -435,6 +453,23 @@ collections:
                 name: screenshot_caption
                 widget: string
                 required: false
+          - label: Testimonials Heading
+            name: testimonials_heading
+            widget: string
+            required: false
+          - label: Editor Testimonials
+            name: testimonials
+            widget: list
+            required: false
+            fields:
+              - {label: Quote, name: quote, widget: text}
+              - {label: Name, name: name, widget: string}
+              - {label: Role, name: role, widget: string, required: false}
+              - {label: Photo, name: photo, widget: image, required: false}
+          - label: Results Introduction
+            name: achievements_intro
+            widget: text
+            required: false
           - label: FAQ Heading
             name: faq_heading
             widget: string
