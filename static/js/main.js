@@ -17,7 +17,10 @@ if (toggleBtn) {
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  const closeMenu = () => { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); };
+  hamburger.addEventListener('click', () => { const open = mobileMenu.classList.toggle('open'); hamburger.setAttribute('aria-expanded', String(open)); });
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 }
 
 // ── Scroll reveal ──────────────────────────────────────────

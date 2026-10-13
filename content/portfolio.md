@@ -97,7 +97,7 @@ sample_categories:
     - Automation
     status: Published
     featured: false
-  - title: SignNow Pricing
+  - title: signNow Pricing
     url: https://www.docupilot.com/blog/signnow-pricing
     tag: Docupilot
     subjects:

@@ -13,7 +13,7 @@ bio_paragraphs:
   - "I'm Onize — a SaaS content writer and AI visibility strategist with a track record of helping SaaS brands grow traffic, capture signups, and show up where their buyers are searching — whether that's Google, ChatGPT, Perplexity, or Claude."
   - "I got into content because I believe most of it is a missed opportunity. Too many brands publish to tick a box. I write to move people — deeper into a funnel, closer to a decision, toward trust in a brand."
   - "My edge? I deeply understand SaaS products, user journeys, and the ICPs that buy them. I don't just follow briefs — I improve them. And I rarely need more than one round of feedback."
-fun_fact: "I've worked with brands like Tripledart, Docupilot, SaleDuo, and MobileText Alert — and never needed more than one revision round."
+fun_fact: "I've worked with brands like TripleDart, Docupilot, SalesDuo, and Mobile Text Alerts — and never needed more than one revision round."
 
 expertise_tag: "What I do best"
 expertise_heading: "Four things I'm <em>really</em> good at"

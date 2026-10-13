@@ -201,8 +201,10 @@
       const action = form.getAttribute('action');
       if (!action || action === '#') {
         e.preventDefault();
-        form.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
+        const fields = new FormData(form);
+        const subject = 'Content enquiry: ' + (fields.get('service') || 'New project');
+        const body = 'Name: ' + fields.get('name') + '\nEmail: ' + fields.get('email') + '\n\n' + fields.get('message');
+        window.location.href = 'mailto:{{ .Params.email }}?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       }
     });
   }

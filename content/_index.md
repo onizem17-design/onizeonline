@@ -29,10 +29,10 @@ value_image: /images/uploads/white-black-elegant-modern-corporate-cv-resume.jpg
 value_image_size: large
 proof_label: Brands and agencies I've worked with
 brands:
-  - Tripledart
+  - TripleDart
   - Docupilot
-  - SaleDuo
-  - Mobile Text Alert
+  - SalesDuo
+  - Mobile Text Alerts
   - Your Content Mart
   - Phoenix Content
 stats: []
@@ -58,10 +58,10 @@ testimonials:
   - quote: >-
       I've had the pleasure of working with Onize for more than two years, and
       she has helped me with delivering high quality, publish ready content for
-      two different products in the SaaS space. 
+      two different products in the SaaS space.
 
 
-      She's one of the most reliable content specialists that I had on my pool. If there is one freelancer in my network whom I can depend to get things done on time, be very proactive with communication, and also think beyond the brief, Onize is the person for you. 
+      She's one of the most reliable content specialists that I had on my pool. If there is one freelancer in my network whom I can depend to get things done on time, be very proactive with communication, and also think beyond the brief, Onize is the person for you.
 
 
       What sets her apart is her ability to push back thoughtfully when a brief lacks clarity or compromises quality. This is rare and incredibly valuable, as it strengthens not just the content but the overall strategy. Truly grateful for everything Onize has done for my portfolio.
@@ -72,7 +72,7 @@ testimonials:
   - quote: >-
       Good writing requires even better thinking — Onize does both. I've worked
       with her on several projects, both as editor and manager and watched her
-      grow to become a strong, reliable SaaS writer. 
+      grow to become a strong, reliable SaaS writer.
 
 
       She always amazes me with how well she spots new, better angles to an article and even walks the extra mile to thoroughly understand a topic. Plus, she conveys her thoughts clearly when writing and handles feedback like a pro.
