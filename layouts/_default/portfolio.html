@@ -184,7 +184,7 @@
   .portfolio-samples .feedback-image, .naveen-feedback-crop { border: 1px solid rgba(59,74,47,.15); }
   @media(max-width: 700px) { .portfolio-intro { padding-bottom: 12px; } .portfolio-samples { padding-top: 20px; } }
   .portfolio-hero .hero-description { color: var(--nude-light); font-size: 1.05rem; max-width: 620px; margin: 0 auto; line-height: 1.7; }
-  .portfolio-hero .hero-description p { color: inherit; }
+  .portfolio-hero .hero-description p, .portfolio-hero .hero-description span { color: #F7F0E3; }
 </style>
 {{ end }}
 
@@ -193,7 +193,7 @@
   <section class="portfolio-hero">
     {{ with .Params.hero_eyebrow }}<span class="eyebrow">{{ . }}</span>{{ end }}
     {{ with .Params.hero_headline }}<h1>{{ . | safeHTML }}</h1>{{ end }}
-    {{ with .Params.hero_sub }}<div class="hero-description">{{ . | markdownify }}</div>{{ end }}
+    {{ with .Params.hero_sub }}<div class="hero-description" style="color: #F7F0E3;">{{ . | markdownify }}</div>{{ end }}
   </section>
 
   <section class="portfolio-section portfolio-intro" aria-label="Featured writing">
