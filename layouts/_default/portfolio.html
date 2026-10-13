@@ -172,6 +172,17 @@
   .naveen-feedback-crop { position: relative; width: 100%; max-width: 520px; aspect-ratio: 691 / 430; overflow: hidden; margin-top: 14px; border-radius: 8px; }
   .naveen-feedback-crop img { position: absolute; top: 0; left: 0; width: 100%; height: auto; transform: translateY(-11.72%); }
   .feedback-image.mae-feedback { max-width: 909px; }
+  .portfolio-intro { padding-bottom: 16px; }
+  .portfolio-samples { padding-top: 24px; }
+  .portfolio-samples .article-list { gap: 12px; }
+  .portfolio-samples .article-item { background: #e4e8da; border: 1px solid rgba(59,74,47,.2); border-radius: 16px; }
+  .portfolio-samples .article-item:hover { background: #d9dfcc; }
+  .portfolio-samples .subject-tags span { background: rgba(255,255,255,.65); }
+  [data-theme="dark"] .portfolio-samples .article-item { background: #35432b; border-color: rgba(239,227,202,.2); }
+  [data-theme="dark"] .portfolio-samples .article-item:hover { background: #405236; }
+  [data-theme="dark"] .portfolio-samples .subject-tags span { background: rgba(0,0,0,.2); }
+  .portfolio-samples .feedback-image, .naveen-feedback-crop { border: 1px solid rgba(59,74,47,.15); }
+  @media(max-width: 700px) { .portfolio-intro { padding-bottom: 12px; } .portfolio-samples { padding-top: 20px; } }
 </style>
 {{ end }}
 
@@ -183,7 +194,7 @@
     {{ with .Params.hero_sub }}<div class="hero-description">{{ . | markdownify }}</div>{{ end }}
   </section>
 
-  <section class="portfolio-section" aria-label="Featured writing">
+  <section class="portfolio-section portfolio-intro" aria-label="Featured writing">
     <div class="portfolio-inner">
       {{ with .Params.byline_note }}<p class="byline-note">{{ . }}</p>{{ end }}
       {{ $featured := slice }}
@@ -219,7 +230,7 @@
     </div>
   </section>
   <!-- SAMPLE CATEGORIES -->
-  <section class="portfolio-section">
+  <section class="portfolio-section portfolio-samples">
     <div class="portfolio-inner">
       {{ range .Params.sample_categories }}
       <div class="client-group" data-sample-category id="{{ .heading | anchorize }}">
