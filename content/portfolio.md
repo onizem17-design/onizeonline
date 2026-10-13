@@ -117,6 +117,7 @@ sample_categories:
     - Local SEO
     status: Unpublished writing sample
     featured: false
+    feedback_image: /images/portfolio/nightwatch-accuranker-semrush-editor-feedback.png
 - heading: Explainers and listicles
   description: ''
   articles:
@@ -137,6 +138,7 @@ sample_categories:
     - Legal
     status: Published
     featured: false
+    feedback_image: /images/portfolio/licensing-agreement-editor-feedback.png
   - title: Document Automation for Human Resources
     url: https://www.docupilot.com/blog/document-automation-for-human-resources
     tag: Docupilot
@@ -145,6 +147,7 @@ sample_categories:
     - Document automation
     status: Published
     featured: false
+    feedback_image: /images/portfolio/hr-document-automation-editor-feedback.png
   - title: Trust and Authority in Content Marketing
     url: https://ucmarketing.co.uk/trust-authority-content-marketing/
     tag: UC Marketing
@@ -161,6 +164,7 @@ sample_categories:
     - Document workflows
     status: Published
     featured: false
+    feedback_image: /images/portfolio/wet-electronic-signature-editor-feedback.png
   - title: Addendum to Contract
     url: https://www.docupilot.com/blog/addendum-to-contract
     tag: Docupilot
@@ -169,6 +173,7 @@ sample_categories:
     - Contracts
     status: Published
     featured: false
+    feedback_image: /images/portfolio/contract-addendum-editor-feedback.png
 testimonials:
 - quote: "I've had the pleasure of working with Onize for more than two years, and she has helped me with delivering\
     \ high quality, publish ready content for two different products in the SaaS space. \n\nShe's one of the most\

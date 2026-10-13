@@ -168,7 +168,7 @@
   .subject-tags span { background: var(--bg-alt); color: var(--text); border-radius: 4px; padding: 4px 8px; font-size: .7rem; }
   .publication-status { display: inline-block; font-size: .75rem; color: var(--brown); margin-top: 10px; }
   .sample-feedback { margin-top: 16px; padding-left: 12px; border-left: 2px solid var(--brown); font-size: .85rem; line-height: 1.6; color: var(--text-sub); }
-  .feedback-image { max-width: 100%; height: auto; margin-top: 14px; border-radius: 8px; }
+  .feedback-image { display: block; width: 100%; max-width: 520px; height: auto; margin-top: 14px; border-radius: 8px; }
 </style>
 {{ end }}
 
@@ -196,7 +196,7 @@
               {{ with .subjects }}<div class="subject-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
               {{ with .feedback }}<blockquote class="sample-feedback">{{ . }}</blockquote>{{ end }}
               {{ with .feedback_credit }}<p class="sample-note">{{ . }}</p>{{ end }}
-              {{ with .feedback_image }}<img class="feedback-image" src="{{ . }}" alt="Editor feedback" loading="lazy">{{ end }}
+              {{ with .feedback_image }}<img class="feedback-image" src="{{ . }}" alt="Editor feedback screenshot" loading="lazy">{{ end }}
           <span class="read-link">Read article ↗</span>
         </a>
         {{ end }}
@@ -236,7 +236,7 @@
               {{ with .subjects }}<div class="subject-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
               {{ with .feedback }}<blockquote class="sample-feedback">{{ . }}</blockquote>{{ end }}
               {{ with .feedback_credit }}<p class="sample-note">{{ . }}</p>{{ end }}
-              {{ with .feedback_image }}<img class="feedback-image" src="{{ . }}" alt="Editor feedback" loading="lazy">{{ end }}
+              {{ with .feedback_image }}<img class="feedback-image" src="{{ . }}" alt="Editor feedback screenshot" loading="lazy">{{ end }}
             </div>
             <span class="article-arrow">↗</span>
           </a>
