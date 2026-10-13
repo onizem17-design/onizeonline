@@ -419,6 +419,30 @@ collections:
                     name: tag
                     widget: string
                     required: false
+                  - label: Subject Tags
+                    name: subjects
+                    widget: list
+                    required: false
+                    hint: "Add subjects such as SEO, AI, Ecommerce, or Legal. Reuse the same spelling for consistent filters."
+                    field: {label: Subject, name: subject, widget: string}
+                  - label: Publication Status
+                    name: status
+                    widget: select
+                    options: [Published, Unpublished writing sample]
+                    default: Published
+                    required: false
+                  - label: Editor Feedback
+                    name: feedback
+                    widget: text
+                    required: false
+                  - label: Feedback Attribution
+                    name: feedback_credit
+                    widget: string
+                    required: false
+                  - label: Feedback Screenshot
+                    name: feedback_image
+                    widget: image
+                    required: false
                   - label: Your Contribution
                     name: contribution
                     widget: text

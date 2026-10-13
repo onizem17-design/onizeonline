@@ -35,36 +35,140 @@ cta_heading: Like what you see?
 cta_sub: Tell me about your product, audience, and the content you need.
 cta_button: Get in touch
 byline_note: All samples here were written by me. Some were ghostwritten and published under client or editorial
-  bylines.
+  bylines. Unpublished work is labelled separately.
 featured_heading: Start with these
 testimonials_heading: What my editors say
 achievements_intro: These results reflect my contribution alongside client teams and editors. Rankings and AI citations
   can change over time.
 sample_categories:
-- heading: Product reviews, comparisons, and alternatives
-  description: Firsthand testing and research to help readers evaluate software.
+- heading: How-to and product-led guides
+  description: ''
   articles:
-  - title: 9 Best AI Landing Page Builders in 2026 (I Tested Each)
-    url: https://emergent.sh/learn/best-ai-landing-page-builders
-    tag: Emergent
-    contribution: Reviewed AI landing page builders through firsthand product testing.
-    featured: true
-- heading: Technical explainers and how-to guides
-  description: Practical explanations for readers with different levels of technical knowledge.
-  articles:
-  - title: 'MCP vs API: Which One Do Agencies Need for SEO Automation?'
-    url: https://keyword.com/blog/mcp-vs-api-for-seo-automation/
-    tag: Keyword.com
-    contribution: Explained two approaches to SEO automation with practical workflow examples.
-    featured: true
-- heading: SEO, AI search, and marketing content
-  description: Content about search performance, AI visibility, and marketing.
-  articles:
-  - title: A Guide to LLM Tracking and AI Search Visibility for SEO Agencies
+  - title: Amazon Seller Account Manager
+    url: https://salesduo.com/blog/amazon-seller-account-manager
+    tag: SalesDuo
+    subjects:
+    - Ecommerce
+    status: Published
+    featured: false
+  - title: Promotional SMS
+    url: https://mobile-text-alerts.com/articles/promotional-sms
+    tag: Mobile Text Alerts
+    subjects:
+    - Marketing
+    - SMS marketing
+    status: Published
+    featured: false
+  - title: LLM Tracking and AI Search Visibility
     url: https://keyword.com/blog/llm-tracking-ai-search-visibility/
     tag: Keyword.com
-    contribution: Explained AI visibility metrics and how agencies can track brand presence.
+    subjects:
+    - SEO
+    - AI
+    status: Published
     featured: true
+- heading: Alternatives, reviews, and comparisons
+  description: ''
+  articles:
+  - title: 'Coda vs Notion: Which Should You Use?'
+    url: https://hackernoon.com/coda-vs-notion-which-should-you-use
+    tag: HackerNoon
+    subjects:
+    - Productivity
+    - SaaS
+    status: Published
+    featured: false
+  - title: Best AI Landing Page Builders
+    url: https://emergent.sh/learn/best-ai-landing-page-builders
+    tag: Emergent
+    subjects:
+    - AI
+    - Website builders
+    status: Published
+    featured: true
+  - title: Amazon Store Management Agency Comparison
+    url: https://salesduo.com/blog/amazon-store-management-agency-comparison/
+    tag: SalesDuo
+    subjects:
+    - Ecommerce
+    status: Published
+    featured: false
+  - title: Top Formstack Alternatives
+    url: https://www.docupilot.com/blog/top-formstack-alternatives
+    tag: Docupilot
+    subjects:
+    - Document automation
+    - SaaS
+    status: Published
+    featured: false
+  - title: SignNow Pricing
+    url: https://www.docupilot.com/blog/signnow-pricing
+    tag: Docupilot
+    subjects:
+    - Electronic signatures
+    - SaaS
+    status: Published
+    featured: false
+  - title: Nightwatch vs. AccuRanker vs. Semrush for Local Rank Tracking
+    url: https://docs.google.com/document/d/1ja2rpSN58-ekHaY045jhUHLmQdrR2kRNQCU1amuRsrk/edit
+    tag: Keyword.com
+    subjects:
+    - SEO
+    - Local SEO
+    status: Unpublished writing sample
+    featured: false
+- heading: Explainers and listicles
+  description: ''
+  articles:
+  - title: MCP vs API for SEO Automation
+    url: https://keyword.com/blog/mcp-vs-api-for-seo-automation/
+    tag: Keyword.com
+    subjects:
+    - API
+    - MCP
+    - SEO
+    - Automation
+    status: Published
+    featured: true
+  - title: Licensing Agreement Guide
+    url: https://www.docupilot.com/blog/licensing-agreement
+    tag: Docupilot
+    subjects:
+    - Legal
+    status: Published
+    featured: false
+  - title: Document Automation for Human Resources
+    url: https://www.docupilot.com/blog/document-automation-for-human-resources
+    tag: Docupilot
+    subjects:
+    - HR
+    - Document automation
+    status: Published
+    featured: false
+  - title: Trust and Authority in Content Marketing
+    url: https://ucmarketing.co.uk/trust-authority-content-marketing/
+    tag: UC Marketing
+    subjects:
+    - Marketing
+    - Content marketing
+    status: Published
+    featured: false
+  - title: Wet Signature vs Electronic Signature
+    url: https://www.docupilot.com/blog/wet-signature-vs-electronic-signature
+    tag: Docupilot
+    subjects:
+    - Electronic signatures
+    - Document workflows
+    status: Published
+    featured: false
+  - title: Addendum to Contract
+    url: https://www.docupilot.com/blog/addendum-to-contract
+    tag: Docupilot
+    subjects:
+    - Legal
+    - Contracts
+    status: Published
+    featured: false
 testimonials:
 - quote: "I've had the pleasure of working with Onize for more than two years, and she has helped me with delivering\
     \ high quality, publish ready content for two different products in the SaaS space. \n\nShe's one of the most\
