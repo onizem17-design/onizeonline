@@ -199,6 +199,7 @@
       {{ with .Params.byline_note }}<p class="byline-note">{{ . }}</p>{{ end }}
       {{ $featured := slice }}
       {{ range .Params.sample_categories }}{{ range .articles }}{{ if .featured }}{{ $featured = $featured | append . }}{{ end }}{{ end }}{{ end }}
+      {{ if ne .Params.show_featured false }}
       {{ with first 3 $featured }}
       <h2 class="section-heading">{{ $.Params.featured_heading }}</h2>
       <div class="featured-grid">
@@ -215,6 +216,7 @@
         </a>
         {{ end }}
       </div>
+      {{ end }}
       {{ end }}
       {{ $subjects := slice }}
       {{ range .Params.sample_categories }}{{ range .articles }}{{ range .subjects }}{{ $subjects = $subjects | append . }}{{ end }}{{ end }}{{ end }}

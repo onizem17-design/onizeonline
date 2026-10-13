@@ -385,6 +385,12 @@ collections:
             name: byline_note
             widget: text
             required: false
+          - label: Show Featured Samples
+            name: show_featured
+            widget: boolean
+            default: true
+            required: false
+            hint: "Turn on to display the Start with these section. Featured selections remain saved when hidden."
           - label: Featured Samples Heading
             name: featured_heading
             widget: string

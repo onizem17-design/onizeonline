@@ -186,4 +186,5 @@ testimonials:
   role: Senior Content Writer & Strategist, Phoenix Content
   initial: i
   photo: /images/uploads/mae.jpg
+show_featured: false
 ---
