@@ -56,7 +56,6 @@ sample_categories:
     tag: Mobile Text Alerts
     subjects:
     - Marketing
-    - SMS marketing
     status: Published
     featured: false
   - title: LLM Tracking and AI Search Visibility
@@ -75,7 +74,6 @@ sample_categories:
     tag: HackerNoon
     subjects:
     - Productivity
-    - SaaS
     status: Published
     featured: false
   - title: Best AI Landing Page Builders
@@ -83,7 +81,6 @@ sample_categories:
     tag: Emergent
     subjects:
     - AI
-    - Website builders
     status: Published
     featured: true
   - title: Amazon Store Management Agency Comparison
@@ -97,16 +94,14 @@ sample_categories:
     url: https://www.docupilot.com/blog/top-formstack-alternatives
     tag: Docupilot
     subjects:
-    - Document automation
-    - SaaS
+    - Automation
     status: Published
     featured: false
   - title: SignNow Pricing
     url: https://www.docupilot.com/blog/signnow-pricing
     tag: Docupilot
     subjects:
-    - Electronic signatures
-    - SaaS
+    - Legal
     status: Published
     featured: false
   - title: Nightwatch vs. AccuRanker vs. Semrush for Local Rank Tracking
@@ -114,7 +109,6 @@ sample_categories:
     tag: Keyword.com
     subjects:
     - SEO
-    - Local SEO
     status: Unpublished writing sample
     featured: false
     feedback_image: /images/portfolio/nightwatch-accuranker-semrush-editor-feedback.png
@@ -126,9 +120,8 @@ sample_categories:
     tag: Keyword.com
     subjects:
     - API
-    - MCP
-    - SEO
     - Automation
+    - SEO
     status: Published
     featured: true
   - title: Licensing Agreement Guide
@@ -144,7 +137,7 @@ sample_categories:
     tag: Docupilot
     subjects:
     - HR
-    - Document automation
+    - Automation
     status: Published
     featured: false
     feedback_image: /images/portfolio/hr-document-automation-editor-feedback.png
@@ -153,15 +146,14 @@ sample_categories:
     tag: UC Marketing
     subjects:
     - Marketing
-    - Content marketing
     status: Published
     featured: false
   - title: Wet Signature vs Electronic Signature
     url: https://www.docupilot.com/blog/wet-signature-vs-electronic-signature
     tag: Docupilot
     subjects:
-    - Electronic signatures
-    - Document workflows
+    - Legal
+    - Automation
     status: Published
     featured: false
     feedback_image: /images/portfolio/wet-electronic-signature-editor-feedback.png
@@ -170,7 +162,6 @@ sample_categories:
     tag: Docupilot
     subjects:
     - Legal
-    - Contracts
     status: Published
     featured: false
     feedback_image: /images/portfolio/contract-addendum-editor-feedback.png
