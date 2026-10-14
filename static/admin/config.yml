@@ -397,6 +397,8 @@ collections:
             required: false
           - label: Sample Categories
             name: sample_categories
+            summary: "{{fields.heading}}"
+            hint: "Expand each category to find its articles. Guides: 3; comparisons: 6; explainers: 6 in the current selection."
             widget: list
             required: false
             fields:
@@ -410,6 +412,7 @@ collections:
                 required: false
               - label: Articles
                 name: articles
+                summary: "{{fields.title}}"
                 widget: list
                 required: false
                 fields:

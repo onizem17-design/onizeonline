@@ -3,30 +3,846 @@ backend:
   repo: onizem17-design/onizeonline
   branch: main
   base_url: https://cms-auth.onizem17.workers.dev
-media_folder: images/uploads
+
+publish_mode: editorial_workflow
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
 
 collections:
   - name: blog
     label: Blog Posts
-    folder: _posts
+    folder: content/blog
     create: true
+    slug: "{{slug}}"
     fields:
-      - label: Title
+      - label: Title (H1 — shown on page)
         name: title
         widget: string
+      - label: SEO Title (meta title — shown in Google)
+        name: seo_title
+        widget: string
+        required: false
+        hint: "Leave blank to use the H1 title. Keep under 60 characters for best results."
       - label: Date
         name: date
         widget: datetime
+      - label: Description
+        name: description
+        widget: markdown
+        required: false
+        hint: "Shown in Google search results and on the blog listing page. Keep under 160 characters."
       - label: Featured Image
         name: image
         widget: image
         required: false
-      - label: Excerpt
-        name: excerpt
-        widget: text
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
       - label: Body
         name: body
         widget: markdown
+        required: false
+
+  - name: pages
+    label: Pages
+    files:
+      - name: homepage
+        label: Homepage
+        file: content/_index.md
+        fields:
+          - label: "🚫 Hide Hero Section"
+            name: hide_hero
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide Value Section"
+            name: hide_value
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide Social Proof Bar"
+            name: hide_proof
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide AI Section"
+            name: hide_ai
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide Testimonials"
+            name: hide_testimonials
+            widget: boolean
+            default: false
+            required: false
+          - label: "🚫 Hide Services Section"
+            name: hide_services
+            widget: boolean
+            default: false
+            required: false
+          - label: Hero Photo
+            name: hero_photo
+            widget: image
+            required: false
+            hint: "Your headshot shown in the homepage hero section"
+          - label: Speech Bubble Text
+            name: speech_bubble
+            widget: markdown
+            required: false
+            hint: "The floating speech bubble next to your photo"
+          - label: Hero Eyebrow Text
+            name: hero_eyebrow
+            widget: markdown
+            required: false
+          - label: Hero Headline
+            name: hero_headline
+            widget: markdown
+            required: false
+          - label: Hero Text Color
+            name: hero_text_color
+            widget: select
+            options: ["dark olive", "black", "brown", "white"]
+            default: "dark olive"
+            required: false
+            hint: "Text color for the hero headline"
+          - label: Hero Button Text
+            name: hero_cta
+            widget: string
+            required: false
+          - label: Value Section Heading
+            name: value_heading
+            widget: markdown
+            required: false
+          - label: Value Section Text Color
+            name: value_text_color
+            widget: select
+            options: ["black", "dark olive", "brown", "white"]
+            default: "black"
+            required: false
+            hint: "Text color for the value section"
+          - label: Value Section Intro
+            name: value_intro
+            widget: markdown
+            required: false
+          - label: Value Bullet Style
+            name: value_bullet_style
+            widget: select
+            options: ["arrow", "dot", "check", "dash"]
+            default: "arrow"
+            required: false
+            hint: "Choose the bullet style for the value section list"
+          - label: Value Section Button Text
+            name: value_cta
+            widget: string
+            required: false
+          - label: Value Section Image
+            name: value_image
+            widget: image
+            required: false
+            hint: "Image shown beside the value section text"
+          - label: Value Image Size
+            name: value_image_size
+            widget: select
+            options: ["small", "medium", "large", "full"]
+            default: "full"
+            required: false
+            hint: "How large the value section image appears"
+          - label: Social Proof Label
+            name: proof_label
+            widget: string
+            required: false
+            hint: "Text shown above the brand logos (e.g. 'I've helped these brands')"
+          - label: Client Brands
+            name: brands
+            widget: list
+            required: false
+            hint: "Brand names shown in the social proof bar"
+          - label: Stats
+            name: stats
+            widget: list
+            required: false
+            fields:
+              - label: Number (e.g. 150%)
+                name: number
+                widget: string
+                required: false
+              - label: Use Badge Instead of Number
+                name: badge
+                widget: boolean
+                default: false
+                required: false
+              - label: Badge Text
+                name: badge_text
+                widget: string
+                required: false
+              - label: Description
+                name: description
+                widget: string
+                required: false
+          - label: AI Section Text Color
+            name: ai_text_color
+            widget: select
+            options: ["white", "cream", "black", "brown"]
+            default: "white"
+            required: false
+            hint: "Text color for the AI section"
+          - label: AI Section Heading
+            name: ai_heading
+            widget: markdown
+            required: false
+          - label: AI Section Image
+            name: ai_image
+            widget: image
+            required: false
+            hint: "Image shown beside the AI section text"
+          - label: AI Image Size
+            name: ai_image_size
+            widget: select
+            options: ["small", "medium", "large", "full"]
+            default: "full"
+            required: false
+            hint: "How large the AI section image appears"
+          - label: AI Section Bullet Points
+            name: ai_bullets
+            widget: list
+            required: false
+          - label: Testimonials Section Heading
+            name: testimonials_heading
+            widget: markdown
+            required: false
+            hint: "Heading above testimonials (e.g. 'What clients say')"
+          - label: Testimonials Link Text
+            name: testimonials_link
+            widget: string
+            required: false
+            hint: "Text for the 'See all' link. Leave empty to hide."
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            required: false
+            fields:
+              - label: Testimonial Title
+                name: title
+                widget: string
+                required: false
+                hint: "A short highlight heading for this testimonial"
+              - label: Quote
+                name: quote
+                widget: markdown
+                required: false
+              - label: Client Name
+                name: name
+                widget: string
+                required: false
+              - label: Role & Company
+                name: role
+                widget: string
+                required: false
+              - label: Initial (single letter avatar)
+                name: initial
+                widget: string
+                required: false
+              - label: Client Photo
+                name: photo
+                widget: image
+                required: false
+                hint: "Upload a headshot. If provided, it replaces the initial avatar."
+          - label: "Left Column Heading (e.g. 'What I can do for you')"
+            name: services_left_heading
+            widget: string
+            required: false
+          - label: Left Column Content
+            name: services_left_content
+            widget: markdown
+            required: false
+            hint: "Use bullet points (checkmarks added automatically). Separate groups with a blank line."
+          - label: "Right Column Heading (e.g. 'Who I work with')"
+            name: services_right_heading
+            widget: string
+            required: false
+          - label: Right Column Content
+            name: services_right_content
+            widget: markdown
+            required: false
+            hint: "Use bullet points (checkmarks added automatically)."
+          - label: Button Text
+            name: services_cta
+            widget: string
+            required: false
+          - label: Link Text (below button)
+            name: services_link
+            widget: string
+            required: false
+            hint: "Text for the link below the button (e.g. 'See full pricing'). Leave empty to hide."
+
+      - name: about
+        label: About Page
+        file: content/about.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: markdown
+            required: false
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+            required: false
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+            required: false
+          - label: Hero Subtext
+            name: hero_sub
+            widget: markdown
+            required: false
+          - label: Bio Section Tag
+            name: bio_tag
+            widget: string
+            required: false
+          - label: Bio Heading
+            name: bio_heading
+            widget: string
+            required: false
+          - label: Bio Paragraphs
+            name: bio_paragraphs
+            widget: list
+            required: false
+            hint: "Each item is one paragraph"
+          - label: Fun Fact / Highlight
+            name: fun_fact
+            widget: markdown
+            required: false
+          - label: Expertise Section Tag
+            name: expertise_tag
+            widget: string
+            required: false
+          - label: Expertise Heading
+            name: expertise_heading
+            widget: string
+            required: false
+          - label: Expertise Items
+            name: expertise_items
+            widget: list
+            required: false
+            hint: "Each item is one expertise point"
+          - label: Values Section Heading
+            name: values_heading
+            widget: string
+            required: false
+          - label: Values
+            name: values
+            widget: list
+            required: false
+            fields:
+              - label: Icon (emoji)
+                name: icon
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+                required: false
+              - label: Description
+                name: description
+                widget: markdown
+                required: false
+          - label: CTA Heading
+            name: cta_heading
+            widget: string
+            required: false
+          - label: CTA Subtext
+            name: cta_sub
+            widget: markdown
+            required: false
+          - label: CTA Button Text
+            name: cta_button
+            widget: string
+            required: false
+
+      - name: portfolio
+        label: Portfolio Page
+        file: content/portfolio.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: markdown
+            required: false
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+            required: false
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+            required: false
+          - label: Hero Subtext
+            name: hero_sub
+            widget: markdown
+            required: false
+          - label: Byline Note
+            name: byline_note
+            widget: text
+            required: false
+          - label: Show Featured Samples
+            name: show_featured
+            widget: boolean
+            default: true
+            required: false
+            hint: "Turn on to display the Start with these section. Featured selections remain saved when hidden."
+          - label: Featured Samples Heading
+            name: featured_heading
+            widget: string
+            required: false
+          - label: Sample Categories
+            name: sample_categories
+            summary: "{{fields.heading}}"
+            hint: "Expand each category to find its articles. Guides: 3; comparisons: 6; explainers: 6 in the current selection."
+            widget: list
+            required: false
+            fields:
+              - label: Category Heading
+                name: heading
+                widget: string
+                required: false
+              - label: Short Description
+                name: description
+                widget: string
+                required: false
+              - label: Articles
+                name: articles
+                summary: "{{fields.title}}"
+                widget: list
+                required: false
+                fields:
+                  - label: Article Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Article URL
+                    name: url
+                    widget: string
+                    required: false
+                  - label: Client / Publication
+                    name: tag
+                    widget: string
+                    required: false
+                  - label: Subject Tags
+                    name: subjects
+                    widget: list
+                    required: false
+                    hint: "Add subjects such as SEO, AI, Ecommerce, or Legal. Reuse the same spelling for consistent filters."
+                    field: {label: Subject, name: subject, widget: string}
+                  - label: Publication Status
+                    name: status
+                    widget: select
+                    options: [Published, Unpublished writing sample]
+                    default: Published
+                    required: false
+                  - label: Editor Feedback
+                    name: feedback
+                    widget: text
+                    required: false
+                  - label: Feedback Attribution
+                    name: feedback_credit
+                    widget: string
+                    required: false
+                  - label: Feedback Screenshot
+                    name: feedback_image
+                    widget: image
+                    required: false
+                  - label: Your Contribution
+                    name: contribution
+                    widget: text
+                    required: false
+                  - label: Feature This Sample
+                    name: featured
+                    widget: boolean
+                    default: false
+                    hint: "The first three featured samples appear at the top."
+                    required: false
+              - label: See More URL
+                name: see_more_url
+                widget: string
+                required: false
+              - label: Testimonial Quote
+                name: testimonial_quote
+                widget: text
+                required: false
+              - label: Testimonial Name
+                name: testimonial_name
+                widget: string
+                required: false
+              - label: Testimonial Role
+                name: testimonial_role
+                widget: string
+                required: false
+              - label: Result Screenshot
+                name: screenshot
+                widget: image
+                required: false
+              - label: Screenshot Caption
+                name: screenshot_caption
+                widget: string
+                required: false
+          - label: Testimonials Heading
+            name: testimonials_heading
+            widget: string
+            required: false
+          - label: Editor Testimonials
+            name: testimonials
+            widget: list
+            required: false
+            fields:
+              - {label: Quote, name: quote, widget: text}
+              - {label: Name, name: name, widget: string}
+              - {label: Role, name: role, widget: string, required: false}
+              - {label: Photo, name: photo, widget: image, required: false}
+          - label: Results Introduction
+            name: achievements_intro
+            widget: text
+            required: false
+          - label: FAQ Heading
+            name: faq_heading
+            widget: string
+            required: false
+          - label: FAQs
+            name: faqs
+            widget: list
+            required: false
+            fields:
+              - label: Question
+                name: question
+                widget: string
+                required: false
+              - label: Answer
+                name: answer
+                widget: text
+                required: false
+          - label: Achievements Heading
+            name: achievements_heading
+            widget: string
+            required: false
+          - label: Achievements
+            name: achievements
+            widget: list
+            required: false
+            fields:
+              - label: Heading
+                name: heading
+                widget: string
+                required: false
+              - label: Text
+                name: text
+                widget: markdown
+                required: false
+              - label: Image
+                name: image
+                widget: image
+                required: false
+              - label: Stats
+                name: stats
+                widget: list
+                required: false
+                fields:
+                  - label: Number
+                    name: number
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+          - label: CTA Heading
+            name: cta_heading
+            widget: string
+            required: false
+          - label: CTA Subtext
+            name: cta_sub
+            widget: markdown
+            required: false
+          - label: CTA Button Text
+            name: cta_button
+            widget: string
+            required: false
+
+      - name: pricing
+        label: Pricing Page
+        file: content/pricing.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: markdown
+            required: false
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+            required: false
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+            required: false
+          - label: Hero Subtext
+            name: hero_sub
+            widget: markdown
+            required: false
+          - label: Packages
+            name: packages
+            widget: list
+            required: false
+            fields:
+              - label: Icon (emoji)
+                name: icon
+                widget: string
+                required: false
+              - label: Package Name
+                name: name
+                widget: string
+                required: false
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+              - label: Price
+                name: price
+                widget: string
+                required: false
+              - label: Price Note
+                name: price_note
+                widget: string
+                required: false
+              - label: Mark as Featured / Most Popular
+                name: featured
+                widget: boolean
+                default: false
+                required: false
+              - label: Features (bullet points)
+                name: features
+                widget: list
+                required: false
+              - label: Button Text
+                name: cta
+                widget: string
+                required: false
+          - label: Packages Note (shown below grid)
+            name: packages_note
+            widget: string
+            required: false
+          - label: FAQ Section Heading
+            name: faq_heading
+            widget: string
+            required: false
+          - label: FAQs
+            name: faqs
+            widget: list
+            required: false
+            fields:
+              - label: Question
+                name: question
+                widget: string
+                required: false
+              - label: Answer
+                name: answer
+                widget: markdown
+                required: false
+          - label: CTA Heading
+            name: cta_heading
+            widget: string
+            required: false
+          - label: CTA Subtext
+            name: cta_sub
+            widget: markdown
+            required: false
+          - label: CTA Button Text
+            name: cta_button
+            widget: string
+            required: false
+
+      - name: contact
+        label: Contact Page
+        file: content/contact.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: markdown
+            required: false
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+            required: false
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+            required: false
+          - label: Hero Subtext
+            name: hero_sub
+            widget: markdown
+            required: false
+          - label: Info Section Heading
+            name: info_heading
+            widget: string
+            required: false
+          - label: Info Text
+            name: info_text
+            widget: markdown
+            required: false
+          - label: Email Address
+            name: email
+            widget: string
+            required: false
+          - label: Booking Link URL
+            name: booking_url
+            widget: string
+            required: false
+          - label: Booking Link Label
+            name: booking_label
+            widget: string
+            required: false
+          - label: Booking Note
+            name: booking_note
+            widget: string
+            required: false
+          - label: LinkedIn URL
+            name: linkedin_url
+            widget: string
+            required: false
+          - label: Form Heading
+            name: form_heading
+            widget: string
+            required: false
+          - label: Form Subtext
+            name: form_sub
+            widget: string
+            required: false
+          - label: Form Button Text
+            name: form_button
+            widget: string
+            required: false
+          - label: Service Options (dropdown)
+            name: service_options
+            widget: list
+            required: false
+          - label: "What Happens Next — Heading"
+            name: expect_heading
+            widget: string
+            required: false
+          - label: "What Happens Next — Steps"
+            name: expect_steps
+            widget: list
+            required: false
+            fields:
+              - label: Step Title
+                name: title
+                widget: string
+                required: false
+              - label: Step Description
+                name: description
+                widget: markdown
+                required: false
+
+      - name: project
+        label: Featured Case Study
+        file: content/project.md
+        fields:
+          - label: SEO Description
+            name: description
+            widget: markdown
+            required: false
+          - label: Hero Eyebrow
+            name: hero_eyebrow
+            widget: string
+            required: false
+          - label: Hero Headline
+            name: hero_headline
+            widget: string
+            required: false
+          - label: Hero Subtext
+            name: hero_sub
+            widget: markdown
+            required: false
+          - label: Client Name
+            name: client
+            widget: string
+            required: false
+          - label: Service Provided
+            name: service
+            widget: string
+            required: false
+          - label: Industry
+            name: industry
+            widget: string
+            required: false
+          - label: Timeline
+            name: timeline
+            widget: string
+            required: false
+          - label: Results (top stats)
+            name: results
+            widget: list
+            required: false
+            fields:
+              - label: Number (e.g. 150%)
+                name: number
+                widget: string
+                required: false
+              - label: Label
+                name: label
+                widget: string
+                required: false
+          - label: Challenge Section Heading
+            name: challenge_heading
+            widget: string
+            required: false
+          - label: Challenge Text
+            name: challenge_text
+            widget: markdown
+            required: false
+          - label: Approach Section Heading
+            name: approach_heading
+            widget: string
+            required: false
+          - label: Approach Text
+            name: approach_text
+            widget: markdown
+            required: false
+          - label: Approach Bullet Points
+            name: approach_bullets
+            widget: list
+            required: false
+          - label: Results Section Heading
+            name: outcome_heading
+            widget: string
+            required: false
+          - label: Results Text
+            name: outcome_text
+            widget: markdown
+            required: false
+          - label: Client Testimonial Quote
+            name: testimonial_quote
+            widget: markdown
+            required: false
+          - label: Testimonial — Client Name
+            name: testimonial_name
+            widget: string
+            required: false
+          - label: Testimonial — Role & Company
+            name: testimonial_role
+            widget: string
+            required: false
+          - label: CTA Heading
+            name: cta_heading
+            widget: string
+            required: false
+          - label: CTA Subtext
+            name: cta_sub
+            widget: markdown
+            required: false
+          - label: CTA Button Text
+            name: cta_button
+            widget: string
+            required: false
+
   - name: testimonials
     label: Testimonials
     folder: _testimonials
@@ -38,48 +854,12 @@ collections:
       - label: Title and Company
         name: title
         widget: string
+        required: false
       - label: Quote
         name: quote
-        widget: text
+        widget: markdown
+        required: false
       - label: Photo
         name: photo
-        widget: image
-        required: false
-  - name: services
-    label: Services
-    folder: _services
-    create: true
-    fields:
-      - label: Service Title
-        name: title
-        widget: string
-      - label: Subtitle
-        name: subtitle
-        widget: string
-      - label: Description
-        name: description
-        widget: text
-      - label: CTA Text
-        name: cta
-        widget: string
-  - name: portfolio
-    label: Portfolio and Work
-    folder: _portfolio
-    create: true
-    fields:
-      - label: Client Name
-        name: client
-        widget: string
-      - label: Project Type
-        name: type
-        widget: string
-      - label: Description
-        name: description
-        widget: text
-      - label: Results
-        name: results
-        widget: text
-      - label: Featured Image
-        name: image
         widget: image
         required: false
