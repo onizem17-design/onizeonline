@@ -214,6 +214,7 @@ faqs:
       other writers, write LinkedIn promotional copy, and repurpose articles
       into LinkedIn carousels. These are separate services and will be priced
       based on the scope of the project.
+show_achievements: true
 achievements_heading: Results I've contributed to
 achievements:
   - heading: "Docupilot: content that supported organic growth"

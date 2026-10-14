@@ -295,6 +295,7 @@
   </section>
 
   <!-- ACHIEVEMENTS -->
+  {{ if ne .Params.show_achievements false }}
   {{ with .Params.achievements }}
   <section class="achievements">
     <div class="achievements-inner">
@@ -319,6 +320,8 @@
       {{ end }}
     </div>
   </section>
+  {{ end }}
+
   {{ end }}
 
   {{ with .Params.testimonials }}

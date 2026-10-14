@@ -548,6 +548,12 @@ collections:
                 name: answer
                 widget: text
                 required: false
+          - label: Show Achievements Section
+            name: show_achievements
+            widget: boolean
+            default: true
+            required: false
+            hint: "Turn off to hide the entire results and achievements section. All content stays saved."
           - label: Achievements Heading
             name: achievements_heading
             widget: string
