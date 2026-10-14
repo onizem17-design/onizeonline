@@ -2,7 +2,7 @@
 description: Published content and results by Onize Muhammed — SaaS content
   writer and AI visibility strategist.
 hero_eyebrow: Portfolio
-hero_headline: Selected writing and results
+hero_headline: ""
 hero_sub: I’m Onize, a SaaS, AI, and technical content writer with 3+ years of
   experience and 200+ published articles.
 byline_note: All samples here were written by me. Some were ghostwritten and
