@@ -224,15 +224,19 @@
       {{ end }}
       {{ $subjects := slice }}
       {{ range .Params.sample_categories }}{{ range .articles }}{{ range .subjects }}{{ $subjects = $subjects | append . }}{{ end }}{{ end }}{{ end }}
+      {{ if ne .Params.show_subject_filters false }}
       <div class="subject-filters" role="group" aria-label="Filter writing samples by subject" hidden>
-        <p>Filter by subject</p><div class="filter-buttons">
-        <button type="button" data-subject-filter="" aria-pressed="true">All</button>
+        <p>{{ .Params.subject_filter_heading | default "Filter by subject" }}</p><div class="filter-buttons">
+        <button type="button" data-subject-filter="" aria-pressed="true">{{ .Params.subject_filter_all_label | default "All" }}</button>
         {{ range sort (uniq $subjects) }}<button type="button" data-subject-filter="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
         </div><p id="filter-status" role="status" aria-live="polite"></p>
       </div>
+      {{ end }}
+      {{ if ne .Params.show_category_navigation false }}
       <nav class="category-nav" aria-label="Writing categories">
         {{ range .Params.sample_categories }}<a href="#{{ .heading | anchorize }}">{{ .heading }}</a>{{ end }}
       </nav>
+      {{ end }}
     </div>
   </section>
   <!-- SAMPLE CATEGORIES -->

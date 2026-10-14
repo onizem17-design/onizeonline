@@ -7,6 +7,10 @@ hero_sub: I’m Onize, a SaaS, AI, and technical content writer with 3+ years of
   experience and 200+ published articles.
 byline_note: All samples here were written by me. Some were ghostwritten and
   published under client or editorial bylines.
+show_subject_filters: true
+subject_filter_heading: Filter by subject
+subject_filter_all_label: All
+show_category_navigation: true
 show_featured: false
 featured_heading: Start with these
 sample_categories:

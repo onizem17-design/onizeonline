@@ -385,6 +385,28 @@ collections:
             name: byline_note
             widget: text
             required: false
+          - label: Show Subject Filters
+            name: show_subject_filters
+            widget: boolean
+            default: true
+            required: false
+            hint: "Subject buttons come from each article's Subjects field. Edit those fields to rename, add, or remove subjects."
+          - label: Subject Filter Heading
+            name: subject_filter_heading
+            widget: string
+            default: Filter by subject
+            required: false
+          - label: All Subjects Button Label
+            name: subject_filter_all_label
+            widget: string
+            default: All
+            required: false
+          - label: Show Category Navigation
+            name: show_category_navigation
+            widget: boolean
+            default: true
+            required: false
+            hint: "The category buttons use the Category Heading fields under Sample Categories. Reorder categories there to reorder these buttons."
           - label: Show Featured Samples
             name: show_featured
             widget: boolean
