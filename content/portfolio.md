@@ -215,9 +215,16 @@ achievements:
     label: Reported organic traffic growth
   - number: 40+
     label: Keywords ranked No. 1
-cta_heading: Like what you see?
-cta_sub: Tell me about your product, audience, and the content you need.
+cta_heading: Let’s talk
+cta_sub: Book a one-on-one, send me a LinkedIn DM, or email me.
 cta_button: Get in touch
 layout: portfolio
 title: Portfolio
+cta_links:
+- label: Book a one-on-one
+  url: mailto:onizemuhammed@gmail.com?subject=One-on-one%20call
+- label: Send me a LinkedIn DM
+  url: https://www.linkedin.com/in/onize-muhammed/
+- label: Email me
+  url: mailto:onizemuhammed@gmail.com
 ---

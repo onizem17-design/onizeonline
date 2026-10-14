@@ -562,6 +562,14 @@ collections:
             name: cta_sub
             widget: markdown
             required: false
+          - label: Contact Actions
+            name: cta_links
+            widget: list
+            required: false
+            summary: "{{fields.label}}"
+            fields:
+              - {label: Button Label, name: label, widget: string}
+              - {label: Destination URL, name: url, widget: string}
           - label: CTA Button Text
             name: cta_button
             widget: string
