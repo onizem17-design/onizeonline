@@ -223,7 +223,7 @@ achievements:
         label: Reported organic traffic growth
       - number: 40+
         label: Keywords ranked No. 1
-cta_heading: ""
+cta_heading: Let’s talk
 cta_sub: ""
 cta_links:
   - label: Book a one-on-one

@@ -1,7 +1,7 @@
 {{ define "styles" }}
 <style>
   /* ─── PORTFOLIO HERO ─── */
-  .portfolio-hero { background: var(--olive-dark); padding: 140px 24px 80px; text-align: center; }
+  .portfolio-hero { background: var(--olive-dark); padding: 120px 24px 48px; text-align: center; }
   .portfolio-hero .eyebrow {
     display: inline-block; background: rgba(239,227,202,0.12); color: var(--brown-light);
     font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
@@ -12,9 +12,9 @@
   .portfolio-hero p { font-size: 1.05rem; color: rgba(239,227,202,0.6); max-width: 540px; margin: 0 auto; line-height: 1.7; }
 
   /* ─── CLIENT GROUPS ─── */
-  .portfolio-section { padding: 80px 24px 40px; background: var(--bg); }
+  .portfolio-section { padding: 48px 24px 32px; background: var(--bg); }
   .portfolio-inner { max-width: 900px; margin: 0 auto; }
-  .client-group { margin-bottom: 64px; }
+  .client-group { margin-bottom: 32px; }
   .client-group-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--olive); }
   [data-theme="dark"] .client-group-header { border-bottom-color: var(--brown-light); }
   .client-group-header h2 { font-size: clamp(1.3rem, 2vw, 1.6rem); color: var(--text-dark); line-height: 1.3; }
@@ -83,15 +83,15 @@
   }
 
   /* ─── ACHIEVEMENTS ─── */
-  .achievements { padding: 80px 24px 100px; background: var(--nude); }
+  .achievements { padding: 48px 24px; background: var(--nude); }
   [data-theme="dark"] .achievements { background: rgba(59,74,47,0.35); }
   .achievements-inner { max-width: 900px; margin: 0 auto; }
-  .achievements-heading { font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text-dark); margin-bottom: 48px; text-align: center; }
+  .achievements-heading { font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text-dark); margin-bottom: 24px; text-align: center; }
   [data-theme="dark"] .achievements-heading { color: var(--nude-light); }
 
   .achievement-card {
     background: var(--card-bg); border: 1px solid var(--card-border);
-    border-radius: 24px; padding: 40px; margin-bottom: 32px;
+    border-radius: 24px; padding: 28px; margin-bottom: 20px;
   }
   .achievement-stats { display: flex; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
   .achievement-stat { text-align: center; }
@@ -105,9 +105,9 @@
   .achievement-img img { width: 100%; height: auto; display: block; border-radius: 12px; }
 
   /* ─── FAQ ─── */
-  .portfolio-faq { padding: 80px 24px; background: var(--bg); }
+  .portfolio-faq { padding: 48px 24px; background: var(--bg); }
   .faq-inner { max-width: 900px; margin: 0 auto; }
-  .faq-heading { font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text-dark); margin-bottom: 40px; }
+  .faq-heading { font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text-dark); margin-bottom: 24px; }
   [data-theme="dark"] .faq-heading { color: var(--nude-light); }
   .faq-item { border-bottom: 1px solid var(--card-border); }
   .faq-question {
@@ -130,7 +130,7 @@
   }
 
   /* ─── CTA ─── */
-  .portfolio-cta { background: var(--olive-dark); padding: 100px 24px; text-align: center; }
+  .portfolio-cta { background: var(--olive-dark); padding: 48px 24px; text-align: center; }
   .portfolio-cta h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); color: var(--nude-light); margin-bottom: 16px; }
   .portfolio-cta h2 em { color: var(--brown-light); font-style: italic; }
   .portfolio-cta p { color: rgba(239,227,202,0.6); font-size: 1rem; margin-bottom: 36px; line-height: 1.7; }
@@ -141,24 +141,25 @@
     .inline-testimonial { padding: 24px; }
   }
   .sample-note { color: var(--text-sub); font-size: .86rem; line-height: 1.65; margin-top: 10px; }
-  .byline-note { border-left: 3px solid var(--brown); padding: 12px 20px; color: var(--text-sub); line-height: 1.7; margin-bottom: 40px; }
+  .byline-note { border-left: 3px solid var(--brown); padding: 12px 20px; color: var(--text-sub); line-height: 1.7; margin-bottom: 24px; }
   .section-heading { font-size: clamp(1.7rem,3vw,2.2rem); margin-bottom: 28px; }
   .featured-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
   .featured-card { display: flex; flex-direction: column; border: 1px solid var(--card-border); background: var(--card-bg); padding: 28px; border-radius: 18px; color: var(--text); text-decoration: none; }
   .featured-card h3 { font-size: 1.3rem; margin-top: 14px; line-height: 1.3; }
   .read-link { margin-top: auto; padding-top: 24px; color: var(--brown); font-size: .85rem; font-weight: 600; }
-  .category-nav { position: static; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; background: none; padding: 0; box-shadow: none; }
+  .category-nav { position: static; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; background: none; padding: 0; box-shadow: none; }
   .category-nav a { border: 1px solid var(--card-border); padding: 10px 14px; border-radius: 30px; color: var(--text); font-size: .8rem; }
   .client-group { scroll-margin-top: 100px; }
+  .client-group:last-child, .achievement-card:last-child { margin-bottom: 0; }
   .results-intro { line-height: 1.7; color: var(--text-sub); margin: -20px 0 32px; }
   .faq-question { list-style: none; gap: 20px; }
   .faq-question::-webkit-details-marker { display: none; }
   details[open] .faq-question span { transform: rotate(45deg); }
   .featured-card:hover { border-color: var(--brown); }
   .featured-card:focus-visible, .article-item:focus-visible, .category-nav a:focus-visible, .faq-question:focus-visible { outline: 3px solid var(--brown-light); outline-offset: 4px; }
-  @media(max-width: 700px) { .featured-grid { grid-template-columns: 1fr; } .portfolio-hero { padding: 120px 24px 60px; } .portfolio-section, .achievements, .portfolio-faq { padding: 50px 20px; } .achievement-card { padding: 24px; } }
+  @media(max-width: 700px) { .featured-grid { grid-template-columns: 1fr; } .portfolio-hero { padding: 104px 20px 32px; } .portfolio-section, .achievements, .portfolio-faq { padding: 32px 20px; } .achievement-card { padding: 24px; } }
   [hidden] { display: none !important; }
-  .subject-filters { margin-top: 40px; }
+  .subject-filters { margin-top: 24px; }
   .subject-filters > p { color: var(--text-sub); font-size: .85rem; margin: 12px 0; }
   .filter-buttons, .subject-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .filter-buttons button { font: inherit; font-size: .82rem; padding: 9px 14px; border: 1px solid var(--brown); border-radius: 24px; background: var(--card-bg); color: var(--text); cursor: pointer; }
