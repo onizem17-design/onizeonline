@@ -1,0 +1,7 @@
+{{- $subjects := slice -}}
+{{- range . -}}
+  {{- $subject := . -}}
+  {{- if eq (lower $subject) "api" -}}{{- $subject = "Automation" -}}{{- end -}}
+  {{- $subjects = $subjects | append $subject -}}
+{{- end -}}
+{{- return (uniq $subjects) -}}

@@ -202,17 +202,17 @@
     <div class="portfolio-inner">
       {{ with .Params.byline_note }}<p class="byline-note">{{ . }}</p>{{ end }}
       {{ $featured := slice }}
-      {{ range .Params.sample_categories }}{{ range .articles }}{{ if .featured }}{{ $featured = $featured | append . }}{{ end }}{{ end }}{{ end }}
+      {{ range .Params.sample_categories }}{{ range where .articles "visible" "ne" false }}{{ if .featured }}{{ $featured = $featured | append . }}{{ end }}{{ end }}{{ end }}
       {{ if ne .Params.show_featured false }}
       {{ with first 3 $featured }}
       <h2 class="section-heading">{{ $.Params.featured_heading }}</h2>
       <div class="featured-grid">
         {{ range . }}
-        <a class="featured-card" data-sample data-subjects="{{ .subjects | jsonify }}" href="{{ .url }}" target="_blank" rel="noopener">
+        <a class="featured-card" data-sample data-subjects="{{ partial "portfolio-subjects.html" .subjects | jsonify }}" href="{{ .url }}" target="_blank" rel="noopener">
           <span class="article-client-tag">{{ .tag }}</span><h3>{{ .title }}</h3>
           {{ with .contribution }}<p class="sample-note">{{ . }}</p>{{ end }}
 {{ if eq .status "Unpublished writing sample" }}<span class="publication-status">Unpublished writing sample</span>{{ end }}
-              {{ with .subjects }}<div class="subject-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+              {{ with (partial "portfolio-subjects.html" .subjects) }}<div class="subject-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
               {{ with .feedback }}<blockquote class="sample-feedback">{{ . }}</blockquote>{{ end }}
               {{ with .feedback_credit }}<p class="sample-note">{{ . }}</p>{{ end }}
               {{ with .feedback_image }}{{ if eq . "/images/portfolio/licensing-agreement-editor-feedback.png" }}<div class="naveen-feedback-crop"><img src="{{ . }}" alt="Naveen’s feedback on the licensing agreement article" loading="lazy"></div>{{ else }}<img class="feedback-image{{ if eq . "/images/portfolio/nightwatch-accuranker-semrush-editor-feedback.png" }} mae-feedback{{ end }}" src="{{ . }}" alt="Editor feedback screenshot" loading="lazy">{{ end }}{{ end }}
@@ -223,7 +223,7 @@
       {{ end }}
       {{ end }}
       {{ $subjects := slice }}
-      {{ range .Params.sample_categories }}{{ range .articles }}{{ range .subjects }}{{ $subjects = $subjects | append . }}{{ end }}{{ end }}{{ end }}
+      {{ range .Params.sample_categories }}{{ range where .articles "visible" "ne" false }}{{ range (partial "portfolio-subjects.html" .subjects) }}{{ $subjects = $subjects | append . }}{{ end }}{{ end }}{{ end }}
       {{ if ne .Params.show_subject_filters false }}
       <div class="subject-filters" role="group" aria-label="Filter writing samples by subject" hidden>
         <p>{{ .Params.subject_filter_heading | default "Filter by subject" }}</p><div class="filter-buttons">
@@ -234,7 +234,7 @@
       {{ end }}
       {{ if ne .Params.show_category_navigation false }}
       <nav class="category-nav" aria-label="Writing categories">
-        {{ range .Params.sample_categories }}<a href="#{{ .heading | anchorize }}">{{ .heading }}</a>{{ end }}
+        {{ range .Params.sample_categories }}{{ if (where .articles "visible" "ne" false) }}<a href="#{{ .heading | anchorize }}">{{ .heading }}</a>{{ end }}{{ end }}
       </nav>
       {{ end }}
     </div>
@@ -243,21 +243,22 @@
   <section class="portfolio-section portfolio-samples">
     <div class="portfolio-inner">
       {{ range .Params.sample_categories }}
+      {{ if (where .articles "visible" "ne" false) }}
       <div class="client-group" data-sample-category id="{{ .heading | anchorize }}">
         <div class="client-group-header">
           {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
           {{ with .description }}<p class="client-group-desc">{{ . }}</p>{{ end }}
         </div>
-        {{ with .articles }}
+        {{ with (where .articles "visible" "ne" false) }}
         <div class="article-list">
           {{ range . }}
-          <a href="{{ .url }}" target="_blank" rel="noopener" class="article-item" data-sample data-subjects="{{ .subjects | jsonify }}">
+          <a href="{{ .url }}" target="_blank" rel="noopener" class="article-item" data-sample data-subjects="{{ partial "portfolio-subjects.html" .subjects | jsonify }}">
             <div class="article-info">
               <div class="article-title">{{ .title }}</div>
               {{ with .tag }}<div class="article-client-tag">{{ . }}</div>{{ end }}
               {{ with .contribution }}<p class="sample-note">{{ . }}</p>{{ end }}
 {{ if eq .status "Unpublished writing sample" }}<span class="publication-status">Unpublished writing sample</span>{{ end }}
-              {{ with .subjects }}<div class="subject-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+              {{ with (partial "portfolio-subjects.html" .subjects) }}<div class="subject-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
               {{ with .feedback }}<blockquote class="sample-feedback">{{ . }}</blockquote>{{ end }}
               {{ with .feedback_credit }}<p class="sample-note">{{ . }}</p>{{ end }}
               {{ with .feedback_image }}{{ if eq . "/images/portfolio/licensing-agreement-editor-feedback.png" }}<div class="naveen-feedback-crop"><img src="{{ . }}" alt="Naveen’s feedback on the licensing agreement article" loading="lazy"></div>{{ else }}<img class="feedback-image{{ if eq . "/images/portfolio/nightwatch-accuranker-semrush-editor-feedback.png" }} mae-feedback{{ end }}" src="{{ . }}" alt="Editor feedback screenshot" loading="lazy">{{ end }}{{ end }}
@@ -288,6 +289,7 @@
         </div>
         {{ end }}
       </div>
+      {{ end }}
       {{ end }}
     </div>
   </section>

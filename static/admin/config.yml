@@ -438,6 +438,12 @@ collections:
                 widget: list
                 required: false
                 fields:
+                  - label: Show Article
+                    name: visible
+                    widget: boolean
+                    default: true
+                    required: false
+                    hint: "Turn off to hide this card everywhere on the portfolio. Its content stays saved."
                   - label: Article Title
                     name: title
                     widget: string
