@@ -110,7 +110,7 @@ sample_categories:
           - AI
         status: Published
         featured: true
-      - title: How to Hire the Right Amazon Seller Account Manager in 2026
+      - title: Top Amazon Store Management Agencies 2026
         url: https://salesduo.com/blog/amazon-store-management-agency-comparison/
         tag: SalesDuo
         subjects:
