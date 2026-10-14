@@ -6,8 +6,7 @@ hero_headline: ""
 hero_sub: I’m Onize, a SaaS, AI, and technical content writer with 3+ years of
   experience and 200+ published articles.
 byline_note: All samples here were written by me. Some were ghostwritten and
-  published under client or editorial bylines. Unpublished work is labelled
-  separately.
+  published under client or editorial bylines.
 show_featured: false
 featured_heading: Start with these
 sample_categories:
