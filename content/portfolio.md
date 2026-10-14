@@ -229,7 +229,7 @@ cta_heading: Let’s talk
 cta_sub: ""
 cta_links:
   - label: Book a one-on-one
-    url: mailto:onizemuhammed@gmail.com?subject=One-on-one%20call
+    url: https://calendly.com/onizemuhammed/new-meeting
   - label: Send me a LinkedIn DM
     url: https://www.linkedin.com/in/onize-muhammed/
   - label: Email me
