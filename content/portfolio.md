@@ -26,11 +26,6 @@ achievements:
     label: Reported organic traffic growth
   - number: 40+
     label: Keywords ranked No. 1
-- heading: 'Emergent: content refreshes that reached page one'
-  text: I updated and optimized four articles that moved from pages three and four to page one of Google.
-  stats:
-  - number: '4'
-    label: Articles moved to page one
 cta_heading: Like what you see?
 cta_sub: Tell me about your product, audience, and the content you need.
 cta_button: Get in touch
