@@ -44,6 +44,7 @@ sample_categories:
         url: https://keyword.com/blog/mcp-vs-api-for-seo-automation/
         tag: Keyword.com
         subjects:
+          - API
           - Automation
           - SEO
         status: Published
@@ -168,7 +169,7 @@ testimonials:
     photo: /images/uploads/mae.jpg
 achievements_intro: These results reflect my contribution alongside client teams
   and editors. Rankings and AI citations can change over time.
-faq_heading: Quick questions, straight answers
+faq_heading: FAQs
 faqs:
   - question: How do you use AI in your content?
     answer: I use AI during research to analyze information from different sources,
@@ -223,7 +224,7 @@ achievements:
       - number: 40+
         label: Keywords ranked No. 1
 cta_heading: Let’s talk
-cta_sub: ""
+cta_sub: Book a one-on-one, send me a LinkedIn DM, or email me.
 cta_links:
   - label: Book a one-on-one
     url: mailto:onizemuhammed@gmail.com?subject=One-on-one%20call
