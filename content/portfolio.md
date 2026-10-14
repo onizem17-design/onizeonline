@@ -44,7 +44,6 @@ sample_categories:
         url: https://keyword.com/blog/mcp-vs-api-for-seo-automation/
         tag: Keyword.com
         subjects:
-          - API
           - Automation
           - SEO
         status: Published
