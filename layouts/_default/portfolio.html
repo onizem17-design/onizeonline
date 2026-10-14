@@ -345,7 +345,6 @@
   <section class="portfolio-cta">
     <div>
       {{ with .Params.cta_heading }}<h2>{{ . | safeHTML }}</h2>{{ end }}
-      {{ with .Params.cta_sub }}<p>{{ . }}</p>{{ end }}
       {{ with .Params.cta_links }}<div class="portfolio-contact-actions">{{ range . }}<a href="{{ .url }}" class="btn-primary"{{ if hasPrefix .url "https://" }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a>{{ end }}</div>{{ else }}{{ with .Params.cta_button }}<a href="/contact/" class="btn-primary">{{ . }}</a>{{ end }}{{ end }}
     </div>
   </section>

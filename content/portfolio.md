@@ -226,7 +226,7 @@ achievements:
       - number: 40+
         label: Keywords ranked No. 1
 cta_heading: Let’s talk
-cta_sub: Book a one-on-one, send me a LinkedIn DM, or email me.
+cta_sub: ""
 cta_links:
   - label: Book a one-on-one
     url: mailto:onizemuhammed@gmail.com?subject=One-on-one%20call
