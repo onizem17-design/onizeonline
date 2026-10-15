@@ -1,41 +1,67 @@
 ---
-title: "About Onize"
-description: "Meet Onize Muhammed — SaaS content writer and AI visibility strategist helping SaaS brands rank on Google and show up across AI platforms."
+title: About Onize
+description: Meet Onize Muhammed — SaaS content writer and AI visibility strategist
+  helping SaaS brands rank on Google and show up across AI platforms.
 layout: about
-
-hero_eyebrow: "About Me"
-hero_headline: "The writer <em>behind</em> the strategy"
-hero_sub: "SaaS content writer, AEO strategist, and content systems builder — obsessed with content that actually does something."
-
-bio_tag: "A bit about me"
-bio_heading: "I turn good ideas into <em>great content</em>"
+hero_eyebrow: About me
+hero_headline: A content writer with a <em>marketing mindset</em>
+hero_sub: I’m Onize, a SaaS, AI, and technical content writer. I create well-researched
+  content that helps readers solve problems and understand how a product fits into
+  the solution.
+bio_tag: My story
+bio_heading: I learned early that content should do more than sound good
 bio_paragraphs:
-  - "I'm Onize — a SaaS content writer and AI visibility strategist with a track record of helping SaaS brands grow traffic, capture signups, and show up where their buyers are searching — whether that's Google, ChatGPT, Perplexity, or Claude."
-  - "I got into content because I believe most of it is a missed opportunity. Too many brands publish to tick a box. I write to move people — deeper into a funnel, closer to a decision, toward trust in a brand."
-  - "My edge? I deeply understand SaaS products, user journeys, and the ICPs that buy them. I don't just follow briefs — I improve them. And I rarely need more than one round of feedback."
-fun_fact: "I've worked with brands like TripleDart, Docupilot, SalesDuo, and Mobile Text Alerts — and never needed more than one revision round."
-
-expertise_tag: "What I do best"
-expertise_heading: "Four things I'm <em>really</em> good at"
-expertise_items:
-  - "Writing long-form SaaS content that ranks on Google and resonates with real buyers — not just search engines."
-  - "Building AEO strategies that get your brand cited on ChatGPT, Claude, Perplexity, and Google AI Mode."
-  - "Humanizing AI-generated content so it sounds like a real expert wrote it — because a real expert did."
-  - "Designing content workflows and automation systems that scale without sacrificing quality."
-
-values_heading: "How I <em>work</em>"
+- I started my content career as an intern at Your Content Mart, a B2B SaaS content
+  marketing agency. There, I gained exposure to different parts of the content marketing
+  process, from strategy and production to distribution and performance measurement.
+- I saw firsthand how content could contribute to a company’s revenue pipeline. That
+  experience shaped how I approach writing today.
+fun_fact: ''
+expertise_tag: ''
+expertise_heading: What I bring to your content
+values_heading: How I work
 values:
-  - icon: "🎯"
-    title: "Brief-first, always"
-    description: "I follow your brief to the letter — then improve it based on what I know about your ICP and product."
-  - icon: "⚡"
-    title: "Fast, reliable delivery"
-    description: "Deadlines aren't suggestions. I'm consistently on time and communicate proactively if anything changes."
-  - icon: "🔁"
-    title: "One round of feedback"
-    description: "I get it right the first time, or close enough that one round of revisions handles everything."
-
-cta_heading: "Ready to work <em>together?</em>"
-cta_sub: "Whether you need a blog post, a content strategy, or a full AI visibility audit — let's talk."
-cta_button: "Get in touch →"
+- title: I think beyond the brief
+  description: I follow the intended direction of the article, but I also speak up
+    when I find a stronger angle, missing information, or an opportunity to make the
+    content more useful.
+- title: I communicate proactively
+  description: I ask questions when something is unclear, provide updates where necessary,
+    and flag potential problems before they affect the work or deadline.
+- title: I take feedback seriously
+  description: I treat feedback as part of the collaborative process. I consider it
+    carefully, apply it consistently, and use it to improve both the current article
+    and future assignments.
+cta_heading: Need a writer who can understand your product and think beyond the brief?
+cta_sub: Let’s discuss your audience, content goals, and the kind of support you need.
+cta_button: Work with me
+bio_continuation:
+- I don’t see content as beautiful prose alone. I see it as a tool for helping readers
+  solve real problems while moving them closer to a product that can help.
+- That is why a significant part of my writing process involves understanding the
+  people I’m writing for, including their needs, pain points, expectations, and level
+  of knowledge. I also consider how the client’s product fits naturally into the solution,
+  whether the reader is ready to try it immediately or needs to remember it for later.
+experience_heading: My experience
+experience_paragraphs:
+- Over the past three years, I’ve written more than 200 articles for SaaS, AI, ecommerce,
+  and marketing brands, including Keyword.com, Docupilot, SalesDuo, and Emergent.
+- My work spans product reviews, comparisons, how-to guides, content refreshes, and
+  technical explainers on topics such as SEO, AI, APIs, automation, productivity,
+  and digital marketing.
+- Some of these articles have ranked on page one of Google and earned citations in
+  Google AI Overviews and AI assistants, including ChatGPT.
+strengths:
+- title: A marketing mindset
+  description: I connect the audience’s problem, the company’s business goals, and
+    the role the product plays in the solution. This helps me create content that
+    supports the reader while moving them closer to a decision.
+- title: Research-led writing
+  description: Depending on the assignment, I test software, compare competing products,
+    study user reviews, verify features and pricing, and find useful angles that existing
+    articles have missed.
+- title: Clear explanations
+  description: I’m good at understanding complex or unfamiliar subjects and explaining
+    them in clear, engaging language for readers with different levels of technical
+    knowledge.
 ---

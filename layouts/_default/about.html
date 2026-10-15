@@ -46,7 +46,7 @@
   .expertise-inner > .section-tag { font-size: 0.72rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; color: var(--brown); margin-bottom: 16px; }
   .expertise-inner > h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin-bottom: 48px; }
   .expertise-inner > h2 em { color: var(--brown); font-style: italic; }
-  .expertise-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
   .expertise-card {
     background: var(--card-bg); border: 1px solid var(--card-border);
     border-radius: 20px; padding: 32px 28px;
@@ -88,6 +88,17 @@
     .expertise-grid { grid-template-columns: 1fr; }
     .values-grid { grid-template-columns: 1fr; }
   }
+  .bio-section, .expertise-section, .values-section, .about-cta { padding: 64px 24px; }
+  .bio-inner { gap: 48px; }
+  .about-prose { max-width: 900px; margin: 0 auto; }
+  .about-prose p { color: var(--text-sub); font-size: .97rem; line-height: 1.85; margin-bottom: 16px; }
+  .bio-continuation { margin-top: 32px; }
+  .experience-section { padding: 0 24px 64px; background: var(--bg); }
+  .experience-section h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin-bottom: 24px; }
+  .expertise-card { flex-direction: column; }
+  .expertise-card h3 { font-size: 1.15rem; margin-bottom: 12px; }
+  .about-cta h2 { max-width: 850px; margin-left: auto; margin-right: auto; }
+  @media(max-width: 900px) { .bio-section, .expertise-section, .values-section, .about-cta { padding: 40px 20px; } .experience-section { padding: 0 20px 40px; } .bio-inner { gap: 28px; } }
 </style>
 {{ end }}
 
@@ -123,7 +134,15 @@
         {{ end }}
       </div>
     </div>
+    {{ with .Params.bio_continuation }}<div class="about-prose bio-continuation container">{{ range . }}<p>{{ . }}</p>{{ end }}</div>{{ end }}
   </section>
+
+  {{ with .Params.experience_paragraphs }}
+  <section class="experience-section"><div class="about-prose container">
+    <h2>{{ $.Params.experience_heading }}</h2>
+    {{ range . }}<p>{{ . }}</p>{{ end }}
+  </div></section>
+  {{ end }}
 
   <!-- EXPERTISE -->
   <section class="expertise-section">
@@ -131,10 +150,10 @@
       <p class="section-tag reveal">{{ .Params.expertise_tag }}</p>
       <h2 class="reveal">{{ .Params.expertise_heading | safeHTML }}</h2>
       <div class="expertise-grid">
-        {{ range $i, $item := .Params.expertise_items }}
+        {{ range $i, $item := .Params.strengths }}
         <div class="expertise-card reveal">
           <span class="expertise-num">{{ printf "%02d" (math.Add $i 1) }}</span>
-          <p>{{ $item }}</p>
+          <div><h3>{{ $item.title }}</h3><p>{{ $item.description }}</p></div>
         </div>
         {{ end }}
       </div>
@@ -150,7 +169,7 @@
       <div class="values-grid">
         {{ range .Params.values }}
         <div class="value-card reveal">
-          <div class="value-icon">{{ .icon }}</div>
+          {{ with .icon }}<div class="value-icon">{{ . }}</div>{{ end }}
           <h3>{{ .title }}</h3>
           <p>{{ .description }}</p>
         </div>
@@ -165,7 +184,7 @@
       <h2>{{ .Params.cta_heading | safeHTML }}</h2>
       <p>{{ .Params.cta_sub }}</p>
       <a href="/contact/" class="btn-primary">{{ .Params.cta_button }}</a>
-      <a href="/portfolio/" class="btn-outline" style="border-color:rgba(239,227,202,0.4);color:var(--nude-light);">See my work →</a>
+
     </div>
   </section>
 {{ end }}

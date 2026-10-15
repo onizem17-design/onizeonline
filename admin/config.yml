@@ -310,6 +310,18 @@ collections:
             widget: list
             required: false
             hint: "Each item is one paragraph"
+          - label: Story Continuation Paragraphs
+            name: bio_continuation
+            widget: list
+            required: false
+          - label: Experience Heading
+            name: experience_heading
+            widget: string
+            required: false
+          - label: Experience Paragraphs
+            name: experience_paragraphs
+            widget: list
+            required: false
           - label: Fun Fact / Highlight
             name: fun_fact
             widget: markdown
@@ -322,11 +334,14 @@ collections:
             name: expertise_heading
             widget: string
             required: false
-          - label: Expertise Items
-            name: expertise_items
+          - label: Content Strengths
+            name: strengths
             widget: list
+            summary: "{{fields.title}}"
             required: false
-            hint: "Each item is one expertise point"
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: text}
           - label: Values Section Heading
             name: values_heading
             widget: string
