@@ -4,8 +4,10 @@ description: Meet Onize Muhammed — SaaS content writer and AI visibility
 hero_eyebrow: About me
 hero_headline: A content writer that thinks like a marketer
 hero_sub: ""
+hero_cta_label: Let’s talk
+hero_cta_url: https://calendly.com/onizemuhammed/new-meeting
 bio_tag: My story
-bio_heading: I learned early that content should do more than sound good
+bio_heading: ""
 bio_paragraphs:
   - I started my content career as an intern at Your Content Mart, a B2B SaaS
     content marketing agency. There, I gained exposure to different parts of the

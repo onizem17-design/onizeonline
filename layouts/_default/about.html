@@ -99,6 +99,7 @@
   .expertise-card h3 { font-size: 1.15rem; margin-bottom: 12px; }
   .about-cta h2 { max-width: 850px; margin-left: auto; margin-right: auto; }
   @media(max-width: 900px) { .bio-section, .expertise-section, .values-section, .about-cta { padding: 40px 20px; } .experience-section { padding: 0 20px 40px; } .bio-inner { gap: 28px; } }
+  .about-hero-cta { margin-top: 28px; }
 </style>
 {{ end }}
 
@@ -107,7 +108,8 @@
   <section class="about-hero">
     <span class="eyebrow">{{ .Params.hero_eyebrow }}</span>
     <h1>{{ .Params.hero_headline | safeHTML }}</h1>
-    <p>{{ .Params.hero_sub }}</p>
+    {{ with .Params.hero_sub }}<p>{{ . }}</p>{{ end }}
+    {{ with .Params.hero_cta_url }}<a href="{{ . }}" class="btn-primary about-hero-cta" target="_blank" rel="noopener">{{ $.Params.hero_cta_label }}</a>{{ end }}
   </section>
 
   <!-- BIO -->
@@ -122,7 +124,7 @@
       </div>
       <div class="bio-text reveal">
         <p class="section-tag">{{ .Params.bio_tag }}</p>
-        <h2>{{ .Params.bio_heading | safeHTML }}</h2>
+        {{ with .Params.bio_heading }}<h2>{{ . | safeHTML }}</h2>{{ end }}
         {{ range .Params.bio_paragraphs }}
           <p>{{ . }}</p>
         {{ end }}

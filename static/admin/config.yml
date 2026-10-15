@@ -297,6 +297,14 @@ collections:
             name: hero_sub
             widget: markdown
             required: false
+          - label: Hero CTA Button Text
+            name: hero_cta_label
+            widget: string
+            required: false
+          - label: Hero CTA URL
+            name: hero_cta_url
+            widget: string
+            required: false
           - label: Bio Section Tag
             name: bio_tag
             widget: string
