@@ -100,6 +100,7 @@
   .about-cta h2 { max-width: 850px; margin-left: auto; margin-right: auto; }
   @media(max-width: 900px) { .bio-section, .expertise-section, .values-section, .about-cta { padding: 40px 20px; } .experience-section { padding: 0 20px 40px; } .bio-inner { gap: 28px; } }
   .about-hero-cta { margin-top: 28px; }
+  .bio-inner { align-items: start; }
 </style>
 {{ end }}
 
@@ -128,6 +129,7 @@
         {{ range .Params.bio_paragraphs }}
           <p>{{ . }}</p>
         {{ end }}
+        {{ range .Params.bio_continuation }}<p>{{ . }}</p>{{ end }}
         {{ with .Params.fun_fact }}
         <div class="fun-fact">
           <span class="fun-fact-icon">💡</span>
@@ -136,7 +138,6 @@
         {{ end }}
       </div>
     </div>
-    {{ with .Params.bio_continuation }}<div class="about-prose bio-continuation container">{{ range . }}<p>{{ . }}</p>{{ end }}</div>{{ end }}
   </section>
 
   {{ with .Params.experience_paragraphs }}
