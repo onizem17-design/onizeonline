@@ -2,8 +2,7 @@
 description: Meet Onize Muhammed — SaaS content writer and AI visibility
   strategist helping SaaS brands rank on Google and show up across AI platforms.
 hero_eyebrow: About me
-hero_headline: SEO and AEO content for Software and AI brands that want to gain
-  mindshare and grow their revenue
+hero_headline: A content writer that thinks like a marketer
 hero_sub: ""
 bio_tag: My story
 bio_heading: I learned early that content should do more than sound good
