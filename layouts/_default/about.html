@@ -117,7 +117,8 @@
   <section class="bio-section">
     <div class="bio-inner container">
       <div class="bio-photo-wrap reveal">
-        {{ with .Params.photo }}
+        {{ $aboutPhoto := .Params.photo | default site.Home.Params.hero_photo }}
+        {{ with $aboutPhoto }}
           <img src="{{ . }}" alt="Onize Muhammed"/>
         {{ else }}
           <div class="bio-photo-placeholder">[ Your photo here ]</div>

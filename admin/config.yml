@@ -281,6 +281,11 @@ collections:
         label: About Page
         file: content/about.md
         fields:
+          - label: About Photo
+            name: photo
+            widget: image
+            required: false
+            hint: "Leave empty to use your homepage photo automatically."
           - label: SEO Description
             name: description
             widget: markdown
