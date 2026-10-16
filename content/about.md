@@ -7,12 +7,11 @@ hero_sub: ''
 bio_tag: My story
 bio_heading: I learned early that content should do more than sound good
 bio_paragraphs:
-- I started my content career as an intern at Your Content Mart
-- a B2B SaaS content marketing agency. There
-- I gained exposure to different parts of the content marketing process
-- from strategy to writing to distribution and performance measurement. I saw how
-  content could contribute to a company’s revenue pipeline. That experience shaped
-  how I approach writing today.
+- I started my content career as an intern at Your Content Mart, a B2B SaaS content
+  marketing agency. There, I gained exposure to different parts of the content marketing
+  process, from strategy to writing to distribution and performance measurement.
+- I saw how content could contribute to a company’s revenue pipeline. That experience
+  shaped how I approach writing today.
 fun_fact: ''
 expertise_tag: ''
 expertise_heading: What I bring to your content

@@ -321,11 +321,13 @@ collections:
           - label: Bio Paragraphs
             name: bio_paragraphs
             widget: list
+            field: {label: Paragraph, name: paragraph, widget: text}
             required: false
             hint: "Each item is one paragraph"
           - label: Story Continuation Paragraphs
             name: bio_continuation
             widget: list
+            field: {label: Paragraph, name: paragraph, widget: text}
             required: false
           - label: Experience Heading
             name: experience_heading
@@ -334,6 +336,7 @@ collections:
           - label: Experience Paragraphs
             name: experience_paragraphs
             widget: list
+            field: {label: Paragraph, name: paragraph, widget: text}
             required: false
           - label: Fun Fact / Highlight
             name: fun_fact
