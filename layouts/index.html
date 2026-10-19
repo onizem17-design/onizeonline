@@ -179,8 +179,9 @@
     .speech-desktop { display: none; }
     .speech-mobile { display: block; }
     .speech-mobile span { display: block; white-space: nowrap; }
-    .hero-photo-wrap { flex-basis: clamp(100px, 30vw, 128px); width: clamp(100px, 30vw, 128px); }
-    .speech-bubble { padding: 12px 10px; }
+    .hero-photo-wrap { flex-basis: clamp(124px, 40vw, 168px); width: clamp(124px, 40vw, 168px); height: clamp(176px, 52vw, 216px); }
+    .hero-photo-col { gap: 10px; }
+    .speech-bubble { padding: 12px 10px; font-size: clamp(.72rem, 3.3vw, .8rem); }
     .speech-bubble::after { display: block; top: 50%; left: -10px; right: auto; bottom: auto; transform: translateY(-50%); border-width: 8px 10px 8px 0; border-color: transparent var(--olive-dark) transparent transparent; }
     [data-theme="dark"] .speech-bubble::after { border-color: transparent var(--brown) transparent transparent; }
   }
