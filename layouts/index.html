@@ -160,6 +160,8 @@
     .testimonials-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
 
+  .speech-mobile { display: none; }
+
   /* Phone hero: full-width copy with a compact portrait below. */
   @media (max-width: 600px) {
     .hero { min-height: 0; padding: 94px 20px 28px; align-items: flex-start; }
@@ -174,7 +176,13 @@
     .hero-photo-wrap { order: -1; flex: 0 0 128px; width: 128px; height: 156px; border-radius: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
     .speech-bubble { position: relative; inset: auto; width: auto; max-width: 180px; flex: 0 1 180px; padding: 12px 14px; font-size: .8rem; line-height: 1.45; animation: none; border-radius: 14px 14px 14px 4px; }
     .speech-bubble p { margin: 0; }
-    .speech-bubble::after { display: none; }
+    .speech-desktop { display: none; }
+    .speech-mobile { display: block; }
+    .speech-mobile span { display: block; white-space: nowrap; }
+    .hero-photo-wrap { flex-basis: clamp(100px, 30vw, 128px); width: clamp(100px, 30vw, 128px); }
+    .speech-bubble { padding: 12px 10px; }
+    .speech-bubble::after { display: block; top: 50%; left: -10px; right: auto; bottom: auto; transform: translateY(-50%); border-width: 8px 10px 8px 0; border-color: transparent var(--olive-dark) transparent transparent; }
+    [data-theme="dark"] .speech-bubble::after { border-color: transparent var(--brown) transparent transparent; }
   }
 </style>
 {{ end }}
@@ -185,7 +193,7 @@
   <section class="hero" id="home">
     <div class="hero-stage reveal">
       <div class="hero-photo-col">
-        {{ with .Params.speech_bubble }}<div class="speech-bubble">{{ . | markdownify }}</div>{{ end }}
+        {{ with .Params.speech_bubble }}<div class="speech-bubble"><div class="speech-desktop">{{ . | markdownify }}</div><div class="speech-mobile"><span>👋 Hi, I’m Onize,</span><span>your content partner</span></div></div>{{ end }}
         <div class="hero-photo-wrap">
           {{ with .Params.hero_photo }}
             <img src="{{ . }}" alt="Onize Muhammed — SaaS Content Writer & AI Visibility Strategist"/>
