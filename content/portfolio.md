@@ -114,7 +114,7 @@ sample_categories:
         status: Unpublished writing sample
         featured: false
         feedback_image: /images/portfolio/nightwatch-accuranker-semrush-editor-feedback.png
-        visible: true
+        visible: false
   - heading: How-to and product-led guides
     description: ""
     articles:
@@ -141,7 +141,7 @@ sample_categories:
           - AI
         status: Published
         featured: true
-        visible: true
+        visible: false
 testimonials_heading: What my editors say
 testimonials:
   - quote: >-
