@@ -25,7 +25,7 @@ sample_categories:
           - SEO
         status: Published
         featured: true
-        visible: true
+        visible: false
       - title: "Licensing Agreement: Complete Guide & Key Components"
         url: https://www.docupilot.com/blog/licensing-agreement
         tag: Docupilot
