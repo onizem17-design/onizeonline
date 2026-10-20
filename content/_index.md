@@ -62,18 +62,18 @@ stats: []
 ai_heading: "## Write content that improves AI visibility and wins users"
 ai_body: >-
   You can’t achieve those results with generic, robotic, clunky, or overly
-  promotional content. I want to help you write content that:
+  promotional content. I want to help you write articles that:
 
 
-  * Answers specific questions in clear, self-contained sections
+  * Answer specific questions in clear, self-contained sections
 
-  * Contributes unique and original insights
+  * Contribute unique and original insights
 
-  * Represents your brand’s value clearly, correctly, and consistently
+  * Represent your brand’s value clearly, correctly, and consistently
 
-  * Speaks to readers in a natural, engaging voice
+  * Speak to readers in a natural, engaging voice
 
-  * Helps readers understand how your product fits into the problem they are trying to solve
+  * Help readers understand how your product fits into the problem they are trying to solve
 
 
   Such articles make it easier for search engines and AI platforms to find, understand, and cite relevant parts of your content. They also give readers a reason to trust your brand, remember it, and sign up for your tool.
