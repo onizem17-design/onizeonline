@@ -136,8 +136,8 @@
   [data-theme="dark"] .services-col h3 { color: var(--nude-light); }
   .services-col ul { list-style: none; display: flex; flex-direction: column; gap: 18px; margin: 0 0 28px; }
   .services-col ul:last-child { margin-bottom: 0; }
-  .services-col ul li { display: flex; align-items: flex-start; gap: 14px; font-size: 0.95rem; color: var(--text-dark); line-height: 1.65; }
-  .services-col ul li::before { content: '✓'; color: var(--brown); font-weight: 700; font-size: 1.05rem; flex-shrink: 0; margin-top: 1px; }
+  .services-col ul li { display: block; position: relative; padding-left: 28px; font-size: 0.95rem; color: var(--text-dark); line-height: 1.65; }
+  .services-col ul li::before { position: absolute; left: 0; top: 0; content: '✓'; color: var(--brown); font-weight: 700; font-size: 1.05rem; flex-shrink: 0; margin-top: 1px; }
   [data-theme="dark"] .services-col ul li { color: var(--nude); }
   .services-cta { text-align: center; margin-top: 60px; }
   .see-pricing { text-align: center; margin-top: 48px; }
@@ -212,6 +212,8 @@
   .ai-content[data-bullet="numbered"] li::before { content: counter(ai-item) '.'; }
   .ai-content[data-bullet="none"] li { padding-left: 0; }
   .ai-content[data-bullet="none"] li::before { content: none; }
+  .services-checklist li strong { display: inline; }
+  .services-checklist li p { margin: 0; }
 </style>
 {{ end }}
 
