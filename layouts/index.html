@@ -185,6 +185,19 @@
     .speech-bubble::after { display: block; top: 50%; left: -10px; right: auto; bottom: auto; transform: translateY(-50%); border-width: 8px 10px 8px 0; border-color: transparent var(--olive-dark) transparent transparent; }
     [data-theme="dark"] .speech-bubble::after { border-color: transparent var(--brown) transparent transparent; }
   }
+
+  /* Desktop hero alignment and compact headline. */
+  @media (min-width: 901px) {
+    .hero { min-height: 0; padding: 70px 0 0; align-items: flex-start; }
+    .hero-stage { align-items: flex-end; }
+    .hero-photo-col { margin-top: 80px; }
+    .hero-photo-wrap { height: 400px; }
+    .hero-photo-wrap img { object-position: center 65%; }
+    .hero-card { width: 500px; max-width: 500px; align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 36px 32px 60px; }
+    .hero-card h1 { font-size: clamp(2.2rem, 3.2vw, 2.9rem); line-height: 1.12; margin-bottom: 24px; }
+    .hero-card h1 p { margin: 0; font: inherit; line-height: inherit; color: inherit; }
+    .speech-bubble { top: 32px; left: -170px; animation: none; }
+  }
 </style>
 {{ end }}
 
