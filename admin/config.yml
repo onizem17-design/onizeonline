@@ -203,7 +203,23 @@ collections:
             options: [arrow, dot, check, dash, numbered, none]
             default: arrow
             required: false
-          - label: Copy 2 Bullet Color
+          - label: Copy 2 Bullet Palette
+            name: ai_bullet_palette
+            widget: select
+            default: custom
+            required: false
+            options:
+              - {label: "Olive (#3B4A2F)", value: "#3B4A2F"}
+              - {label: "Dark olive (#2A3320)", value: "#2A3320"}
+              - {label: "Mid olive (#4E6038)", value: "#4E6038"}
+              - {label: "Nude (#EFE3CA)", value: "#EFE3CA"}
+              - {label: "Cream (#F7F0E3)", value: "#F7F0E3"}
+              - {label: "Brown (#8B6347)", value: "#8B6347"}
+              - {label: "Light brown (#C4956A)", value: "#C4956A"}
+              - {label: "White (#FFFFFF)", value: "#FFFFFF"}
+              - {label: Custom color, value: custom}
+            hint: "Pick an exact brand color, or choose Custom color to use the picker below."
+          - label: Copy 2 Custom Bullet Color
             name: ai_bullet_color
             widget: color
             default: "#D4AA7D"

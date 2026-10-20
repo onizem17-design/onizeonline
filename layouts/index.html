@@ -299,7 +299,9 @@
       {{ end }}
       {{ $aiColor := "#F7F0E3" }}
       {{ if eq .Params.ai_text_color "black" }}{{ $aiColor = "#000000" }}{{ else if eq .Params.ai_text_color "brown" }}{{ $aiColor = "#D4AA7D" }}{{ else if eq .Params.ai_text_color "white" }}{{ $aiColor = "#FFFFFF" }}{{ end }}
-      <div class="reveal ai-content" data-bullet="{{ .Params.ai_bullet_style | default "arrow" }}" style="--ai-copy-color: {{ $aiColor }};{{ with .Params.ai_bullet_color }} --ai-bullet-color: {{ . }};{{ end }}">
+      {{ $bulletColor := .Params.ai_bullet_color | default "#C4956A" }}
+      {{ with .Params.ai_bullet_palette }}{{ if ne . "custom" }}{{ $bulletColor = . }}{{ end }}{{ end }}
+      <div class="reveal ai-content" data-bullet="{{ .Params.ai_bullet_style | default "arrow" }}" style="--ai-copy-color: {{ $aiColor }}; --ai-bullet-color: {{ $bulletColor }};">
         {{ with .Params.ai_heading }}<h2>{{ . | markdownify }}</h2>{{ end }}
         {{ with .Params.ai_body }}<div class="ai-body">{{ . | markdownify }}</div>{{ end }}
         {{ with .Params.ai_bullets }}<ul class="value-list" style="margin-top: 24px;">
