@@ -1,30 +1,60 @@
 ---
+value_bullet_style: arrow
+value_cta: Say no more, let's talk
+services_left_content: >-
+  * Well-researched, product-led and thought leadership articles
+
+  * Content refreshes — updated information, optimised for conversions and AI citation
+
+  * AI content humanisation — making generated content sound like your brand
+
+
+  * Audit your blog to surface performing and decaying content
+
+  * Generate content ideas based on customer pain points
+
+  * Identify AI search visibility gaps across platforms
+
+  * Map out a content plan and generate briefs
+
+
+  * Identify content bottlenecks and replace them with AI-powered workflows and automations
+value_bullets: []
 hero_photo: /images/uploads/image.jpg
-speech_bubble: 👋Hi, I'm Onize, your content partner
+speech_bubble: |-
+  👋Hi, I'm Onize, 
+
+  your content partner
+hero_eyebrow: SaaS Content · SEO · AI Visibility
 hero_headline: "# Get familiar with seeing your content show up on Google and AI
   platforms — and win signups"
 hero_cta: Oh yes, I want that
-value_heading: "## Garbage content is killing your brand reputation and revenue"
+value_heading: "## **SEO content has gone beyond ranking and traffic**"
 value_intro: >-
-  If your content isn't building positive sentiment and helping your audience
-  make faster buying decisions, it's failing.
+  If your articles rank but aren't getting expected traffic in 2026, moving
+  higher in the SERPs, improving click-through rates, and publishing more
+  articles may not help much.
 
 
-  And no, it's not about whether it's AI-assisted or not. It's about the skillset behind it.
+  The problem is that you're still measuring content success by the standard of an SEO era that's extincting.
 
 
-  A strong content engine is built around:
+  With Google's AI overview and AI platform, readers don’t need to open a website to get answers to most queries. So, chasing SEO traffic is like running a race that already has a winner.
 
 
-  * Your audience's pain points
+  Yes, you should still aim to be visible in traditional search. But also aim to:
 
-  * The solutions your software provides
 
-  * Consistent, cohesive, and engaging stories
+  * Earn relevant mentions and citations in AI responses
 
-  * Search engines and AI platforms optimization
-value_bullet_style: arrow
-value_cta: Say no more, let's talk
+  * Represent your product accurately wherever it appears
+
+  * Give readers a reason to visit, stay, and trust your brand
+
+  * Move the right readers closer to a buying decision
+
+
+  These are the outcomes I want to help you achieve.
 value_image: /images/uploads/white-black-elegant-modern-corporate-cv-resume.jpg
 value_image_size: large
 proof_label: Brands and agencies I've worked with
@@ -36,24 +66,28 @@ brands:
   - Your Content Mart
   - Phoenix Content
 stats: []
-ai_image: /images/uploads/ai-search-visibility.svg
 ai_heading: >-
-  ## Traffic is down. AI is eating your clicks. Here's how I can help.
+  ## Write content that improves AI visibility and wins users
 
 
-  Chasing traffic in 2026 is like trying to fill a leaking bucket. It's going and isn't coming back.
+  You can’t achieve those results with generic, robotic, clunky, or overly promotional content. I want to help you write content that:
 
 
-  So instead of writing content that ranks but no one sees, I'll help you build something that lasts.
+  * Answers specific questions in clear, self-contained sections
+
+  * Contributes unique and original insights
+
+  * Represents your brand’s value clearly, correctly, and consistently
+
+  * Speaks to readers in a natural, engaging voice
+
+  * Helps readers understand how your product fits into the problem they are trying to solve
 
 
-  I understand how AI retrieves content and how buyers think. That knowledge helps me write product-led content that gets your brand mentioned in AI platforms and converts users already prequalified from AI responses.
-
-
-  I back that up with templates, vibe-coded tools, and proprietary data that make your content more useful than anything your competitors are publishing.
-
-
-  I'm not looking for a one-off project. I want to work with you long enough to see results.
+  Such articles make it easier for search engines and AI platforms to find, understand, and cite relevant parts of your content. They also give readers a reason to trust your brand, remember it, and sign up for your tool.
+ai_image: /images/uploads/ai-search-visibility.svg
+ai_bullets: []
+testimonials_heading: "## What clients say"
 testimonials:
   - quote: >-
       I've had the pleasure of working with Onize for more than two years, and
@@ -84,28 +118,6 @@ testimonials:
     initial: i
     photo: /images/uploads/mae.jpg
 services_left_heading: What I can do for you
-services_left_content: >-
-  * Well-researched, product-led and thought leadership articles
-
-  * Content refreshes — updated information, optimised for conversions and AI citation
-
-  * AI content humanisation — making generated content sound like your brand
-
-
-  * Audit your blog to surface performing and decaying content
-
-  * Generate content ideas based on customer pain points
-
-  * Identify AI search visibility gaps across platforms
-
-  * Map out a content plan and generate briefs
-
-
-  * Identify content bottlenecks and replace them with AI-powered workflows and automations
-value_bullets: []
-hero_eyebrow: SaaS Content · SEO · AI Visibility
-ai_bullets: []
-testimonials_heading: "## What clients say"
 services_right_heading: Who I work with
 services_right_content: >-
   * SaaS content managers who need a writer that thinks beyond the brief and
