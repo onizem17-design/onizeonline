@@ -198,6 +198,20 @@
     .hero-card h1 p { margin: 0; font: inherit; line-height: inherit; color: inherit; }
     .speech-bubble { top: 32px; left: -170px; animation: none; }
   }
+
+  .ai-content h2, .ai-content p, .ai-content li { color: var(--ai-copy-color, var(--nude-light)); }
+  .ai-body { margin-top: 20px; line-height: 1.75; }
+  .ai-body p { margin-bottom: 16px; }
+  .ai-content ul, .ai-content ol { list-style: none; counter-reset: ai-item; padding: 0; margin: 20px 0; }
+  .ai-content li { position: relative; padding-left: 28px; margin-bottom: 12px; line-height: 1.65; counter-increment: ai-item; }
+  .ai-content li::before { position: absolute; left: 0; top: 0; color: var(--ai-bullet-color, var(--brown-light)); font-weight: 600; }
+  .ai-content[data-bullet="arrow"] li::before { content: '→'; }
+  .ai-content[data-bullet="dot"] li::before { content: '•'; }
+  .ai-content[data-bullet="check"] li::before { content: '✓'; }
+  .ai-content[data-bullet="dash"] li::before { content: '–'; }
+  .ai-content[data-bullet="numbered"] li::before { content: counter(ai-item) '.'; }
+  .ai-content[data-bullet="none"] li { padding-left: 0; }
+  .ai-content[data-bullet="none"] li::before { content: none; }
 </style>
 {{ end }}
 
@@ -283,8 +297,11 @@
         <img src="{{ . }}" alt="AI search visibility" style="width:100%;height:auto;object-fit:contain;display:block;"/>
       </div>
       {{ end }}
-      <div class="reveal">
+      {{ $aiColor := "#F7F0E3" }}
+      {{ if eq .Params.ai_text_color "black" }}{{ $aiColor = "#000000" }}{{ else if eq .Params.ai_text_color "brown" }}{{ $aiColor = "#D4AA7D" }}{{ else if eq .Params.ai_text_color "white" }}{{ $aiColor = "#FFFFFF" }}{{ end }}
+      <div class="reveal ai-content" data-bullet="{{ .Params.ai_bullet_style | default "arrow" }}" style="--ai-copy-color: {{ $aiColor }};{{ with .Params.ai_bullet_color }} --ai-bullet-color: {{ . }};{{ end }}">
         {{ with .Params.ai_heading }}<h2>{{ . | markdownify }}</h2>{{ end }}
+        {{ with .Params.ai_body }}<div class="ai-body">{{ . | markdownify }}</div>{{ end }}
         {{ with .Params.ai_bullets }}<ul class="value-list" style="margin-top: 24px;">
           {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
         </ul>{{ end }}

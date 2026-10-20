@@ -192,6 +192,22 @@ collections:
             name: ai_heading
             widget: markdown
             required: false
+          - label: Copy 2 Body
+            name: ai_body
+            widget: markdown
+            required: false
+            hint: "Paragraphs and lists below the AI section heading."
+          - label: Copy 2 Bullet Style
+            name: ai_bullet_style
+            widget: select
+            options: [arrow, dot, check, dash, numbered, none]
+            default: arrow
+            required: false
+          - label: Copy 2 Bullet Color
+            name: ai_bullet_color
+            widget: color
+            default: "#D4AA7D"
+            required: false
           - label: AI Section Image
             name: ai_image
             widget: image
@@ -207,6 +223,7 @@ collections:
           - label: AI Section Bullet Points
             name: ai_bullets
             widget: list
+            field: {label: Bullet Text, name: text, widget: markdown}
             required: false
           - label: Testimonials Section Heading
             name: testimonials_heading
