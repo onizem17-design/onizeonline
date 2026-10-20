@@ -225,6 +225,16 @@
     .testi-text, .services-checklist { overflow-wrap: break-word; }
   }
   .testi-text p + p { margin-top: 1em; }
+
+  /* Dark mode overrides CMS light-mode text colors. */
+  [data-theme="dark"] .hero-card h1 { color: var(--nude) !important; }
+  [data-theme="dark"] .hero-card h1 :is(p, strong) { color: inherit; }
+  [data-theme="dark"] .value-section { color: var(--nude) !important; }
+  [data-theme="dark"] .value-section :is(h2, h3, p, li, strong),
+  [data-theme="dark"] .ai-content :is(h2, h3, p, li, strong),
+  [data-theme="dark"] .services-checklist :is(p, li, strong) { color: var(--nude); }
+  [data-theme="dark"] .value-inner h2 em,
+  [data-theme="dark"] .hero-card h1 span { color: var(--brown-light); }
 </style>
 {{ end }}
 
