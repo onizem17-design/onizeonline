@@ -214,6 +214,16 @@
   .ai-content[data-bullet="none"] li::before { content: none; }
   .services-checklist li strong { display: inline; }
   .services-checklist li p { margin: 0; }
+
+  /* Give phone testimonial and service copy more horizontal room. */
+  @media (max-width: 600px) {
+    .testimonials, .services { padding-left: 16px; padding-right: 16px; }
+    .testimonials-inner.container, .services-inner.container { padding-left: 0; padding-right: 0; }
+    .testi-grid, .services-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .testi-card { min-width: 0; padding: 24px 20px; border-radius: 20px; }
+    .services-col { min-width: 0; padding: 28px 20px; border-radius: 20px; }
+    .testi-text, .services-checklist { overflow-wrap: break-word; }
+  }
 </style>
 {{ end }}
 
