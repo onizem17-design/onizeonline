@@ -2,25 +2,16 @@
 value_bullet_style: arrow
 value_cta: Say no more, let's talk
 services_left_content: >-
-  * **Write SEO and GEO-optimized long-form content,**
+  * **Write SEO and GEO-optimized long-form content,** like guides, product
+  reviews, listicles, comparisons, and alternatives.
 
-     like guides, product reviews, listicles, comparisons, and alternatives.
+  * **Refresh content** to keep it up to date and optimized for conversions, search performance, and AI citations.
 
-  * **Refresh content**
+  * **Create content briefs** that give writers a clear angle, structure, audience direction, and research foundation.
 
-     to keep it up to date and optimized for conversions, search performance, and AI citations.
+  * **Write LinkedIn promotional copy** for the articles I produce.
 
-  * **Create content briefs**
-
-     that give writers a clear angle, structure, audience direction, and research foundation.
-
-  * **Write LinkedIn promotional copy**
-
-     for the articles I produce.
-
-  * **Repurpose articles into LinkedIn carousels**
-
-     to extend their reach and present the key ideas visually.
+  * **Repurpose articles into LinkedIn carousels** to extend their reach and present the key ideas visually.
 value_bullets: []
 hero_photo: /images/uploads/image.jpg
 speech_bubble: |-
@@ -122,17 +113,12 @@ testimonials:
 services_left_heading: What I can do for you
 services_right_heading: Who I work with
 services_right_content: >-
-  * * **Content managers**
+  * **Content managers** who need a writer who thinks beyond the brief and
+  writes with business goals in mind  
 
-       who need a writer who thinks beyond the brief and writes with business goals in mind  
+  * **SaaS and AI startups** that need consistent, search-led content without hiring an in-house writer  
 
-    * **SaaS and AI startups**
-
-       that need consistent, search-led content without hiring an in-house writer  
-
-    * **Solo marketers**
-
-       who need a reliable partner to take content execution off their plate
+  * **Solo marketers** who need a reliable partner to take content execution off their plate
 services_cta: Book a Discovery Call
 title: Onize Muhammed – SaaS Content & AI Visibility Strategist
 description: SaaS content that's visible across Google and AI platforms — and wins signups.
