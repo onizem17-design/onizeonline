@@ -127,10 +127,7 @@
       <div class="bio-text reveal">
         <p class="section-tag">{{ .Params.bio_tag }}</p>
         {{ with .Params.bio_heading }}<h2>{{ . | safeHTML }}</h2>{{ end }}
-        {{ range .Params.bio_paragraphs }}
-          <p>{{ . }}</p>
-        {{ end }}
-        {{ range .Params.bio_continuation }}<p>{{ . }}</p>{{ end }}
+        {{ with .Params.story_body }}<div class="story-body">{{ . | markdownify }}</div>{{ end }}
         {{ with .Params.fun_fact }}
         <div class="fun-fact">
           <span class="fun-fact-icon">💡</span>

@@ -6,12 +6,6 @@ hero_headline: A content writer that thinks like a marketer
 hero_sub: ''
 bio_tag: My story
 bio_heading: I learned early that content should do more than sound good
-bio_paragraphs:
-- I started my content career as an intern at Your Content Mart, a B2B SaaS content
-  marketing agency. There, I gained exposure to different parts of the content marketing
-  process, from strategy to writing to distribution and performance measurement.
-- I saw how content could contribute to a company’s revenue pipeline. That experience
-  shaped how I approach writing today.
 fun_fact: ''
 expertise_tag: ''
 expertise_heading: What I bring to your content
@@ -31,13 +25,6 @@ values:
 cta_button: Work with me
 layout: about
 experience_heading: My experience
-bio_continuation:
-- I don’t see content as beautiful prose alone. I see it as a tool for helping readers
-  solve real problems while moving them closer to a product that can help.
-- That is why a significant part of my writing process involves understanding the
-  people I’m writing for, including their needs, pain points, expectations, and level
-  of knowledge. I also consider how the client’s product fits naturally into the solution,
-  whether the reader is ready to try it immediately or needs to remember it for later.
 cta_sub: Let’s discuss your audience, content goals, and the kind of support you need.
 strengths:
 - title: A marketing mindset
@@ -63,4 +50,22 @@ experience_paragraphs:
 - Some of these articles have ranked on page one of Google and earned citations in
   Google AI Overviews and AI assistants, including ChatGPT.
 photo: /images/uploads/image.jpg
+story_body: 'I started my content career as an intern at Your Content Mart, a B2B
+  SaaS content marketing agency. There, I gained exposure to different parts of the
+  content marketing process, from strategy to writing to distribution and performance
+  measurement.
+
+
+  I saw how content could contribute to a company’s revenue pipeline. That experience
+  shaped how I approach writing today.
+
+
+  I don’t see content as beautiful prose alone. I see it as a tool for helping readers
+  solve real problems while moving them closer to a product that can help.
+
+
+  That is why a significant part of my writing process involves understanding the
+  people I’m writing for, including their needs, pain points, expectations, and level
+  of knowledge. I also consider how the client’s product fits naturally into the solution,
+  whether the reader is ready to try it immediately or needs to remember it for later.'
 ---

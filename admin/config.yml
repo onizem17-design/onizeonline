@@ -335,17 +335,11 @@ collections:
             name: bio_heading
             widget: string
             required: false
-          - label: Bio Paragraphs
-            name: bio_paragraphs
-            widget: list
-            field: {label: Paragraph, name: paragraph, widget: text}
+          - label: My Story Body
+            name: story_body
+            widget: markdown
             required: false
-            hint: "Each item is one paragraph"
-          - label: Story Continuation Paragraphs
-            name: bio_continuation
-            widget: list
-            field: {label: Paragraph, name: paragraph, widget: text}
-            required: false
+            hint: "Edit the whole story here. Use a blank line between paragraphs."
           - label: Experience Heading
             name: experience_heading
             widget: string
