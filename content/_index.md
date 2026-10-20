@@ -66,11 +66,10 @@ brands:
   - Your Content Mart
   - Phoenix Content
 stats: []
-ai_heading: >-
-  ## Write content that improves AI visibility and wins users
-
-
-  You can’t achieve those results with generic, robotic, clunky, or overly promotional content. I want to help you write content that:
+ai_heading: "## Write content that improves AI visibility and wins users"
+ai_body: >-
+  You can’t achieve those results with generic, robotic, clunky, or overly
+  promotional content. I want to help you write content that:
 
 
   * Answers specific questions in clear, self-contained sections
@@ -85,6 +84,7 @@ ai_heading: >-
 
 
   Such articles make it easier for search engines and AI platforms to find, understand, and cite relevant parts of your content. They also give readers a reason to trust your brand, remember it, and sign up for your tool.
+ai_bullet_style: arrow
 ai_image: /images/uploads/ai-search-visibility.svg
 ai_bullets: []
 testimonials_heading: "## What clients say"
