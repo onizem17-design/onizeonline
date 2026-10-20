@@ -186,15 +186,15 @@
     [data-theme="dark"] .speech-bubble::after { border-color: transparent var(--brown) transparent transparent; }
   }
 
-  /* Desktop hero alignment and compact headline. */
+  /* Desktop hero fits the viewport and continues behind the fixed navigation. */
   @media (min-width: 901px) {
-    .hero { min-height: 0; padding: 70px 0 0; align-items: flex-start; }
-    .hero-stage { align-items: flex-end; }
-    .hero-photo-col { margin-top: 80px; }
-    .hero-photo-wrap { height: 400px; }
+    .hero { min-height: 0; padding: 0; align-items: flex-start; }
+    .hero-stage { height: min(600px, 100svh); align-items: flex-end; }
+    .hero-photo-col { height: calc(100% - 140px); margin-top: 0; }
+    .hero-photo-wrap { height: 100%; }
     .hero-photo-wrap img { object-position: center 65%; }
-    .hero-card { width: 500px; max-width: 500px; align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 36px 32px 60px; }
-    .hero-card h1 { font-size: clamp(2.2rem, 3.2vw, 2.9rem); line-height: 1.12; margin-bottom: 24px; }
+    .hero-card { width: 460px; max-width: 460px; height: 100%; align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 94px 20px 24px 40px; border-radius: 0; }
+    .hero-card h1 { width: 100%; font-size: clamp(1.8rem, min(3vw, 5svh), 2.65rem); line-height: 1.1; margin-bottom: 22px; }
     .hero-card h1 p { margin: 0; font: inherit; line-height: inherit; color: inherit; }
     .speech-bubble { top: 32px; left: -170px; animation: none; }
   }
