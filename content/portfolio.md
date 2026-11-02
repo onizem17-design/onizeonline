@@ -14,6 +14,53 @@ show_category_navigation: true
 show_featured: false
 featured_heading: Start with these
 sample_categories:
+  - heading: Alternatives, reviews, and comparisons
+    description: ""
+    articles:
+      - title: "Coda vs Notion: Which Should You Use?"
+        url: https://hackernoon.com/coda-vs-notion-which-should-you-use
+        tag: HackerNoon
+        subjects:
+          - Productivity
+        status: Published
+        featured: false
+      - title: 9 Best AI Landing Page Builders in 2026 (I Tested Each)
+        url: https://emergent.sh/learn/best-ai-landing-page-builders
+        tag: Emergent
+        subjects:
+          - AI
+        status: Published
+        featured: true
+      - title: Top Amazon Store Management Agencies 2026
+        url: https://salesduo.com/blog/amazon-store-management-agency-comparison/
+        tag: SalesDuo
+        subjects:
+          - Ecommerce
+        status: Published
+        featured: false
+      - title: "10 Best Formstack Alternatives: Features & Pricing Comparison"
+        url: https://www.docupilot.com/blog/top-formstack-alternatives
+        tag: Docupilot
+        subjects:
+          - Automation
+        status: Published
+        featured: false
+      - title: "SignNow Pricing 2026: Full Plan Breakdown, Hidden Costs & Alternatives"
+        url: https://www.docupilot.com/blog/signnow-pricing
+        tag: Docupilot
+        subjects:
+          - Legal
+        status: Published
+        featured: false
+      - title: Nightwatch vs. AccuRanker vs. Semrush for Local Rank Tracking
+        url: https://docs.google.com/document/d/1ja2rpSN58-ekHaY045jhUHLmQdrR2kRNQCU1amuRsrk/edit
+        tag: Keyword.com
+        subjects:
+          - SEO
+        status: Unpublished writing sample
+        featured: false
+        feedback_image: /images/portfolio/nightwatch-accuranker-semrush-editor-feedback.png
+        visible: false
   - heading: Explainers and listicles
     description: ""
     articles:
@@ -68,53 +115,6 @@ sample_categories:
         status: Published
         featured: false
         feedback_image: /images/portfolio/contract-addendum-editor-feedback.png
-  - heading: Alternatives, reviews, and comparisons
-    description: ""
-    articles:
-      - title: "Coda vs Notion: Which Should You Use?"
-        url: https://hackernoon.com/coda-vs-notion-which-should-you-use
-        tag: HackerNoon
-        subjects:
-          - Productivity
-        status: Published
-        featured: false
-      - title: 9 Best AI Landing Page Builders in 2026 (I Tested Each)
-        url: https://emergent.sh/learn/best-ai-landing-page-builders
-        tag: Emergent
-        subjects:
-          - AI
-        status: Published
-        featured: true
-      - title: Top Amazon Store Management Agencies 2026
-        url: https://salesduo.com/blog/amazon-store-management-agency-comparison/
-        tag: SalesDuo
-        subjects:
-          - Ecommerce
-        status: Published
-        featured: false
-      - title: "10 Best Formstack Alternatives: Features & Pricing Comparison"
-        url: https://www.docupilot.com/blog/top-formstack-alternatives
-        tag: Docupilot
-        subjects:
-          - Automation
-        status: Published
-        featured: false
-      - title: "SignNow Pricing 2026: Full Plan Breakdown, Hidden Costs & Alternatives"
-        url: https://www.docupilot.com/blog/signnow-pricing
-        tag: Docupilot
-        subjects:
-          - Legal
-        status: Published
-        featured: false
-      - title: Nightwatch vs. AccuRanker vs. Semrush for Local Rank Tracking
-        url: https://docs.google.com/document/d/1ja2rpSN58-ekHaY045jhUHLmQdrR2kRNQCU1amuRsrk/edit
-        tag: Keyword.com
-        subjects:
-          - SEO
-        status: Unpublished writing sample
-        featured: false
-        feedback_image: /images/portfolio/nightwatch-accuranker-semrush-editor-feedback.png
-        visible: false
   - heading: How-to and product-led guides
     description: ""
     articles:
