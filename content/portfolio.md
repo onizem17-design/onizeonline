@@ -60,7 +60,7 @@ sample_categories:
         status: Unpublished writing sample
         featured: false
         feedback_image: /images/portfolio/nightwatch-accuranker-semrush-editor-feedback.png
-        visible: false
+        visible: true
   - heading: Explainers and listicles
     description: ""
     articles:
@@ -72,7 +72,7 @@ sample_categories:
           - SEO
         status: Published
         featured: true
-        visible: false
+        visible: true
       - title: "Licensing Agreement: Complete Guide & Key Components"
         url: https://www.docupilot.com/blog/licensing-agreement
         tag: Docupilot
@@ -141,7 +141,7 @@ sample_categories:
           - AI
         status: Published
         featured: true
-        visible: false
+        visible: true
 testimonials_heading: What my editors say
 testimonials:
   - quote: >-
