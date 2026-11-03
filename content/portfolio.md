@@ -141,7 +141,7 @@ sample_categories:
           - AI
         status: Published
         featured: true
-        visible: false
+        visible: true
 testimonials_heading: What my editors say
 testimonials:
   - quote: >-
